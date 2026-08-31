@@ -1,0 +1,12 @@
+{
+  "common": {
+    "home": "Inicio",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "profile": "Perfil",
+    "register": "Registrarse",
+    "settings": "Configuración",
+    "welcome": "Bienvenido",
+    "yes": "Si"
+  }
+}
