@@ -2,6 +2,11 @@ import { Component, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import translationsEN from '../assets/i18n/en.json';
 import translationsES from '../assets/i18n/es.json';
+import { register } from 'swiper/element/bundle';
+
+
+//Para que reconosca Swiper-container y < swiper-slide>
+register();
 
 @Component({
   selector: 'app-root',
@@ -16,6 +21,7 @@ export class AppComponent {
     this.initTranslate();
   }
 
+
   // Private functions
   // ===========================
 
@@ -27,4 +33,7 @@ export class AppComponent {
     const browserLang = this.translate.getBrowserLang();
     this.translate.use(browserLang?.match(/es|en/) ? browserLang : 'es');
   }
+
+
 }
+register();

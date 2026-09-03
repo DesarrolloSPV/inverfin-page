@@ -1,0 +1,34 @@
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  color: black;
+  font-weight: 600;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin-left: 8px;
+}
+
+.desktop-menu {
+  display: flex;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: flex;
+  }
+  .logo {
+    height: 32px; /* más pequeño en móvil */
+  }
+}
+

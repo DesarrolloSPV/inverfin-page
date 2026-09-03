@@ -1,0 +1,82 @@
+.hero-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* Estructura base del slide */
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 60px;
+}
+
+/* Contenido principal */
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🔧 Corrige visibilidad del contenido en efecto fade */
+.swiper-slide {
+  position: relative !important;
+  z-index: 1 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Oculta los slides no activos */
+.swiper-slide:not(.swiper-slide-active) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Asegura que el contenido del slide activo se vea */
+.swiper-slide-active .hero-text,
+.swiper-slide-active .hero-image {
+  opacity: 1 !important;
+}
+
+/* Animación */
+.hero-text,
+.hero-image {
+  opacity: 0;
+}
+
+.animate {
+  animation: fadeInOut 6s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Colores por slide */
+.slide-1 {
+  background-color: #fff;
+
+  .hero-text h1,
+  .hero-text p {
+    color: var(--ion-color-primary);
+  }
+}
+
+.slide-2 {
+  background-color: var(--ion-color-primary);
+
+  .hero-text h1,
+  .hero-text p {
+    color: #fff;
+  }
+}

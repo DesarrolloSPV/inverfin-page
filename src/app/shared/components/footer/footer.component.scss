@@ -1,0 +1,23 @@
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  height: 60px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+.footer-text {
+  font-size: 13px;
+  color: var(--ion-color-secondary);
+  text-align: center;
+}
