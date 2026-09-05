@@ -1,18 +1,19 @@
+div {
+  height: 100%;
+}
 .hero-swiper {
   width: 100%;
   height: 100%;
 }
 
-/* Estructura base del slide */
 .slide {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding: 60px;
+  padding: 60px 40px;
 }
 
-/* Contenido principal */
 .hero-content {
   display: flex;
   flex-direction: row;
@@ -20,63 +21,97 @@
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
+  gap: 40px;
   position: relative;
   z-index: 2;
 }
 
-/* 🔧 Corrige visibilidad del contenido en efecto fade */
-.swiper-slide {
-  position: relative !important;
-  z-index: 1 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-}
+/* --- ESTILOS MEJORADOS PARA H1 Y P --- */
+.hero-text {
+  max-width: 600px;
 
-/* Oculta los slides no activos */
-.swiper-slide:not(.swiper-slide-active) {
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
 
-/* Asegura que el contenido del slide activo se vea */
-.swiper-slide-active .hero-text,
-.swiper-slide-active .hero-image {
-  opacity: 1 !important;
-}
-
-/* Animación */
-.hero-text,
-.hero-image {
-  opacity: 0;
-}
-
-.animate {
-  animation: fadeInOut 6s ease forwards;
-}
-
-@keyframes fadeInOut {
-  0% { opacity: 0; transform: translateY(20px); }
-  20% { opacity: 1; transform: translateY(0); }
-  80% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-20px); }
-}
-
-/* Colores por slide */
-.slide-1 {
-  background-color: #fff;
-
-  .hero-text h1,
-  .hero-text p {
-    color: var(--ion-color-primary);
+  p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-weight: 400;
+    margin-bottom: 30px;
+    opacity: 0.9;
   }
 }
 
-.slide-2 {
+/* Ocultar elementos de slides inactivos */
+.swiper-slide:not(.swiper-slide-active) {
+  .hero-text h1,
+  .hero-text p,
+  .hero-text ion-button,
+  .hero-image {
+    opacity: 0;
+    animation: none;
+  }
+}
+
+/* --- ANIMACIONES ENTRADA SUAVE --- */
+.swiper-slide-active {
+  .hero-text h1 {
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+
+  .hero-text p {
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.3s; // Inicia 0.3s después del H1
+  }
+
+  .hero-text ion-button {
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.6s; // Inicia 0.6s después del H1
+  }
+
+  .hero-image {
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.2s; // Inicia 0.2s después del H1
+  }
+}
+
+/* Animación de entrada hacia arriba */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- COLORES POR SLIDE --- */
+.slide-1,
+.slide-3 {
+  background-color: #ffffff;
+
+  .hero-text h1 {
+    color: var(--ion-color-primary);
+  }
+
+  .hero-text p {
+    color: #555555;
+  }
+}
+
+.slide-2,
+.slide-4 {
   background-color: var(--ion-color-primary);
 
   .hero-text h1,
   .hero-text p {
-    color: #fff;
+    color: #ffffff;
   }
 }

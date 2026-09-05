@@ -1,0 +1,74 @@
+<section class="contact-section">
+  <div class="contact-container">
+    <!-- LADO IZQUIERDO: TEXTO E INFORMACIÓN DE HORARIOS -->
+    <div class="contact-info">
+      <p class="subtitle">
+        Obtén asesoramiento confiable y respaldo sólido para tus proyectos financieros, sin
+        complicaciones.
+      </p>
+      <h2 class="title">¡Contáctanos hoy mismo!</h2>
+
+      <div class="divider"></div>
+
+      <div class="schedule">
+        <p><strong>Horario de Atención:</strong> Lunes a Viernes de 09:00 a 18:00 horas</p>
+      </div>
+    </div>
+
+    <!-- LADO DERECHO: FORMULARIO BLANCO -->
+    <div class="contact-form-card">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Nombre<span class="required">*</span></label>
+          <ion-input type="text" placeholder="Ingresa tu nombre" fill="outline"></ion-input>
+        </div>
+
+        <div class="form-group">
+          <label>Correo electrónico<span class="required">*</span></label>
+          <ion-input type="email" placeholder="ejemplo@correo.com" fill="outline"></ion-input>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Teléfono<span class="required">*</span></label>
+            <ion-input type="tel" placeholder="55 0000 0000" fill="outline"></ion-input>
+          </div>
+
+          <div class="form-group">
+            <label>Estado<span class="required">*</span></label>
+            <ion-select placeholder="Selecciona" interface="popover" fill="outline">
+              <ion-select-option value="cdmx">Ciudad de México</ion-select-option>
+              <ion-select-option value="edomex">Estado de México</ion-select-option>
+              <ion-select-option value="jalisco">Jalisco</ion-select-option>
+              <ion-select-option value="nl">Nuevo León</ion-select-option>
+              <!-- Agrega los demás estados según requieras -->
+            </ion-select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>¿Persona física o moral?<span class="required">*</span></label>
+            <ion-select placeholder="Selecciona" interface="popover" fill="outline">
+              <ion-select-option value="fisica">Persona Física</ion-select-option>
+              <ion-select-option value="moral">Persona Moral</ion-select-option>
+            </ion-select>
+          </div>
+
+          <div class="form-group">
+            <label>¿Qué servicio te interesa?<span class="required">*</span></label>
+            <ion-select placeholder="Selecciona" interface="popover" fill="outline">
+              <ion-select-option value="arrendamiento">Arrendamiento puro</ion-select-option>
+              <ion-select-option value="factoraje">Factoraje financiero</ion-select-option>
+              <ion-select-option value="sale-leaseback">Sale & Lease Back</ion-select-option>
+            </ion-select>
+          </div>
+        </div>
+
+        <ion-button expand="block" type="submit" class="submit-btn" color="primary">
+          Enviar
+        </ion-button>
+      </form>
+    </div>
+  </div>
+</section>

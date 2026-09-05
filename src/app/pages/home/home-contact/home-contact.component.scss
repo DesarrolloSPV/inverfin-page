@@ -1,0 +1,124 @@
+.contact-section {
+  width: 100%;
+  background-color: var(--ion-color-primary); /* Fondo azul principal de Inverfin */
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+  gap: 50px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* LADO IZQUIERDO */
+.contact-info {
+  flex: 1;
+
+  .subtitle {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.95;
+    font-weight: 300;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+  }
+
+  .divider {
+    width: 80px;
+    height: 3px;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    opacity: 0.8;
+  }
+
+  .schedule {
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      opacity: 0.85;
+      strong {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+/* LADO DERECHO: TARJETA BLANCA */
+.contact-form-card {
+  flex: 1.1;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  color: #333333;
+
+  .form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #444444;
+      margin-bottom: 6px;
+
+      .required {
+        color: #e53935;
+        margin-left: 2px;
+      }
+    }
+
+    ion-input,
+    ion-select {
+      --background: #f8f9fa;
+      --border-color: #e0e0e0;
+      --border-radius: 8px;
+      --padding-start: 12px;
+      font-size: 0.95rem;
+      color: #333333;
+      min-height: 44px;
+    }
+  }
+
+  .form-row {
+    display: flex;
+    gap: 15px;
+
+    .form-group {
+      flex: 1;
+    }
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  .submit-btn {
+    margin-top: 10px;
+    --border-radius: 8px;
+    font-weight: 700;
+    height: 48px;
+    letter-spacing: 0.5px;
+  }
+}

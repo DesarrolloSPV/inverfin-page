@@ -5,10 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { TranslatePipe } from '@ngx-translate/core';
 import { SharedModule } from '../../shared/shared.module';
 import { HomeHeroComponent } from './home-hero/home-hero.component';
-
+import { HomeAboutComponent } from './home-about/home-about.component';
+import { HomeServiceComponent } from './home-service/home-service.component';
+import { HomeValuesComponent } from './home-values/home-values.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { HomeBlogComponent } from './home-blog/home-blog.component';
+import { HomeContactComponent } from './home-contact/home-contact.component';
 
 @NgModule({
   imports: [
@@ -16,14 +20,19 @@ import { HomeHeroComponent } from './home-hero/home-hero.component';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    TranslatePipe,
     SharedModule,
+    TranslateModule,
   ],
   declarations: [
     HomePage,
     HomeHeroComponent,
+    HomeAboutComponent,
+    HomeServiceComponent,
+    HomeValuesComponent,
+    HomeContactComponent,
+    HomeBlogComponent,
   ],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [],
 })
 export class HomePageModule {}

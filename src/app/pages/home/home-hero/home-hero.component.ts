@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-home-hero',
@@ -7,38 +7,15 @@ import { Component, AfterViewInit } from '@angular/core';
   standalone: false,
 })
 export class HomeHeroComponent implements AfterViewInit {
+  @ViewChild('swiperHero') swiperEl!: ElementRef;
 
   ngAfterViewInit() {
-    const swiperEl = document.querySelector('swiper-container') as any;
-
-    if (swiperEl) {
-      // Esperar a que Swiper se inicialice
-      swiperEl.initialize();
-
-      // Acceder a la instancia real
-      const swiper = swiperEl.swiper;
-
-      // Animar el primer slide
-      const firstSlide = swiperEl.querySelector('.swiper-slide');
-      if (firstSlide) {
-        const animatedEls = firstSlide.querySelectorAll('.hero-text, .hero-image');
-        animatedEls.forEach((el: HTMLElement) => el.classList.add('animate'));
+    // Garantiza que Swiper se inicialice e inicie el autoplay inmediatamente
+    setTimeout(() => {
+      const swiper = this.swiperEl?.nativeElement?.swiper;
+      if (swiper) {
+        swiper.autoplay?.start();
       }
-
-      // Callback de cambio de slide
-      swiper.on('slideChange', () => {
-        console.log('Slide activo:', swiper.activeIndex); // 👈 verifica en consola
-
-        const currentSlide = swiperEl.querySelectorAll('.swiper-slide')[swiper.activeIndex];
-        if (currentSlide) {
-          const animatedEls = currentSlide.querySelectorAll('.hero-text, .hero-image');
-          animatedEls.forEach((el: HTMLElement) => {
-            el.classList.remove('animate');
-            void el.offsetWidth;
-            el.classList.add('animate');
-          });
-        }
-      });
-    }
+    }, 100);
   }
 }

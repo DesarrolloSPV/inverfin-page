@@ -1,0 +1,88 @@
+
+.service-section {
+  padding: 80px 40px;
+  background-color: var(--ion-color-primary);
+  text-align: center;
+}
+
+.service-header {
+  margin-bottom: 60px;
+
+  h5 {
+    color: white;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: white;
+  }
+
+  p {
+    color: white;
+    font-size: 1.1rem;
+  }
+}
+
+.service-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  width: 340px;
+  min-height: 420px; /* Cambiado de height a min-height para que crezca si el contenido lo pide */
+  height: auto;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #6c757d; /* Usar código hex directo o var() */
+    color: var(--ion-color-light);
+    transform: translateY(-10px);
+
+    /* Estilo del botón al hacer hover */
+    ion-button {
+      --background: rgba(0, 0, 0, 0.15); /* Sintaxis limpia de Ionic */
+      --color: var(--ion-color-primary);
+    }
+  }
+
+  .service-content {
+    padding: 30px 20px; /* Reducimos ligeramente el padding interno */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      height: 70px;
+      margin-bottom: 15px;
+      transition: filter 0.3s ease;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    ion-button {
+      margin-top: auto; /* Empuja el botón al fondo de la tarjeta */
+      width: 80%; /* Para que el botón tenga buen tamaño visual */
+    }
+  }
+}
