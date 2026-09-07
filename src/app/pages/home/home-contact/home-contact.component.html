@@ -17,58 +17,89 @@
 
     <!-- LADO DERECHO: FORMULARIO BLANCO -->
     <div class="contact-form-card">
-      <form (ngSubmit)="onSubmit()">
+      <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
         <div class="form-group">
           <label>Nombre<span class="required">*</span></label>
-          <ion-input type="text" placeholder="Ingresa tu nombre" fill="outline"></ion-input>
+          <ion-input
+            type="text"
+            placeholder="Ingresa tu nombre"
+            fill="outline"
+            name="user_name"
+            ngModel
+            required
+          >
+          </ion-input>
         </div>
 
         <div class="form-group">
           <label>Correo electrónico<span class="required">*</span></label>
-          <ion-input type="email" placeholder="ejemplo@correo.com" fill="outline"></ion-input>
+          <ion-input
+            type="email"
+            placeholder="ejemplo@correo.com"
+            fill="outline"
+            name="user_email"
+            ngModel
+            required
+          >
+          </ion-input>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label>Teléfono<span class="required">*</span></label>
-            <ion-input type="tel" placeholder="55 0000 0000" fill="outline"></ion-input>
+            <ion-input
+              type="tel"
+              placeholder="55 0000 0000"
+              fill="outline"
+              name="user_phone"
+              ngModel
+              required
+            >
+            </ion-input>
           </div>
 
           <div class="form-group">
             <label>Estado<span class="required">*</span></label>
-            <ion-select placeholder="Selecciona" interface="popover" fill="outline">
-              <ion-select-option value="aguascalientes">Aguascalientes</ion-select-option>
-              <ion-select-option value="baja-california">Baja California</ion-select-option>
-              <ion-select-option value="baja-california-sur">Baja California Sur</ion-select-option>
-              <ion-select-option value="campeche">Campeche</ion-select-option>
-              <ion-select-option value="chiapas">Chiapas</ion-select-option>
-              <ion-select-option value="chihuahua">Chihuahua</ion-select-option>
-              <ion-select-option value="cdmx">Ciudad de México</ion-select-option>
-              <ion-select-option value="coahuila">Coahuila</ion-select-option>
-              <ion-select-option value="colima">Colima</ion-select-option>
-              <ion-select-option value="durango">Durango</ion-select-option>
-              <ion-select-option value="guanajuato">Guanajuato</ion-select-option>
-              <ion-select-option value="guerrero">Guerrero</ion-select-option>
-              <ion-select-option value="hidalgo">Hidalgo</ion-select-option>
-              <ion-select-option value="jalisco">Jalisco</ion-select-option>
-              <ion-select-option value="edomex">Estado de México</ion-select-option>
-              <ion-select-option value="michoacan">Michoacán</ion-select-option>
-              <ion-select-option value="morelos">Morelos</ion-select-option>
-              <ion-select-option value="nayarit">Nayarit</ion-select-option>
-              <ion-select-option value="nuevo-leon">Nuevo León</ion-select-option>
-              <ion-select-option value="oaxaca">Oaxaca</ion-select-option>
-              <ion-select-option value="puebla">Puebla</ion-select-option>
-              <ion-select-option value="queretaro">Querétaro</ion-select-option>
-              <ion-select-option value="quintana-roo">Quintana Roo</ion-select-option>
-              <ion-select-option value="san-luis-potosi">San Luis Potosí</ion-select-option>
-              <ion-select-option value="sinaloa">Sinaloa</ion-select-option>
-              <ion-select-option value="sonora">Sonora</ion-select-option>
-              <ion-select-option value="tabasco">Tabasco</ion-select-option>
-              <ion-select-option value="tamaulipas">Tamaulipas</ion-select-option>
-              <ion-select-option value="tlaxcala">Tlaxcala</ion-select-option>
-              <ion-select-option value="veracruz">Veracruz</ion-select-option>
-              <ion-select-option value="yucatan">Yucatán</ion-select-option>
-              <ion-select-option value="zacatecas">Zacatecas</ion-select-option>
+            <ion-select
+              placeholder="Selecciona"
+              interface="popover"
+              fill="outline"
+              name="user_state"
+              ngModel
+              required
+            >
+              <ion-select-option value="Aguascalientes">Aguascalientes</ion-select-option>
+              <ion-select-option value="Baja California">Baja California</ion-select-option>
+              <ion-select-option value="Baja California Sur">Baja California Sur</ion-select-option>
+              <ion-select-option value="Campeche">Campeche</ion-select-option>
+              <ion-select-option value="Chiapas">Chiapas</ion-select-option>
+              <ion-select-option value="Chihuahua">Chihuahua</ion-select-option>
+              <ion-select-option value="Ciudad de México">Ciudad de México</ion-select-option>
+              <ion-select-option value="Coahuila">Coahuila</ion-select-option>
+              <ion-select-option value="Colima">Colima</ion-select-option>
+              <ion-select-option value="Durango">Durango</ion-select-option>
+              <ion-select-option value="Guanajuato">Guanajuato</ion-select-option>
+              <ion-select-option value="Guerrero">Guerrero</ion-select-option>
+              <ion-select-option value="Hidalgo">Hidalgo</ion-select-option>
+              <ion-select-option value="Jalisco">Jalisco</ion-select-option>
+              <ion-select-option value="Estado de México">Estado de México</ion-select-option>
+              <ion-select-option value="Michoacán">Michoacán</ion-select-option>
+              <ion-select-option value="Morelos">Morelos</ion-select-option>
+              <ion-select-option value="Nayarit">Nayarit</ion-select-option>
+              <ion-select-option value="Nuevo León">Nuevo León</ion-select-option>
+              <ion-select-option value="Oaxaca">Oaxaca</ion-select-option>
+              <ion-select-option value="Puebla">Puebla</ion-select-option>
+              <ion-select-option value="Querétaro">Querétaro</ion-select-option>
+              <ion-select-option value="Quintana Roo">Quintana Roo</ion-select-option>
+              <ion-select-option value="San Luis Potosí">San Luis Potosí</ion-select-option>
+              <ion-select-option value="Sinaloa">Sinaloa</ion-select-option>
+              <ion-select-option value="Sonora">Sonora</ion-select-option>
+              <ion-select-option value="Tabasco">Tabasco</ion-select-option>
+              <ion-select-option value="Tamaulipas">Tamaulipas</ion-select-option>
+              <ion-select-option value="Tlaxcala">Tlaxcala</ion-select-option>
+              <ion-select-option value="Veracruz">Veracruz</ion-select-option>
+              <ion-select-option value="Yucatán">Yucatán</ion-select-option>
+              <ion-select-option value="Zacatecas">Zacatecas</ion-select-option>
             </ion-select>
           </div>
         </div>
@@ -76,29 +107,51 @@
         <div class="form-row">
           <div class="form-group">
             <label>¿Persona física o moral?<span class="required">*</span></label>
-            <ion-select placeholder="Selecciona" interface="popover" fill="outline">
-              <ion-select-option value="fisica">Persona Física</ion-select-option>
-              <ion-select-option value="moral">Persona Moral</ion-select-option>
+            <ion-select
+              placeholder="Selecciona"
+              interface="popover"
+              fill="outline"
+              name="person_type"
+              ngModel
+              required
+            >
+              <ion-select-option value="Persona Física">Persona Física</ion-select-option>
+              <ion-select-option value="Persona Moral">Persona Moral</ion-select-option>
             </ion-select>
           </div>
 
           <div class="form-group">
             <label>¿Qué servicio te interesa?<span class="required">*</span></label>
-            <ion-select placeholder="Selecciona" interface="popover" fill="outline">
-              <ion-select-option value="arrendamiento">Arrendamiento puro</ion-select-option>
-              <ion-select-option value="factoraje">Factoraje financiero</ion-select-option>
-              <ion-select-option value="sale-leaseback">Sale & Lease Back</ion-select-option>
+            <ion-select
+              placeholder="Selecciona"
+              interface="popover"
+              fill="outline"
+              name="service"
+              ngModel
+              required
+            >
+              <ion-select-option value="Arrendamiento puro">Arrendamiento puro</ion-select-option>
+              <ion-select-option value="Factoraje financiero"
+                >Factoraje financiero</ion-select-option
+              >
+              <ion-select-option value="Sale & Lease Back">Sale & Lease Back</ion-select-option>
             </ion-select>
           </div>
         </div>
 
         <!-- RECAPTCHA CONTENEDOR -->
         <div class="form-group captcha-container">
-          <div class="g-recaptcha" data-sitekey="6Lfo464tAAAAACSjw7oA2wEMkonwoVAbXYgyLwpn"></div>
+          <div class="g-recaptcha" [attr.data-sitekey]="siteKey"></div>
         </div>
 
-        <ion-button expand="block" type="submit" class="submit-btn" color="primary">
-          Enviar
+        <ion-button
+          expand="block"
+          type="submit"
+          class="submit-btn"
+          color="primary"
+          [disabled]="isSending"
+        >
+          {{ isSending ? 'Enviando...' : 'Enviar' }}
         </ion-button>
       </form>
     </div>

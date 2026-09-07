@@ -1,14 +1,20 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { FormsModule } from '@angular/forms'; // <-- Agregado para Formularios
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+
+// Importaciones de Firebase
+import { AngularFireModule } from '@angular/fire/compat'; // <-- Agregado
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore'; // <-- Agregado
+import { environment } from '../environments/environment'; // <-- Agregado
 
 // Importaciones de ngx-translate
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -23,11 +29,13 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    FormsModule, // <-- Módulo de Formularios
     AppRoutingModule,
     HttpClientModule,
     IonicModule.forRoot(),
     SharedModule,
-    AppRoutingModule, // Configuración de NGX-Translate
+    AngularFireModule.initializeApp(environment.firebase), // <-- Inicializador de Firebase
+    AngularFirestoreModule, // <-- Módulo de Firestore
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
