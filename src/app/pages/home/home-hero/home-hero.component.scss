@@ -1,64 +1,93 @@
 div {
   height: 100%;
 }
+
 .hero-swiper {
   width: 100%;
+
   height: 100%;
 }
 
 .slide {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   height: 100%;
+
   padding: 60px 40px;
 }
 
 .hero-content {
   display: flex;
+
   flex-direction: row;
+
   align-items: center;
-  justify-content: space-between;
+
+  justify-content: center;
+
   width: 100%;
+
   max-width: 1200px;
-  gap: 40px;
+
+  gap: 60px;
+
+  margin: 0 auto;
+
   position: relative;
+
   z-index: 2;
 }
 
 /* --- ESTILOS MEJORADOS PARA H1 Y P --- */
+
 .hero-text {
-  max-width: 600px;
+  flex: 1;
+  max-width: 500px;
 
   h1 {
     font-size: 2.8rem;
+
     font-weight: 800;
+
     line-height: 1.2;
+
     letter-spacing: -0.5px;
+
     margin-bottom: 20px;
   }
 
   p {
     font-size: 1.25rem;
+
     line-height: 1.6;
+
     font-weight: 400;
+
     margin-bottom: 30px;
+
     opacity: 0.9;
   }
 }
 
 /* Ocultar elementos de slides inactivos */
+
 .swiper-slide:not(.swiper-slide-active) {
   .hero-text h1,
   .hero-text p,
   .hero-text ion-button,
   .hero-image {
     opacity: 0;
+    flex: 1;
     animation: none;
   }
 }
 
 /* --- ANIMACIONES ENTRADA SUAVE --- */
+
 .swiper-slide-active {
   .hero-text h1 {
     animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
@@ -66,33 +95,41 @@ div {
 
   .hero-text p {
     animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+
     animation-delay: 0.3s; // Inicia 0.3s después del H1
   }
 
   .hero-text ion-button {
     animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+
     animation-delay: 0.6s; // Inicia 0.6s después del H1
   }
 
   .hero-image {
     animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+
     animation-delay: 0.2s; // Inicia 0.2s después del H1
   }
 }
 
 /* Animación de entrada hacia arriba */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
+
     transform: translateY(35px);
   }
+
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
 
 /* --- COLORES POR SLIDE --- */
+
 .slide-1,
 .slide-3 {
   background-color: #ffffff;
