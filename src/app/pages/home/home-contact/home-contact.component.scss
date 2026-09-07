@@ -122,3 +122,73 @@
     letter-spacing: 0.5px;
   }
 }
+
+/* --- RESPONSIVE PARA CELULAR --- */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 50px 20px; // menos padding general
+    flex-direction: column; // apila todo verticalmente
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; // espacio entre texto y formulario
+    max-width: 100%;
+  }
+
+  .contact-info {
+    .subtitle {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 1.8rem; // más pequeño para móvil
+      margin-bottom: 20px;
+    }
+
+    .divider {
+      margin: 0 auto 20px; // centra la línea divisora
+    }
+
+    .schedule p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+  }
+
+  .contact-form-card {
+    width: 100%;
+    padding: 25px 20px; // reduce padding interno
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+
+    .form-group {
+      label {
+        font-size: 0.8rem;
+      }
+
+      ion-input,
+      ion-select {
+        font-size: 0.9rem;
+        min-height: 42px;
+      }
+    }
+
+    .form-row {
+      flex-direction: column; // ✅ apila los campos
+      gap: 10px;
+    }
+
+    .submit-btn {
+      margin-top: 15px;
+      height: 46px;
+      font-size: 0.95rem;
+      width: 100%;
+    }
+  }
+}

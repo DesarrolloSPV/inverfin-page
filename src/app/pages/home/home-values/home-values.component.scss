@@ -122,3 +122,78 @@ swiper-slide {
     max-width: 380px;
   }
 }
+
+/* --- RESPONSIVE PARA CELULAR --- */
+@media (max-width: 768px) {
+  .valores-section {
+    height: auto; // ✅ elimina altura fija
+    padding: 50px 20px 60px; // más espacio arriba y abajo
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .dotted-line {
+    display: none !important; // ✅ oculta la línea en todos los tamaños
+  }
+
+  .valores-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px; // más separación entre logo y slider
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .logo-container {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .main-logo {
+    font-size: 2.4rem; // un poco más grande para equilibrio visual
+    text-align: center;
+  }
+
+  .values-slider-container {
+    align-items: center;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .section-subtitle {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 20px; // más espacio debajo del título
+  }
+
+  .vertical-swiper {
+    height: 260px; // ✅ más altura para que los valores respiren
+    overflow: hidden;
+  }
+
+  .value-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px; // más espacio entre ícono y texto
+  }
+
+  .icon-circle {
+    width: 65px;
+    height: 65px;
+    font-size: 1.8rem;
+  }
+
+  .text-content {
+    h3 {
+      font-size: 1.1rem;
+    }
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+}

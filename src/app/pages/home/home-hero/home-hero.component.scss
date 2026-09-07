@@ -152,3 +152,44 @@ div {
     color: #ffffff;
   }
 }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .slide {
+    padding: 40px 20px; // menos padding en móvil
+  }
+
+  .hero-content {
+    flex-direction: column; // ✅ texto arriba, imagen abajo
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center; // centra texto en móvil
+  }
+
+  .hero-text {
+    max-width: 100%; // ocupa todo el ancho
+    h1 {
+      font-size: 1.8rem; // más pequeño en móvil
+      line-height: 1.3;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+  }
+
+  .hero-image {
+    img {
+      width: 100%;
+      max-width: 300px; // limita tamaño de imagen en móvil
+      height: auto;
+    }
+  }
+
+  .hero-text ion-button {
+    width: 100%; // botón ancho completo en móvil
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}

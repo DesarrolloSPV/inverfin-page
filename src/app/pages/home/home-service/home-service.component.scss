@@ -1,4 +1,3 @@
-
 .service-section {
   padding: 80px 40px;
   background-color: var(--ion-color-primary);
@@ -83,6 +82,51 @@
     ion-button {
       margin-top: auto; /* Empuja el botón al fondo de la tarjeta */
       width: 80%; /* Para que el botón tenga buen tamaño visual */
+    }
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .service-section {
+    padding: 40px 20px; // menos padding en móvil
+  }
+
+  .service-header {
+    h2 {
+      font-size: 1.6rem; // más pequeño en móvil
+      line-height: 1.3;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .service-grid {
+    flex-direction: column; // ✅ apila las tarjetas
+    align-items: center;
+    gap: 20px;
+  }
+
+  .service-card {
+    width: 100%; // ocupa todo el ancho
+    max-width: 360px; // límite para que no se vea demasiado grande
+    min-height: auto; // altura flexible
+  }
+
+  .service-content {
+    padding: 20px 15px; // menos padding interno
+    h3 {
+      font-size: 1.2rem;
+    }
+    p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    ion-button {
+      width: 100%; // botón ancho completo en móvil
+      max-width: 220px;
+      margin: 0 auto;
     }
   }
 }

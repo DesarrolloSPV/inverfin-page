@@ -65,3 +65,55 @@
     gap: 20px;
   }
 }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .about-section {
+    height: auto; // ✅ que no fuerce 100vh en móvil
+    padding: 40px 20px; // menos padding
+  }
+
+  .about-content {
+    flex-direction: column; // ✅ apila columnas
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about-text {
+    max-width: 100%;
+    h2 {
+      font-size: 1.8rem; // más pequeño en móvil
+      line-height: 1.3;
+    }
+    h5 {
+      font-size: 1rem;
+    }
+  }
+
+  .about-info {
+    max-width: 100%;
+    p {
+      font-size: 1rem;
+      line-height: 1.4;
+      text-align: justify;
+    }
+
+    .about-logos {
+      justify-content: center; // centra logos
+      img {
+        height: 50px;
+      }
+    }
+
+    .about-buttons {
+      flex-direction: column; // ✅ botones uno debajo del otro
+      gap: 15px;
+      ion-button {
+        width: 100%; // ancho completo en móvil
+        max-width: 220px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
