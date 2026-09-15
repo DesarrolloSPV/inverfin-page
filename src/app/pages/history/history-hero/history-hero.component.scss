@@ -1,0 +1,154 @@
+.history-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  background-color: var(--ion-color-primary, #0a1f33);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 20px;
+  color: #ffffff;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  text-align: center;
+}
+
+/* EFECTOS VISUALES DE FONDO */
+.hero-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+
+  .glow-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.25;
+  }
+
+  .glow-1 {
+    width: 300px;
+    height: 300px;
+    background: #ffffff;
+    top: -50px;
+    left: -50px;
+  }
+
+  .glow-2 {
+    width: 350px;
+    height: 350px;
+    background: var(--ion-color-secondary, #0056b3);
+    bottom: -80px;
+    right: -50px;
+  }
+
+  .overlay-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+/* CONTENIDO PRINCIPAL */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.badge-subtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 18px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(5px);
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+
+  .highlight {
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.hero-quote {
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 0 30px 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  position: relative;
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .history-hero-section {
+    min-height: 350px;
+    padding: 60px 20px;
+  }
+
+  .badge-subtitle {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-quote {
+    font-size: 1.05rem;
+  }
+}

@@ -1,0 +1,110 @@
+.differentials-section {
+  padding: 100px 40px;
+  background-color: #f8f9fa;
+  text-align: center;
+
+  .differentials-header {
+    max-width: 900px;
+    margin: 0 auto 80px;
+
+    h5 {
+      color: var(--ion-color-primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--ion-color-dark);
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #555;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+  }
+
+  .differentials-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--ion-color-primary);
+      opacity: 0.2;
+      transform: translateY(-50%);
+    }
+  }
+
+  .timeline-item {
+    position: relative;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px 25px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    z-index: 2;
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+
+    .timeline-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px;
+      background-color: var(--ion-color-primary);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 0 0 6px rgba(19, 90, 140, 0.2);
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ion-color-primary);
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .differentials-section {
+    padding: 60px 20px;
+  }
+
+  .differentials-timeline::before {
+    display: none;
+  }
+
+  .timeline-item {
+    text-align: center;
+  }
+}

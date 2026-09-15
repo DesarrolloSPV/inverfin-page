@@ -1,0 +1,103 @@
+.faq-section {
+  padding: 80px 40px;
+  background-color: var(--ion-color-primary);
+  color: #ffffff;
+  text-align: center;
+}
+
+.faq-header {
+  margin-bottom: 40px;
+
+  h5 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: #e0e0e0;
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+/* --- Acordeón --- */
+ion-accordion-group {
+  background: transparent;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+ion-item {
+  --background: #ffffff;
+  --color: #333333;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  ion-label {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ion-color-primary);
+  }
+
+  /* Ícono de flecha */
+  ion-icon {
+    color: var(--ion-color-primary);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+
+  &[aria-expanded='true'] ion-icon {
+    transform: rotate(180deg);
+  }
+}
+
+/* --- Contenido desplegado --- */
+.ion-padding {
+  background-color: #f8f9fa;
+  color: #333333;
+  border-radius: 0 0 10px 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  padding: 20px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 60px 20px;
+  }
+
+  .faq-header h2 {
+    font-size: 2rem;
+  }
+
+  ion-item {
+    font-size: 0.95rem;
+  }
+
+  ion-label {
+    font-size: 1rem;
+  }
+}

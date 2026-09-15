@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { UtilitiesService } from '../../services/utilities.service';
+
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
   standalone: false,
 })
-export class HeaderComponent  implements OnInit {
+export class HeaderComponent {
+  constructor(private utilities: UtilitiesService) {}
 
-  constructor() { }
-
-  ngOnInit() {}
-
+  async openContact(event: any) {
+    await this.utilities.popContact(event);  // ✅ usa el nuevo método
+  }
 }

@@ -1,0 +1,181 @@
+<div class="contact-form-card">
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+    <!-- Nombre -->
+    <div class="form-group">
+      <label>Nombre<span class="required">*</span></label>
+      <ion-input
+        type="text"
+        placeholder="Ingresa tu nombre"
+        fill="outline"
+        name="user_name"
+        ngModel
+        required
+      ></ion-input>
+    </div>
+
+    <!-- Correo -->
+    <div class="form-group">
+      <label>Correo electrónico<span class="required">*</span></label>
+      <ion-input
+        type="email"
+        placeholder="ejemplo@correo.com"
+        fill="outline"
+        name="user_email"
+        ngModel
+        required
+      ></ion-input>
+    </div>
+
+    <!-- Teléfono y Estado -->
+    <div class="form-row">
+      <div class="form-group">
+        <label>Teléfono<span class="required">*</span></label>
+        <ion-input
+          type="tel"
+          placeholder="55 0000 0000"
+          fill="outline"
+          name="user_phone"
+          ngModel
+          required
+        ></ion-input>
+      </div>
+
+      <div class="form-group">
+        <label>Estado<span class="required">*</span></label>
+        <ion-select
+          placeholder="Selecciona"
+          interface="popover"
+          fill="outline"
+          name="user_state"
+          ngModel
+          required
+        >
+          <ion-select-option value="Aguascalientes">Aguascalientes</ion-select-option>
+          <ion-select-option value="Baja California">Baja California</ion-select-option>
+          <ion-select-option value="Baja California Sur">Baja California Sur</ion-select-option>
+          <ion-select-option value="Campeche">Campeche</ion-select-option>
+          <ion-select-option value="Chiapas">Chiapas</ion-select-option>
+          <ion-select-option value="Chihuahua">Chihuahua</ion-select-option>
+          <ion-select-option value="Ciudad de México">Ciudad de México</ion-select-option>
+          <ion-select-option value="Coahuila">Coahuila</ion-select-option>
+          <ion-select-option value="Colima">Colima</ion-select-option>
+          <ion-select-option value="Durango">Durango</ion-select-option>
+          <ion-select-option value="Guanajuato">Guanajuato</ion-select-option>
+          <ion-select-option value="Guerrero">Guerrero</ion-select-option>
+          <ion-select-option value="Hidalgo">Hidalgo</ion-select-option>
+          <ion-select-option value="Jalisco">Jalisco</ion-select-option>
+          <ion-select-option value="Estado de México">Estado de México</ion-select-option>
+          <ion-select-option value="Michoacán">Michoacán</ion-select-option>
+          <ion-select-option value="Morelos">Morelos</ion-select-option>
+          <ion-select-option value="Nayarit">Nayarit</ion-select-option>
+          <ion-select-option value="Nuevo León">Nuevo León</ion-select-option>
+          <ion-select-option value="Oaxaca">Oaxaca</ion-select-option>
+          <ion-select-option value="Puebla">Puebla</ion-select-option>
+          <ion-select-option value="Querétaro">Querétaro</ion-select-option>
+          <ion-select-option value="Quintana Roo">Quintana Roo</ion-select-option>
+          <ion-select-option value="San Luis Potosí">San Luis Potosí</ion-select-option>
+          <ion-select-option value="Sinaloa">Sinaloa</ion-select-option>
+          <ion-select-option value="Sonora">Sonora</ion-select-option>
+          <ion-select-option value="Tabasco">Tabasco</ion-select-option>
+          <ion-select-option value="Tamaulipas">Tamaulipas</ion-select-option>
+          <ion-select-option value="Tlaxcala">Tlaxcala</ion-select-option>
+          <ion-select-option value="Veracruz">Veracruz</ion-select-option>
+          <ion-select-option value="Yucatán">Yucatán</ion-select-option>
+          <ion-select-option value="Zacatecas">Zacatecas</ion-select-option>
+         </ion-select>
+      </div>
+    </div>
+
+    <!-- Persona física/moral y servicio -->
+    <div class="form-row">
+      <div class="form-group">
+        <label>¿Persona física o moral?<span class="required">*</span></label>
+        <ion-select
+          placeholder="Selecciona"
+          interface="popover"
+          fill="outline"
+          name="person_type"
+          ngModel
+          required
+        >
+          <ion-select-option value="Persona Física">Persona Física</ion-select-option>
+          <ion-select-option value="Persona Moral">Persona Moral</ion-select-option>
+        </ion-select>
+      </div>
+
+      <div class="form-group">
+        <label>¿Qué servicio te interesa?<span class="required">*</span></label>
+        <ion-select
+          placeholder="Selecciona"
+          interface="popover"
+          fill="outline"
+          name="service"
+          ngModel
+          required
+        >
+          <ion-select-option value="Arrendamiento puro">Arrendamiento puro</ion-select-option>
+          <ion-select-option value="Factoraje financiero">Factoraje financiero</ion-select-option>
+        </ion-select>
+      </div>
+    </div>
+
+<!-- Checkbox: presolicitud de línea de crédito -->
+<div class="form-group checkbox-group">
+  <ion-checkbox
+    name="presolicitud"
+    [checked]="showRFC"
+    (ionChange)="togglePresolicitud($event)"
+  >
+    Presolicitar línea de crédito
+  </ion-checkbox>
+</div>
+
+<!-- Campo RFC y mensaje dinámico -->
+<div class="form-group rfc-group" [ngClass]="{ show: showRFC }" *ngIf="showRFC">
+  <label>RFC<span class="required">*</span></label>
+  <ion-input
+    type="text"
+    placeholder="Ingresa tu RFC"
+    fill="outline"
+    name="user_rfc"
+    ngModel
+    required
+  ></ion-input>
+  <small class="info-text">
+    En menos de 48 horas te llegará una liga para continuar con tu preautorización de línea de crédito.
+  </small>
+</div>
+
+
+
+    <!-- TextArea: descripción del financiamiento -->
+    <div class="form-group">
+      <label>Describe el financiamiento que necesitas</label>
+      <ion-textarea
+        placeholder="Cuéntanos brevemente tu necesidad de financiamiento"
+        autoGrow="true"
+        fill="outline"
+        name="financing_description"
+        ngModel
+      ></ion-textarea>
+    </div>
+
+
+
+    <!-- Captcha -->
+    <div class="form-group captcha-container">
+      <div #recaptchaContainer></div>
+    </div>
+
+    <!-- Botón enviar -->
+    <ion-button
+      expand="block"
+      type="submit"
+      class="submit-btn"
+      color="primary"
+      [disabled]="isSending"
+    >
+      {{ isSending ? 'Enviando...' : 'Enviar' }}
+    </ion-button>
+  </form>
+</div>

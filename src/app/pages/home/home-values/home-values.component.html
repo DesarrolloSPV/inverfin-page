@@ -21,15 +21,16 @@
       <!-- TÍTULO SUPERIOR AGREGADO -->
       <span class="section-subtitle">Nuestros valores</span>
 
-      <swiper-container
-        #swiperHero
-        direction="vertical"
-        loop="true"
-        [autoplay]="{ delay: 3000, disableOnInteraction: false }"
-        speed="800"
-        allow-touch-move="false"
-        class="vertical-swiper"
-      >
+        <swiper-container
+          #swiperHero
+          init="true"
+          direction="vertical"
+          loop="true"
+          [autoplay]="{ delay: 3000, disableOnInteraction: false }"
+          speed="800"
+          allow-touch-move="false"
+          class="vertical-swiper"
+        >
         <swiper-slide>
           <div class="value-item">
             <div class="icon-circle">

@@ -10,12 +10,12 @@ export class HomeValuesComponent implements AfterViewInit {
   @ViewChild('swiperHero') swiperEl!: ElementRef;
 
   ngAfterViewInit() {
-    // Garantiza que Swiper se inicialice e inicie el autoplay inmediatamente
     setTimeout(() => {
       const swiper = this.swiperEl?.nativeElement?.swiper;
       if (swiper) {
-        swiper.autoplay?.start();
+        swiper.update(); // Actualiza Swiper y sus clones
+        swiper.autoplay?.start(); // Fuerza inicio de autoplay
       }
-    }, 100);
+    }, 200);
   }
 }

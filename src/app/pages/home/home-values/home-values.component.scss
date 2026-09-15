@@ -76,10 +76,14 @@
 swiper-slide {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
+  pointer-events: none;
+}
 
-  &.swiper-slide-active {
-    opacity: 1;
-  }
+/* El primer slide es visible por defecto si aún no existe la clase activa */
+swiper-slide:first-child,
+swiper-slide.swiper-slide-active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* --- ESTILO DE LOS VALORES --- */

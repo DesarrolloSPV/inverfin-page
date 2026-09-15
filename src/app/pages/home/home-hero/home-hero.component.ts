@@ -7,15 +7,14 @@ import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
   standalone: false,
 })
 export class HomeHeroComponent implements AfterViewInit {
-  @ViewChild('swiperHero') swiperEl!: ElementRef;
+  @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
 
-  ngAfterViewInit() {
-    // Garantiza que Swiper se inicialice e inicie el autoplay inmediatamente
-    setTimeout(() => {
-      const swiper = this.swiperEl?.nativeElement?.swiper;
-      if (swiper) {
-        swiper.autoplay?.start();
-      }
-    }, 100);
-  }
+ngAfterViewInit() {
+  const video = this.heroVideo.nativeElement;
+  document.addEventListener('click', () => {
+    if (video.paused) {
+      video.play().catch(err => console.log('Autoplay bloqueado:', err));
+    }
+  });
+}
 }

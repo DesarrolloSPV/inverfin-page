@@ -13,6 +13,11 @@ import { HomeValuesComponent } from './home-values/home-values.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { HomeBlogComponent } from './home-blog/home-blog.component';
 import { HomeContactComponent } from './home-contact/home-contact.component';
+import { HomeProcessComponent } from './home-process/home-process.component';
+import { HomeDifferentialsComponent } from './home-differentials/home-differentials.component';
+import { HomeTestimonialsComponent } from './home-testimonials/home-testimonials.component';
+import { HomeFaqComponent } from './home-faq/home-faq.component';
+
 
 @NgModule({
   imports: [
@@ -27,10 +32,14 @@ import { HomeContactComponent } from './home-contact/home-contact.component';
     HomePage,
     HomeHeroComponent,
     HomeAboutComponent,
+    HomeProcessComponent,
+    HomeDifferentialsComponent,
+    HomeTestimonialsComponent,
     HomeServiceComponent,
     HomeValuesComponent,
     HomeContactComponent,
     HomeBlogComponent,
+    HomeFaqComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [],

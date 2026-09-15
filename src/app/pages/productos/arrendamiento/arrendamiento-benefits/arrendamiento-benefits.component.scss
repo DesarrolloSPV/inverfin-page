@@ -1,0 +1,129 @@
+.beneficios-hover {
+  padding: 40px;
+  text-align: center;
+  background-color: var(--ion-color-light);
+}
+.beneficios-header {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--ion-color-primary);
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+}
+
+.beneficios-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.beneficio-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--ion-color-primary);
+
+  ion-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  span {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  &:hover,
+  &.active {
+    background-color: var(--ion-color-primary);
+    color: var(--ion-color-light);
+    transform: translateY(-5px);
+  }
+}
+
+.beneficio-detalle {
+  margin-top: 20px;
+  min-height: 250px;
+}
+
+.detalle-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: fadeIn 0.4s ease;
+
+  .detalle-img img {
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .detalle-text {
+    text-align: left;
+
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ion-color-primary);
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.6;
+      max-width: 500px;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detalle-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+
+    .detalle-img img {
+      width: 220px;
+    }
+
+    .detalle-text {
+      h3 {
+        font-size: 1.3rem;
+      }
+      p {
+        font-size: 1rem;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+    }
+  }
+}

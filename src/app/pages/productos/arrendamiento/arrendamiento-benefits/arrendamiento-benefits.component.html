@@ -1,0 +1,87 @@
+<section class="beneficios-hover">
+    <!-- Encabezado -->
+  <div class="beneficios-header">
+    <h2>Beneficios Clave del Arrendamiento</h2>
+    <p>
+          En Inverfin creemos que cada empresa merece crecer con respaldo financiero sólido.<br>
+     Descubre cómo nuestros beneficios impulsan tu operación
+    y fortalecen tu competitividad.
+  </div>
+
+  <!-- Íconos interactivos -->
+  <div class="beneficios-grid">
+    <div class="beneficio-item" (mouseenter)="setActive(1)" [class.active]="active === 1">
+      <ion-icon name="cash-outline"></ion-icon>
+      <span>Preserva tu liquidez</span>
+    </div>
+    <div class="beneficio-item" (mouseenter)="setActive(2)" [class.active]="active === 2">
+      <ion-icon name="construct-outline"></ion-icon>
+      <span>Moderniza tu operación</span>
+    </div>
+    <div class="beneficio-item" (mouseenter)="setActive(3)" [class.active]="active === 3">
+      <ion-icon name="receipt-outline"></ion-icon>
+      <span>Beneficio fiscal</span>
+    </div>
+    <div class="beneficio-item" (mouseenter)="setActive(4)" [class.active]="active === 4">
+      <ion-icon name="trending-up-outline"></ion-icon>
+      <span>Rentas adecuadas</span>
+    </div>
+    <div class="beneficio-item" (mouseenter)="setActive(5)" [class.active]="active === 5">
+      <ion-icon name="cube-outline"></ion-icon>
+      <span>Valor residual</span>
+    </div>
+  </div>
+
+  <!-- Bloque dinámico con imagen + texto -->
+  <div class="beneficio-detalle">
+    <div *ngIf="active === 1" class="detalle-content">
+      <div class="detalle-img">
+        <img src="assets/img/liquidez.jpg" alt="Preserva tu liquidez" />
+      </div>
+      <div class="detalle-text">
+        <h3>Preserva tu liquidez</h3>
+        <p>Incorpora activos sin realizar el desembolso total de la inversión. Mantén tu flujo de efectivo disponible para capital de trabajo y nuevas oportunidades.</p>
+      </div>
+    </div>
+
+    <div *ngIf="active === 2" class="detalle-content">
+      <div class="detalle-img">
+        <img src="assets/img/modernizacion.jpg" alt="Moderniza tu operación" />
+      </div>
+      <div class="detalle-text">
+        <h3>Moderniza tu operación</h3>
+        <p>Facilita la renovación y actualización de maquinaria y equipo productivo, manteniendo tu empresa competitiva y eficiente.</p>
+      </div>
+    </div>
+
+    <div *ngIf="active === 3" class="detalle-content">
+      <div class="detalle-img">
+        <img src="assets/img/fiscal.jpg" alt="Beneficio fiscal" />
+      </div>
+      <div class="detalle-text">
+        <h3>Beneficio fiscal</h3>
+        <p>Conserva tu capacidad financiera y aprovecha deducciones fiscales aplicables conforme a la legislación vigente.</p>
+      </div>
+    </div>
+
+    <div *ngIf="active === 4" class="detalle-content">
+      <div class="detalle-img">
+        <img src="assets/img/rentas.jpg" alt="Rentas adecuadas" />
+      </div>
+      <div class="detalle-text">
+        <h3>Rentas adecuadas</h3>
+        <p>Pagos alineados al perfil financiero y flujo operativo de tu empresa, adaptándose a tus necesidades reales.</p>
+      </div>
+    </div>
+
+    <div *ngIf="active === 5" class="detalle-content">
+      <div class="detalle-img">
+        <img src="assets/img/residual.jpg" alt="Valor residual" />
+      </div>
+      <div class="detalle-text">
+        <h3>Valor residual</h3>
+        <p>Opción de adquirir el activo al término del contrato con condiciones preferentes, maximizando tu inversión.</p>
+      </div>
+    </div>
+  </div>
+</section>

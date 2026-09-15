@@ -11,6 +11,26 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'history',
+    loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)
+  },
+  {
+    path: 'productos',
+    loadChildren: () => import('./pages/productos/productos.module').then( m => m.ProductosPageModule)
+  },
+  {
+  path: 'productos/arrendamiento',
+  loadChildren: () =>
+    import('./pages/productos/arrendamiento/arrendamiento.module').then(m => m.ArrendamientoPageModule)
+  },
+  {
+  path: 'productos/factoraje',
+  loadChildren: () =>
+    import('./pages/productos/factoraje/factoraje.module').then(m => m.FactorajePageModule)
+  }
+
+
 ];
 
 @NgModule({

@@ -12,6 +12,7 @@ import { QuerySnapshot } from '@angular/fire/compat/firestore';
 import { DateTime } from 'luxon';
 import { MexicoStatesByCP } from '../utilities/mexico-estates-cp';
 import { Timestamp } from '@angular/fire/firestore';
+import { ContactFormComponent } from '../components/contact-form/contact-form.component';
 
 @Injectable({
   providedIn: 'root'
@@ -310,6 +311,16 @@ export class UtilitiesService {
     await pop.present();
   }
 
+ async popContact(event: any): Promise<void> {
+  const pop = await this.popC.create({
+    component: ContactFormComponent,   // ✅ tu formulario de contacto
+    event,
+    mode: 'ios',
+    size: 'auto',
+    cssClass: 'pop-contact',           // clase CSS distinta para estilos
+  });
+  await pop.present();
+}
   async tokenHeader(): Promise<HttpHeaders> {
     const user = await this.auth.currentUser;
     const token = await (user as firebase.User).getIdToken(true);

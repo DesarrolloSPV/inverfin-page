@@ -7,10 +7,26 @@
 
     <!-- Menú visible solo en escritorio -->
     <ion-buttons class="desktop-menu" slot="end">
-      <ion-button >Inicio</ion-button>
-      <ion-button >Clientes</ion-button>
-      <ion-button >Reportes</ion-button>
-      <ion-button >¿Hablamos?</ion-button>
+      <ion-button routerLink="/home">Inicio</ion-button>
+      <ion-button routerLink="/inverfin">Inverfin</ion-button>
+
+      <!-- Botón Servicios con popover -->
+      <ion-button id="services-btn">Servicios</ion-button>
+      <ion-popover trigger="services-btn" side="bottom" alignment="center">
+        <ion-content>
+          <ion-list>
+            <ion-item button routerLink="/productos/arrendamiento">
+              Arrendamiento puro
+            </ion-item>
+            <ion-item button routerLink="/productos/factoraje">
+              Factoraje
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-popover>
+
+      <ion-button routerLink="/blog">Blog</ion-button>
+      <ion-button (click)="openContact($event)">¿Hablamos?</ion-button>
     </ion-buttons>
 
     <!-- Botón hamburguesa visible solo en móvil -->

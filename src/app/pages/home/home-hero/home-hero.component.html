@@ -1,92 +1,23 @@
-<div>
-  <swiper-container
-    #swiperHero
-    ...
-    loop="true"
-    [autoplay]="{ delay: 3000, disableOnInteraction: false }"
-    speed="800"
-    pagination="true"
-    effect="fade"
-    class="hero-swiper"
-  >
-    <!-- Slide 1 -->
+<section class="hero-section">
+  <img src="assets/img/inverfin-hero.gif" alt="Hero Inverfin" class="hero-gif" />
 
-    <swiper-slide class="slide slide-1">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>¿Necesitas apoyo financiero en tu empresa?</h1>
+  <div class="hero-overlay"></div>
 
-          <p>En Inverfin te ayudamos a integrar soluciones que impulsan tu crecimiento.</p>
+  <div class="hero-content">
+    <h1>Soluciones financieras que impulsan tu crecimiento</h1>
+    <p>
+      En <strong>Inverfin</strong> transformamos la manera en que accedes a liquidez y activos productivos.
+      Crece sin descapitalizarte con nuestros servicios de <strong>factoraje</strong> y <strong>arrendamiento puro</strong>.
+    </p>
 
-          <ion-button color="danger">Conoce más</ion-button>
-        </div>
-
-        <div class="hero-image">
-          <img src="../../../../assets/img/Fondo1.png" alt="Engranes Inverfin" />
-        </div>
-      </div>
-    </swiper-slide>
-
-    <!-- Slide 2 -->
-
-    <swiper-slide class="slide slide-2">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Arrendamiento puro para crecer sin límites</h1>
-
-          <p>
-            Adquiere activos estratégicos sin comprometer tu capital. <br />
-
-            Inverfin te da flexibilidad y deducción fiscal.
-          </p>
-
-          <ion-button color="danger">Conoce más</ion-button>
-        </div>
-
-        <div class="hero-image">
-          <img src="../../../../assets/img/Fondo1.png" alt="Engranes Inverfin" />
-        </div>
-      </div>
-    </swiper-slide>
-
-    <!-- Slide 3 -->
-
-    <swiper-slide class="slide slide-1">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Confianza que se convierte en resultados</h1>
-
-          <p>
-            En Inverfin te ayudamos a integrar soluciones que impulsan tu crecimiento.<br />
-
-            Tú también puedes dar el siguiente paso.
-          </p>
-
-          <ion-button color="danger">Conoce más</ion-button>
-        </div>
-
-        <div class="hero-image">
-          <img src="../../../../assets/img/Fondo1.png" alt="Engranes Inverfin" />
-        </div>
-      </div>
-    </swiper-slide>
-
-    <!-- Slide 4 -->
-
-    <swiper-slide class="slide slide-2">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Acompañamiento personalizado de inicio a fin</h1>
-
-          <p>No solo te financiamos: te guiamos paso a paso con un equipo experto.</p>
-
-          <ion-button color="danger">Conoce más</ion-button>
-        </div>
-
-        <div class="hero-image">
-          <img src="../../../../assets/img/Fondo1.png" alt="Engranes Inverfin" />
-        </div>
-      </div>
-    </swiper-slide>
-  </swiper-container>
-</div>
+    <div class="hero-buttons">
+      <ion-button color="light" class="cta-btn" routerLink="/productos/arrendamiento">
+        Arrendamiento Puro
+      </ion-button>
+      <ion-button color="light" class="cta-btn" routerLink="/productos/factoraje">
+        Factoraje
+      </ion-button>
+    </div>
+  </div>
+</section>
+<div class="h-line-dark"></div>
