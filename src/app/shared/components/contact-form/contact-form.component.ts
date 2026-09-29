@@ -1,7 +1,11 @@
-import { AfterViewInit, Component, ElementRef, EnvironmentInjector, OnInit, runInInjectionContext, ViewChild } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { NgForm } from '@angular/forms';
+import { AfterViewInit, Component, ElementRef, EnvironmentInjector, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModalController } from '@ionic/angular';
 import { UtilitiesService } from '../../services/utilities.service';
+import { Contact } from '../../models/contact.model';
+import { Subscription } from 'rxjs';
+
 
 declare var grecaptcha: any;
 
@@ -11,14 +15,14 @@ declare var grecaptcha: any;
   styleUrls: ['./contact-form.component.scss'],
   standalone: false
 })
-export class ContactFormComponent implements AfterViewInit {
+export class ContactFormComponent implements AfterViewInit, OnDestroy {
   @ViewChild('recaptchaContainer') recaptchaContainer!: ElementRef;
 
-  showRFC: boolean = false; // Garantiza inicio desactivado
+  formContact: FormGroup;
+  subs: Subscription[] = [];
+  showRFC: boolean = false;
 
-  togglePresolicitud(event: any) {
-    this.showRFC = event.detail.checked;
-  }
+  private contactosCollection: AngularFirestoreCollection<Contact>;
 
   siteKey: string = '6Lfo464tAAAAACSjw7oA2wEMkonwoVAbXYgyLwpn';
   isSending: boolean = false;
@@ -26,12 +30,14 @@ export class ContactFormComponent implements AfterViewInit {
 
   constructor(
     private firestore: AngularFirestore,
+    private utilities: UtilitiesService,
+    private formB: FormBuilder,
     private injector: EnvironmentInjector,
-    private utilities: UtilitiesService
-  ) {}
-
-  // Ciclo de vida
-  // ===========================
+    private modalCtrl: ModalController // 👈 Inyección de ModalController
+  ) {
+    this.formContact = this.createForm();
+    this.contactosCollection = this.firestore.collection<Contact>('contactos');
+  }
 
   ngAfterViewInit() {
     this.initRecaptcha();
@@ -39,20 +45,24 @@ export class ContactFormComponent implements AfterViewInit {
 
   ngOnDestroy() {
     this.widgetId = null;
+    for (const sub of this.subs) {
+      sub.unsubscribe();
+    }
   }
 
-  // Public functions
-  // ===========================
+  // Método para cerrar el modal manualmente
+  dismissModal() {
+    this.modalCtrl.dismiss();
+  }
 
-  async onSubmit(form: NgForm) {
-    if (form.invalid) {
+  async onSubmit() {
+    if (this.formContact.invalid) {
       void this.utilities.normalToast('Por favor, completa todos los campos obligatorios.');
       return;
     }
 
     let captchaResponse = '';
 
-    // Obtener respuesta usando el ID exacto del widget renderizado
     if (typeof grecaptcha !== 'undefined' && this.widgetId !== null) {
       captchaResponse = grecaptcha.getResponse(this.widgetId);
     }
@@ -65,29 +75,32 @@ export class ContactFormComponent implements AfterViewInit {
     this.isSending = true;
 
     try {
-      await runInInjectionContext(this.injector, () => {
-        return this.firestore.collection('contactos').add({
-          nombre: form.value.user_name || '',
-          email: form.value.user_email || '',
-          telefono: form.value.user_phone || '',
-          estado: form.value.user_state || '',
-          tipoPersona: form.value.person_type || '',
-          servicio: form.value.service || '',
-          createdAt: new Date(),
-        });
-      });
+      const formData = this.formContact.getRawValue() as Contact;
+      const contactData: Contact = {
+        ...formData,
+        createdAt: new Date() as any,
+      };
 
-      void this.utilities.normalAlert('¡Mensaje enviado con éxito!');
-      form.resetForm();
+      await this.contactosCollection.add(contactData);
 
-      // Resetear el captcha usando su widgetId de manera segura
+      const alertMessage = this.showRFC
+        ? '¡Mensaje enviado con éxito!\nEn menos de 48 horas te llegará una liga para continuar con tu preautorización de línea de crédito.'
+        : '¡Mensaje enviado con éxito!';
+
+      void this.utilities.normalAlert(alertMessage);
+
+      this.formContact.reset();
+      this.showRFC = false;
+
       if (typeof grecaptcha !== 'undefined' && this.widgetId !== null) {
         try {
           grecaptcha.reset(this.widgetId);
-        } catch (e) {
-          // Captura posible advertencia de reinicio
-        }
+        } catch (e) {}
       }
+
+      // Cierra el modal tras completar la operación
+      this.dismissModal();
+
     } catch (error) {
       console.error('Error al guardar en Firebase:', error);
       alert('Ocurrió un error al enviar tu información.');
@@ -96,16 +109,11 @@ export class ContactFormComponent implements AfterViewInit {
     }
   }
 
-  // Private functions
-  // ===========================
-
-  // Intenta renderizar el reCAPTCHA asegurando que la librería 'grecaptcha' ya esté en memoria
   private initRecaptcha() {
     const checkGrecaptcha = setInterval(() => {
       if (typeof grecaptcha !== 'undefined' && grecaptcha.render && this.recaptchaContainer?.nativeElement) {
         clearInterval(checkGrecaptcha);
 
-        // Limpiamos el contenedor por si había un widget anterior montado
         this.recaptchaContainer.nativeElement.innerHTML = '';
 
         try {
@@ -119,4 +127,40 @@ export class ContactFormComponent implements AfterViewInit {
     }, 100);
   }
 
+  private createForm(): FormGroup {
+    const form = this.formB.group({
+      nombre: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      telefono: ['', [Validators.required, Validators.pattern(this.utilities.regExpPhoneLada)]],
+      estado: [null, Validators.required],
+      tipoPersona: [null, Validators.required],
+      servicio: [null, Validators.required],
+      solicitaPreautorizacion: [false],
+      rfc: [{ value: null, disabled: true }, Validators.required],
+      descripcionFinanciamiento: [null],
+      aceptaTerminos: [false, Validators.requiredTrue]
+    });
+
+    const sub = form.get('solicitaPreautorizacion')?.valueChanges.subscribe((solicita: boolean | null) => {
+      const rfcControl = form.get('rfc');
+      const isChecked = !!solicita;
+
+      this.showRFC = isChecked; // Sincroniza el estado dinámico
+
+      if (isChecked) {
+        rfcControl?.enable();
+      } else {
+        rfcControl?.disable();
+        rfcControl?.reset();
+      }
+
+      form.updateValueAndValidity();
+    });
+
+    if (sub) {
+      this.subs.push(sub);
+    }
+
+    return form;
+  }
 }

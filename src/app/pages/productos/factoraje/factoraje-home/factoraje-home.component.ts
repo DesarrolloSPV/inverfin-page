@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { UtilitiesService } from '../../../../shared/services/utilities.service';
 
 @Component({
   selector: 'app-factoraje-home',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./factoraje-home.component.scss'],
   standalone: false,
 })
-export class FactorajeHomeComponent  implements OnInit {
+export class FactorajeHomeComponent {
 
-  constructor() { }
+  constructor(private utilities: UtilitiesService) {}
 
-  ngOnInit() {}
-
+  async openContactModal() {
+    await this.utilities.popContactModal();  // ✅ abre el modal centrado
+  }
 }

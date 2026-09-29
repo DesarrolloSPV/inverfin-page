@@ -1,9 +1,71 @@
-<ion-footer>
-  <ion-toolbar >
-    <div class="footer-content">
-      <img src="../../../../assets/img/Logo.svg" alt="Inverfin Logo" class="footer-logo" />
-      <ion-text class="footer-text">
-        © 2026 Inverfin Financial Services — Todos los derechos reservados
+<ion-footer class="custom-footer">
+  <ion-toolbar>
+    <div class="footer-container">
+
+      <!-- SECCIÓN 1: LOGO Y DESCRIPCIÓN -->
+      <div class="footer-brand">
+        <img src="../../../../assets/img/Logo.svg" alt="Inverfin Logo" class="footer-logo" />
+        <p class="brand-description">
+          Soluciones integrales de arrendamiento y financiamiento corporativo para impulsar el crecimiento de tu empresa.
+        </p>
+      </div>
+
+      <!-- SECCIÓN 2: LEGALES -->
+      <div class="footer-column">
+        <span class="column-title">Legales</span>
+        <ul>
+          <li>
+            <a routerLink="/aviso-privacidad">Aviso de Privacidad</a>
+          </li>
+          <li>
+            <a routerLink="/terminos-condiciones">Términos y Condiciones</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- SECCIÓN 3: CONTACTO Y REDES SOCIALES -->
+      <div class="footer-column">
+        <span class="column-title">Contacto</span>
+        <ul class="contact-list">
+          <li>
+            <a href="mailto:info&#64;inverfin.com.mx" class="email-link">
+              <ion-icon name="mail-outline"></ion-icon>
+              info&#64;inverfin.com.mx
+            </a>
+          </li>
+        </ul>
+
+        <!-- Íconos de Redes Sociales Reales -->
+        <div class="footer-social-links">
+          <a href="https://www.facebook.com/profile.php?id=61594676872767" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+          <a href="https://www.instagram.com/inverfin.soluciones/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://x.com/inverfinoficial" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <ion-icon name="logo-x"></ion-icon>
+          </a>
+          <a href="https://mx.linkedin.com/company/inverfin-financial-services" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+          <a href="https://wa.me/525569623238" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BARRA INFERIOR: DERECHOS Y PROTECCIÓN RECAPTCHA -->
+    <div class="footer-bottom">
+      <ion-text class="footer-rights">
+        © 2026 Inverfin Financial Services. Todos los derechos reservados.
+      </ion-text>
+      <ion-text class="recaptcha-notice">
+        Protegido por Google reCAPTCHA. Ver
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacidad</a> y
+        <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Términos</a>.
       </ion-text>
     </div>
   </ion-toolbar>

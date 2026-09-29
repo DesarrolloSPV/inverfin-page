@@ -1,5 +1,9 @@
 {
   "common": {
+    "change": "Change",
+    "change-language": "Change language",
+    "close": "Close",
+    "cancel":"Cancel",
     "home": "Home",
     "login": "Login",
     "logout": "Logout",
@@ -7,6 +11,390 @@
     "register": "Register",
     "settings": "Settings",
     "welcome": "Welcome",
-    "yes": "Yes"
-  }
+    "yes": "Yes",
+    "factoring": "Factoring",
+    "financial-factoring":"Financial Factoring",
+    "pure-leasing":"Pure Leasing",
+    "learn-more": "Learn more",
+    "services": "Services",
+    "contact-us": "Let's talk",
+    "name": "Full name",
+    "email": "Email address",
+    "invalid-email": "Invalid email address",
+    "phone":"Phone number",
+    "state": "State",
+    "select":"Select"
+
+
+
+  },
+  "home": {
+
+  "hero1": "Financial solutions that drive your growth",
+  "hero2": "At Inverfin, we transform the way you access liquidity and productive assets. Grow without decapitalizing yourself through our factoring and pure leasing services",
+
+
+  "services1": "Our Services",
+  "services2":"Instant Liquidity and Productive Assets to Support Your Growth",    "services3": "At <strong>Inverfin</strong>, we support businesses with <strong>agile processes</strong>, <strong>flexible solutions</strong>, and <strong>personalized service</strong>.",
+  "services4": "More than 10 years empowering Mexican businesses.",
+  "services-card1":"Acquire machinery, vehicles, or equipment without compromising your liquidity. Make affordable lease payments and take advantage of tax benefits.",
+  "services-card2": "Turn your invoices into immediate cash. Improve your cash flow and take advantage of early payment discounts.",
+
+
+  "process1": "How We Work",
+  "process2": "A Simple 3-Step Process",
+  "process3": "At Inverfin, we simplify your access to liquidity and productive assets through personalized support from start to finish.",
+  "process-timeline1": "Tell Us About Your Needs",
+  "process-timeline2": "Share your financial or asset requirements with us. Our team takes the time to understand your business and its goals.",
+  "process-timeline3": "We Design It Together",
+  "process-timeline4": "We create a tailored solution, whether through Factoring or Operating Leasing, with flexible structures and valuable tax benefits.",
+  "process-timeline5": "We Make It Happen",
+  "process-timeline6": "We execute the process efficiently and transparently, with a dedicated advisor guiding you every step of the way.",
+
+
+
+  "differentials1": "Why choose Inverfin?",
+  "differentials2": "Backing and key differentiators that set us apart",
+  "differentials3": "More than financing, we offer trust, agility, and support so your business can grow without decapitalizing.",
+  "differentials-card1": "Proven experience",
+  "differentials-card2": "Over 10 years driving Mexican businesses with solid and reliable financial solutions.",
+  "differentials-card3": "Nationwide coverage",
+  "differentials-card4": "Presence throughout Mexico to serve SMEs and large enterprises with proximity and local expertise.",
+  "differentials-card5": "Digital agility",
+  "differentials-card6": "Streamlined processes and pre-approval in less than 48 hours, combining technology with human judgment.",
+  "differentials-card7": "Personalized service",
+  "differentials-card8": "Guidance from an dedicated executive at every step, building long-term relationships with our clients.",
+
+
+  "testimonials1": "Success Stories",
+  "testimonials2": "What Our Clients Say",
+  "testimonials3": "Companies that have trusted <strong>Inverfin</strong> to grow without decapitalizing. Discover how our financial solutions have transformed their operations.",
+
+
+  "contact1": "Get reliable advice and solid backing for your financial projects, hassle-free.",
+  "contact2": "Contact us today!",
+  "contact3": "<strong>Business Hours:</strong> Monday through Friday from 9:00 AM to 6:00 PM.",
+
+  "faq1": "Frequently Asked Questions",
+  "faq2": "We answer your most common questions",
+  "faq3": "At <strong>Inverfin</strong>, we simplify your access to liquidity and productive assets. Here you will find quick answers to the most common questions.",
+  "q1_question": "What is Inverfin and what services does it offer?",
+  "q1_answer": "Inverfin is a financial institution specializing in <strong>pure leasing</strong> and <strong>factoring</strong>, helping companies grow without decapitalizing.",
+  "q2_question": "What types of companies can qualify?",
+  "q2_answer": "Sole proprietors with business activities (PFAE) and companies of all sizes that require liquidity or productive assets for their operations.",
+  "q3_question": "Are lease payments or advances tax-deductible?",
+  "q3_answer": "Yes. Lease payments and factoring costs can be tax-deductible in accordance with current tax laws.",
+  "q4_question": "How long does authorization take?",
+  "q4_answer": "You can receive pre-approval for your credit line in less than <strong>48 hours</strong>, with guidance from an executive at every step.",
+  "q5_question": "Do I need to commit all my invoices or assets?",
+  "q5_answer": "No. You can choose which invoices to advance or which assets to lease according to your specific needs."
+  },
+"history":{
+  "hero1": "We drive your growth with agile and reliable financial solutions",
+
+  "about1": "Our History",
+  "about2": "We were born with the mission to support Mexican businesses in their growth, offering financial alternatives that allow them to access liquidity and productive assets without compromising their capital. At <strong>Inverfin</strong>, we believe in agility, trust, and close service as the pillars of every solution.",
+  "about-card1": "Mission",
+  "about-card2": "To provide agile and flexible financial solutions that allow companies to grow without decapitalizing, converting accounts receivable into immediate liquidity and facilitating access to productive assets through pure leasing.",
+  "about-card3": "Vision",
+  "about-card4": "To be the leading leasing and factoring company in Mexico, recognized for driving business development through efficient processes, personalized service, and financial benefits that enhance our clients' competitiveness.",
+  "about-card5": "Purpose",
+  "about-card6": "To foster the sustainable growth of Mexican enterprises, building trust and providing guidance at every stage, so our clients can focus on what truly matters: growing their business.",
+
+  "values": "Our Values",
+  "values1": "AGILITY",
+  "values2": "We simplify processes to respond quickly and help our clients seize opportunities when they need them most.",
+  "values3": "FLEXIBILITY",
+  "values4": "We design financial solutions tailored to the goals, needs, and operational cycles of each company.",
+  "values5": "PERSONALIZED SERVICE",
+  "values6": "Every client receives ongoing support from a dedicated executive throughout the entire process.",
+  "values7": "TRUST",
+  "values8": "We build long-term relationships based on transparency, commitment, and reliability.",
+  "values9": "GROWTH",
+  "values10": "We drive our clients' development by providing access to liquidity and productive assets to strengthen their operations.",
+  "values11": "PROXIMITY",
+  "values12": "We listen, understand, and guide our clients to build solutions that deliver real value to their business.",
+
+
+  "process1": "How We Work",
+  "process2": "An Agile Process in 3 Steps",
+  "process3": "At Inverfin, we simplify your access to liquidity and productive assets with personalized support from start to finish.",
+  "process-timeline1": "Tell Us Your Needs",
+  "process-timeline2": "Share your financial or asset requirements with us. Our team listens and understands your business.",
+  "process-timeline3": "We Design It With You",
+  "process-timeline4": "We create a tailored solution: Factoring or Leasing, with flexible plans and tax benefits.",
+  "process-timeline5": "We Make It Happen",
+  "process-timeline6": "We execute the process with agility and transparency, guided by a dedicated executive every step of the way.",
+
+
+  "differentials1": "Solid support driving your growth",
+  "differentials2": "Inverfin's backing and key differentiators",
+  "differentials3": "Our track record, coverage, and digital focus enable us to offer financial solutions that evolve with you. At Inverfin, every client has the backing of a solid structure and a team that understands their business.",
+  "differentials-card1": "Experience that builds trust",
+  "differentials-card2": "Over a decade strengthening Mexican businesses with financial structures that drive liquidity and productivity. Our experience is your guarantee of results.",
+  "differentials-card3": "Strategic nationwide presence",
+  "differentials-card4": "We operate across all of Mexico with personalized service and local expertise, bringing financial solutions right where they are needed most.",
+  "differentials-card5": "Innovation and digital agility",
+  "differentials-card6": "Automated processes, smart analysis, and response in less than 48 hours. We combine technology with human judgment for faster and safer decisions.",
+  "differentials-card7": "Lasting relationships",
+  "differentials-card8": "Every client receives ongoing guidance from a dedicated executive. At Inverfin, trust is built through results and close service.",
+
+
+  "cta": "Ready to take the next step?",
+  "cta2": "At <strong>Inverfin</strong>, we believe every company deserves to grow with solid financial backing. Our team is ready to work with you to design the solution that best fits your business."
+},
+"productos": {
+    "arrendamiento": {
+      "hero1": "Obtain machinery, vehicles, or equipment without compromising your liquidity. With Inverfin, access flexible plans that drive your growth and take advantage of tax benefits.",
+
+      "benefits1": "Key Benefits of Pure Leasing",
+      "benefits2": "At Inverfin, we believe every company deserves to grow with solid financial backing.<br> Discover how our benefits drive your operations and strengthen your competitiveness.",
+      "benefits-card1": "Preserve your liquidity",
+      "benefits-card2": "Modernize your operations",
+      "benefits-card3": "Tax benefit",
+      "benefits-card4": "Tailored payments",
+      "benefits-card5": "Residual value",
+      "benefits-card6": "Acquire assets without paying the full upfront investment. Keep your cash flow available for working capital and new opportunities.",
+      "benefits-card7": "Facilitate the renewal and upgrading of machinery and productive equipment, keeping your business competitive and efficient.",
+      "benefits-card8": "Maintain your borrowing capacity and leverage tax deductions applicable in accordance with current laws.",
+      "benefits-card9": "Payments aligned with your company's financial profile and cash flow, adapting to your actual needs.",
+      "benefits-card10": "Option to acquire the asset at the end of the contract under preferential terms, maximizing your investment.",
+
+
+      "problem1": "Who is it for and what problem does it solve?",
+      "problem2": "Inverfin Pure Leasing is designed for companies looking to grow without decapitalizing, offering agile and flexible financial solutions.",
+      "problem-card1": "Target Audience",
+      "problem-card2": "Corporations and Sole Proprietors with Business Activities (PFAE) that require vehicles, fleets, transport equipment, or industrial machinery without paying the full value of the asset upfront.",
+      "problem-card3": "Problem it Solves",
+      "problem-card4": "Growing requires investment, but buying assets in cash consumes resources that the company needs for daily operations. Leasing allows you to acquire productive assets without full upfront payments, preserving liquidity for working capital, new operations, and growth opportunities.",
+
+
+      "process1": "Pure Leasing Process",
+      "process2": "Our process is designed to be agile and transparent. In six steps you can access the liquidity and assets your business needs.",
+      "process-card1": "Step 1: Digital Onboarding",
+      "process-card2": "Register your company for pre-authorization.",
+      "process-card3": "Step 2: Authorization",
+      "process-card4": "We analyze and authorize your leasing line.",
+      "process-card5": "Step 3: Asset Selection",
+      "process-card6": "Choose your preferred asset and supplier.",
+      "process-card7": "Step 4: Quotation",
+      "process-card8": "We quote the asset and the corresponding insurance.",
+      "process-card9": "Step 5: Formalization",
+      "process-card10": "We sign the contract and formalize the lease.",
+      "process-card11": "Step 6: Delivery",
+      "process-card12": "We make the payment and deliver the asset.",
+
+
+      "faq1": "Frequently Asked Questions",
+      "faq2": "We answer your most common questions about Inverfin Pure Leasing.",
+      "group-quiestion1": "General Concept",
+      "q1_question": "What is pure leasing or operating lease?",
+      "q1_answer": "It is a solution that allows your business to use productive assets through periodic lease payments, without paying the full upfront cost.",
+      "q2_question": "Why lease instead of buying?",
+      "q2_answer": "It allows you to acquire assets without allocating large amounts of capital, preserving liquidity for operations and growth.",
+      "group-quiestion2": "Assets and Suppliers",
+      "q3_question": "What type of assets can I lease?",
+      "q3_answer": "Vehicles, fleets, transport equipment, machinery, and other productive assets related to your business activity.",
+      "q4_question": "Can I choose the asset and the supplier?",
+      "q4_answer": "Yes, you can select your preferred asset and supplier or rely on our partner network.",
+      "q5_question": "Can Inverfin help me quote the asset?",
+      "q5_answer": "Yes, we have a broad network of suppliers that facilitates searching and quoting.",
+      "q6_question": "Can you also help me with insurance?",
+      "q6_answer": "Yes, through our partner network, we can assist you in quoting insurance to protect the assets.",
+      "group-quiestion3": "Terms and Conditions",
+      "q7_question": "What lease terms do you offer?",
+      "q7_answer": "They are determined based on the type of asset, its characteristics, and your company's financial needs.",
+      "q8_question": "Do I need to make a down payment?",
+      "q8_answer": "It depends on the approved structure, the asset, and the operation's profile. Terms are clearly presented from the quoting stage.",
+      "q9_question": "Who holds title to the asset?",
+      "q9_answer": "During the contract term, Inverfin retains legal ownership, and your company holds the right of use.",
+      "q10_question": "Are lease payments tax-deductible?",
+      "q10_answer": "They can offer tax benefits in accordance with applicable laws and each company's tax status.",
+      "group-quiestion4": "Operations and Renewal",
+      "q11_question": "Can I add multiple assets to my leasing line?",
+      "q11_answer": "Yes, an approved line can allow the addition of different assets through subsequent operations.",
+      "q12_question": "Can I renew my fleet or equipment?",
+      "q12_answer": "Yes, leasing can be part of a periodic asset renewal strategy.",
+      "q13_question": "What happens at the end of the contract?",
+      "q13_answer": "Alternatives depend on the agreed terms. Our team will guide you through the available options.",
+      "group-quiestion5": "Process and Documentation",
+      "q14_question": "How long does authorization take?",
+      "q14_answer": "It depends on the information provided and the specific characteristics of each operation.",
+      "q15_question": "What documentation do I need to get started?",
+      "q15_answer": "Complete the digital onboarding and provide the necessary corporate, financial, tax, and legal information.",
+      "q16_question": "Can I contract leasing even if I already have bank lines?",
+      "q16_answer": "Yes, leasing can complement your financing sources and preserve capacity in other credit lines.",
+      "q17_question": "Does Inverfin handle purchasing the asset?",
+      "q17_answer": "Yes, Inverfin completes the purchase directly with the validated supplier and coordinates delivery.",
+
+      "cta1": "Ready to take the next step?",
+      "cta2": "At <strong>Inverfin</strong> we believe that every company deserves to grow with solid financial backing. Request your leasing line and receive personalized advice from our executives."
+    },
+    "factoraje":{
+      "hero1": "Convert your invoices into immediate liquidity. Advance the collection of your accounts receivable with Inverfin, improve your cash flow, and take advantage of early payment discounts.",
+
+      "benefits1": "Key Benefits of Financial Factoring",
+      "benefits2": "Convert your accounts receivable into immediate liquidity.<br> Discover how Inverfin Factoring strengthens your working capital and accelerates your growth.",
+      "benefits-card1": "Immediate liquidity",
+      "benefits-card2": "Sales-linked financing",
+      "benefits-card3": "Working capital",
+      "benefits-card4": "Flexible solutions",
+      "benefits-card5": "Don't wait 30, 60, or 90 days. Advance the collection of your invoices and convert your credit sales into available cash flow today.",
+      "benefits-card6": "Obtain resources directly from your accounts receivable, without the need for additional collateral or traditional debt.",
+      "benefits-card7": "Access liquidity to take on new orders, purchase inventory, pay suppliers, and take advantage of early payment discounts.",
+      "benefits-card8": "Adapt factoring to your company's operational cycles, with revolving schemes that support your growth.",
+
+
+      "problem1": "Who is it for and what problem does it solve?",
+      "problem2": "Inverfin Financial Factoring is designed for companies that sell on credit and want to convert their accounts receivable into immediate cash flow.",
+      "problem-card1": "Target Audience",
+      "problem-card2": "Companies and Individuals with Business Activity (PFAE) that sell on credit, mainly to corporations, retail chains, and creditworthy companies, looking to convert their accounts receivable into liquidity.",
+      "problem-card3": "Problem It Solves",
+      "problem-card4": "Many companies face cash gaps due to deferred invoice collections, limiting their ability to accept new orders or cover expenses. Factoring enables early invoice collection and shortens the cash cycle without waiting for maturity.",
+
+      "process1": "Financial Factoring Process",
+      "process2": "Our process is designed to be agile and transparent. In six steps, you can advance the collection of your invoices and obtain immediate liquidity.",
+      "process-card1": "Step 1: Digital onboarding",
+      "process-card2": "Register your company on our platform and get pre-approval for your credit line.",
+      "process-card3": "Step 2: Authorization",
+      "process-card4": "Complete the document check to finalize the analysis and authorization of your line.",
+      "process-card5": "Step 3: Invoice submission",
+      "process-card6": "Upload and submit your invoices for validation on the platform.",
+      "process-card7": "Step 4: Formalization",
+      "process-card8": "Sign contracts, annexes, and promissory notes to formalize the transaction.",
+      "process-card9": "Step 5: Disbursement of funds",
+      "process-card10": "Receive up to 90% of the value of eligible invoices in advance.",
+      "process-card11": "Step 6: Collection and settlement",
+      "process-card12": "Upon maturity of the invoices, we follow up on collections and settle the remaining balance.",
+
+
+      "faq1": "Frequently Asked Questions",
+      "faq2": "We resolve your most common questions about Inverfin Financial Factoring.",
+      "group-quiestion1": "General Concept",
+      "q1_question": "What is financial factoring and how does it work?",
+      "q1_answer": "It is a solution that allows you to advance the collection of your invoices to gain liquidity before your client pays them.",
+      "q2_question": "Which companies can apply for factoring with Inverfin?",
+      "q2_answer": "Companies and Individuals with Business Activity (PFAE) that invoice on credit to corporate clients or retail chains with eligible accounts receivable.",
+      "group-quiestion2": "Invoices and Advances",
+      "q3_question": "Do I need to assign all of my invoices?",
+      "q3_answer": "No, you can advance only the invoices you need.",
+      "q4_question": "How much money can I receive for an invoice?",
+      "q4_answer": "Up to 80%–90% of the value of eligible invoices, subject to analysis.",
+      "q5_question": "Will my clients know that I am using factoring?",
+      "q5_answer": "It depends on the modality: there are schemes with and without client notification.",
+      "group-quiestion3": "Operations and Terms",
+      "q6_question": "What happens if my client pays after the due date?",
+      "q6_answer": "The transaction is managed according to what was agreed, under recourse or non-recourse schemes.",
+      "q7_question": "How long does authorization take?",
+      "q7_answer": "The process begins with digital onboarding and an agile analysis of documentation.",
+      "q8_question": "Can I use my line more than once?",
+      "q8_answer": "Yes, with a revolving line you can continue advancing new invoices.",
+      "group-quiestion4": "Benefits and Usage",
+      "q9_question": "What advantages does it have over traditional credit?",
+      "q9_answer": "You obtain liquidity directly from your credit sales, strengthening your working capital.",
+
+      "cta1": "Ready to advance your invoices?",
+      "cta2": "At <strong>Inverfin</strong> we help you convert your accounts receivable into immediate liquidity. Request your factoring line and receive personalized advice from our executives."
+
+    }
+  },
+  "form":{
+    "your-name":"Enter your name",
+    "entity-type": "Individual or Legal entity?",
+    "individual": "Individual / Freelancer",
+    "legal-entity": "Legal Entity / Company",
+    "service-interest": "Which service are you interested in?",
+    "pre-apply": "Pre-apply for a credit line",
+    "description": "Describe the financing you need",
+    "tell-us-about":"Briefly tell us about your financing needs."
+
+  },
+
+  "privacy": {
+  "hero1": "Privacy Policy",
+  "title": "Comprehensive Privacy Policy",
+  "update": "Last updated: September 2026",
+
+  "section1.title": "Identity and Address of the Data Controller",
+  "section1.description1": "(hereinafter referred to as \"The Data Controller\"), with tax and operational address in the Mexican Republic and official web portal <a href=\"https://inverfin.com.mx\" target=\"_blank\" rel=\"noopener\">https://inverfin.com.mx</a>, is responsible for the collection, use, storage, transfer, and protection of your personal data, in strict compliance with the <em>Federal Law on Protection of Personal Data Held by Private Parties (LFPDPPP)</em>, its Regulations, and related legal frameworks.",
+
+  "section2.title": "Personal Data Subject to Processing",
+  "section2.description1": "To carry out the purposes described in this document, we collect the following categories of personal data:",
+  "section2.list1": "<strong>Identification and Contact Data:</strong> Full name or Company name, email address, phone number (landline or mobile), and subject collected via the contact form.",
+  "section2.list2": "<strong>Tax and Financial Identification Data:</strong> Federal Taxpayer Registry (RFC), Unique Population Registry Code (CURP), Tax Identification Card (CIF), SAT Access Password (CIEC), and/or e.firma (in case of formal evaluation).",
+  "section2.list3": "<strong>Financial, Asset, and Analytical Information:</strong> Proof of income, tax returns, tax status certificates, issued/received invoices, tax compliance opinion reports, as well as credit behavior and history.",
+  "section2.list4": "<strong>Browsing and Technical Security Data:</strong> IP address, browser type, operating system, and security validation interaction through the <strong>Google reCAPTCHA</strong> API.",
+
+  "section3.title": "Purposes of Data Processing and Credit Evaluation",
+  "section3.description1": "The personal data collected will be used for the following primary purposes:",
+  "section3.sectionA": "Primary Purposes (Original and Necessary):",
+  "section3.sectionA.list1": "Attend to, follow up on, and respond to requests submitted through our web form.",
+  "section3.sectionA.list2": "<strong>Financial and Credit Viability Assessment:</strong> By providing us with your RFC and tax/financial information, the data will be processed and integrated to initiate credit analysis, asset risk assessment, and viability opinion for granting financing lines, leasing, or other requested corporate products.",
+  "section3.sectionA.list3": "<strong>Inquiry before Tax Authorities and Credit Reporting Agencies:</strong> With your prior consent, your personal and tax data may be cross-checked and investigated before the Tax Administration Service (SAT) and Credit Reporting Agencies (such as Buró de Crédito and/or Círculo de Crédito).",
+  "section3.sectionA.list4": "Prevent cyberattacks, automated mass traffic, and fraud through the use of <strong>Google reCAPTCHA</strong>.",
+  "section3.sectionA.list5": "Comply with anti-money laundering obligations, regulatory audits, and reports to competent authorities in accordance with Mexican legislation.",
+  "section3.sectionB": "Secondary Purposes (Optional):",
+  "section3.sectionB.list1": "Commercial prospecting, sending market newsletters, promotions, and updates regarding Inverfin's leasing or financing services.",
+
+  "section4.title": "Transfer of Personal Data to Third Parties and Specialized Vendors",
+  "section4.description1": "We inform you that for the execution of the credit viability analysis and tax inquiry, <strong>Inverfin transfers data with the technology provider Syntage (SATWS, S.A.P.I. de C.V.)</strong>, an authorized technology infrastructure that facilitates interconnection and automated extraction of tax information directly from SAT servers and data collection for credit risk profiling.",
+  "section4.description2": "Syntage acts as a data processor under equivalent encryption and technical security standards, subject to the provisions of the LFPDPPP and its own privacy policy available at <a href=\"https://syntage.com/aviso-de-privacidad\" target=\"_blank\" rel=\"noopener\">syntage.com/aviso-de-privacidad</a>.",
+  "section4.description3": "Except for legal requirements issued by authorities or the required transfer to Credit Reporting Agencies and Syntage for credit evaluation, Inverfin will not sell, commercialize, or transfer your personal data to any other unrelated third party.",
+
+  "section5.title": "Use of Cookies and Security Measures",
+  "section5.description1": "Our website uses technical and analytical <em>cookies</em> to optimize browsing. The use of contact forms is protected by Google reCAPTCHA v3/v2 technology. The technical interaction with said tool is subject to the <a href=\"https://policies.google.com/terms\" target=\"_blank\" rel=\"noopener\">Terms of Service</a> and <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google Privacy Policy</a>.",
+
+  "section6.title": "Exercise of ARCO Rights and Revocation of Consent",
+  "section6.description1": "You have the right to know what personal data we have about you, what we use it for, and the conditions of its use (Access); request the correction of your personal information (Rectification); request its deletion from our records or databases (Cancellation); as well as object to the use of your data for specific purposes (Opposition).",
+  "section6.description2": "To exercise any of the ARCO rights or to revoke consent for tax and credit analysis, you must send a formal request to the official customer support email:",
+  "section6.description3": "Personal Data Protection Office: <a href=\"mailto:desarrollo&#64;inverfin.com.mx\">desarrollo&#64;inverfin.com.mx</a> ",
+  "section6.description4": "The request must include: (i) Full name of the data subject and reply email address, (ii) Valid official ID proving your identity, (iii) Clear description of the data regarding which you seek to exercise your right. Response time will be a maximum of 20 business days.",
+
+  "section7.title": "Changes to the Privacy Policy",
+  "section7.description1": "This privacy policy may undergo modifications or updates resulting from legal requirements or our own operational practices. Such modifications will be available on the official website: <a href=\"https://inverfin.com.mx/aviso-privacidad\">https://inverfin.com.mx/aviso-privacidad</a>."
+},
+"terms": {
+  "hero1": "Terms and Conditions",
+
+  "title": "Terms and Conditions of Use",
+  "update": "Last updated: September 2026",
+
+  "section1.title": "Acceptance of Terms",
+  "section1.description1": "Welcome to the official website of <strong>INVERFIN</strong> (<a href=\"https://inverfin.com.mx\" target=\"_blank\" rel=\"noopener\">https://inverfin.com.mx</a>). By accessing, browsing, submitting forms, or interacting with our web services, the user (hereinafter, \"The User\") expressly and unconditionally agrees to be bound by these Terms and Conditions, as well as by our <a href=\"https://inverfin.com.mx/aviso-privacidad\">Privacy Notice</a>.",
+  "section1.description2": "If The User does not agree with any of the provisions contained in this document, they must immediately refrain from using the web portal and its tools.",
+
+  "section2.title": "Purpose and Scope of Web Services",
+  "section2.description1": "The Inverfin portal aims to provide corporate information about financial solutions, leasing, credit lines, and business products, as well as to facilitate digital contact channels and information collection for financial feasibility assessments.",
+  "section2.description2": "<strong>Clarification on Binding Offers:</strong> The information, simulations, content, or calculators available on the website are strictly for informational and guidance purposes. Submitting an application through the website or sending data does not constitute an automatic credit approval or a binding contractual offer by Inverfin. All granting of financing will be subject to risk assessment, formal credit evaluation, and the signing of the corresponding contracts in person or via qualified electronic signature.",
+
+  "section3.title": "Credit Feasibility Assessment and Integration with Third Parties",
+  "section3.description1": "For the processing of credit assessment requests and financial feasibility analysis, the Inverfin website integrates specialized technologies and providers:",
+  "section3.description2": "<strong>Tax Verification via Syntage:</strong> By providing their Federal Taxpayer Registry (RFC) and required credentials or tax information, The User authorizes interconnection with the technology provider <strong>Syntage (SATWS, S.A.P.I. de C.V.)</strong> for automated extraction and validation of information with the Tax Administration Service (SAT). The User declares that the access credentials and information provided are legitimate and under their exclusive ownership or legal representation.",
+  "section3.description3": "<strong>Credit Reporting Agencies:</strong> When applicable based on the application, Inverfin may request the express authorizations required by law to check credit history with Credit Bureau (Buró de Crédito) and/or Credit Circle (Círculo de Crédito).",
+  "section3.description4": "<strong>Security Measures and Technical Interaction:</strong> Form validation and automated access prevention are performed through the <strong>Google reCAPTCHA</strong> API. The use of this tool is subject to Google's <a href=\"https://policies.google.com/terms\" target=\"_blank\" rel=\"noopener\">Terms of Service</a> and <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Privacy Policy</a>.",
+
+  "section4.title": "Mandatory Use and Portal Prohibitions",
+  "section4.description1": "The User agrees to use the web portal in accordance with the law, morality, good customs, and public order. It is strictly prohibited to:",
+  "section4.list1": "Provide false, altered, illegitimate, or third-party information or documentation without express legal consent.",
+  "section4.list2": "Use automated tools (robots, scrapers, bots, or scripts) to extract data, breach forms, or alter the proper functioning of the portal.",
+  "section4.list3": "Attempt unauthorized access to the servers, databases, or authentication systems of Inverfin or its technology providers.",
+  "section4.list5": "Introduce malicious code, viruses, trojans, or any other destructive technological component.",
+
+  "section5.title": "Intellectual Property and Reserved Rights",
+  "section5.description1": "All content, designs, logos, registered trademarks, trade names, text, source code, graphics, interfaces, and architecture of the web portal <a href=\"https://inverfin.com.mx\" target=\"_blank\" rel=\"noopener\">inverfin.com.mx</a> are the exclusive property of <strong>INVERFIN</strong> or licensed to it, protected under the Federal Copyright Law and the Federal Law for the Protection of Industrial Property.",
+  "section5.description2": "Reproduction, distribution, modification, transmission, or total/partial exploitation of the content without prior written authorization from Inverfin is strictly prohibited.",
+
+  "section6.title": "Limitation of Liability",
+  "section6.description1": "Inverfin makes reasonable efforts to maintain the availability, accuracy, and updating of the website; however:",
+  "section6.list1": "It does not guarantee uninterrupted or continuous availability of the server, as temporary suspensions may occur due to maintenance, updates, or technical failures beyond its control.",
+  "section6.list2": "It is not responsible for technical inaccuracies or typographical errors in the published content, reserving the right to correct them at any time.",
+  "section6.list3": "It assumes no liability for direct or indirect damages resulting from the inability to use the portal, network outages, or the presence of computer viruses on the User's equipment.",
+
+  "section7.title": "Modifications to Terms and Conditions",
+  "section7.description1": "Inverfin reserves the right to unilaterally modify or update these Terms and Conditions at any time to adapt them to new legislation, case law, or internal policies. Modifications will take effect upon publication on the official website. The User is advised to review this section periodically.",
+
+  "section8.title": "Applicable Law and Jurisdiction",
+  "section8.description1": "For the interpretation, compliance, and resolution of disputes arising from the use of this web portal and these Terms and Conditions, the parties submit to the applicable laws of the Mexican Republic and to the jurisdiction of the competent courts in Mexico City, expressly waiving any other jurisdiction that may correspond to them by reason of their present or future domiciles.",
+  "section8.description2": "<strong>Support and Technical Attention:</strong> <a href=\"mailto:desarrollo&#64;inverfin.com.mx\">desarrollo&#64;inverfin.com.mx</a>"
+}
 }

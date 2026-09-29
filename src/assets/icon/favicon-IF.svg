@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Fondo redondeado opcional para resaltar en cualquier pestaña -->
+  <rect width="512" height="512" rx="96" fill="#ffffff"/>
+  
+  <!-- Letra 'I' en Azul INVERFIN -->
+  <path d="M 110 110 L 210 110 L 210 402 L 110 402 Z" fill="#1B5B8C"/>
+  
+  <!-- Letra 'F' en Gris INVERFIN -->
+  <path d="M 240 110 L 390 110 L 390 180 L 310 180 L 310 230 L 370 230 L 370 295 L 310 295 L 310 402 L 240 402 Z" fill="#7C8897"/>
+</svg>

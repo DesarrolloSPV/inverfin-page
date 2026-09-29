@@ -68,10 +68,10 @@
     flex-wrap: wrap;
 
     .cta-btn {
+      min-width: 220px; /* ✅ Mismo ancho para ambos botones */
       font-weight: 700;
       letter-spacing: 0.6px;
       border-radius: 10px;
-      padding: 16px 32px;
       font-size: 1.05rem;
       transition: all 0.35s ease;
       box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
@@ -81,7 +81,6 @@
         box-shadow: 0 10px 25px rgba(255, 255, 255, 0.35);
       }
 
-      /* Botón principal */
       &.primary {
         background-color: #ffffff;
         color: var(--ion-color-primary);
@@ -93,7 +92,6 @@
         }
       }
 
-      /* Botón secundario */
       &.secondary {
         border: 2px solid #ffffff;
         background-color: var(--ion-color-primary);
@@ -127,23 +125,25 @@
     padding: 80px 20px;
   }
 
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
+  .hero-content {
+    h1 {
+      font-size: 2.2rem;
+    }
 
-  .hero-content p {
-    font-size: 1rem;
-    margin-bottom: 30px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 15px;
-
-    .cta-btn {
-      width: 100%;
-      padding: 14px 0;
+    p {
       font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      gap: 15px;
+
+      .cta-btn {
+        min-width: auto;
+        width: 100%;
+        font-size: 1rem;
+      }
     }
   }
 }

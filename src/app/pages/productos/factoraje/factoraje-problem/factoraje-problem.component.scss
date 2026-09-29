@@ -1,0 +1,92 @@
+.factoraje-publico-problema {
+  padding: 60px 40px;
+  background-color: var(--ion-color-primary); /* ✅ fondo corporativo */
+  color: var(--ion-color-light);
+
+  .section-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--ion-color-light);
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--ion-color-light);
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+  }
+
+  .info-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .info-item {
+    flex: 1 1 500px;
+    max-width: 550px;
+    background: var(--ion-color-light);
+    color: #333;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    text-align: left;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .info-icon {
+      font-size: 2.5rem;
+      color: var(--ion-color-primary);
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ion-color-primary);
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .factoraje-publico-problema {
+    padding: 40px 15px;
+
+    .info-grid {
+      display: block; /* Sin flexbox en móvil */
+    }
+
+    .info-item {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
+      box-sizing: border-box;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

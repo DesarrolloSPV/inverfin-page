@@ -68,15 +68,21 @@
   }
 }
 
-/* Responsive */
+/* Responsive corregido */
 @media (max-width: 768px) {
-  .info-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+  .arrendamiento-publico-problema {
+    padding: 40px 20px;
 
-  .info-item {
-    max-width: 90%;
-    text-align: center;
+    .info-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .info-item {
+      flex: none; /* ✅ Ahora sí se aplica porque tiene la especificidad correcta */
+      width: 100%;
+      max-width: 90%;
+      text-align: center;
+    }
   }
 }

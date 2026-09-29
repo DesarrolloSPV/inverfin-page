@@ -1,8 +1,33 @@
 .faq-section {
+  position: relative; /* Para posicionar el fondo internamente */
   padding: 80px 40px;
   background-color: var(--ion-color-primary);
   color: #ffffff;
   text-align: center;
+  overflow: hidden;
+
+  /* Capa de fondo fija */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+      url('/assets/img/fondo_Q.png');
+    background-repeat: no-repeat;
+    background-position: center top; /* O center center */
+    background-size: cover;
+    z-index: 0;
+  }
+
+  /* Asegura que el contenido quede por encima de la imagen */
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .faq-header {
@@ -36,22 +61,28 @@ ion-accordion-group {
   background: transparent;
   max-width: 900px;
   margin: 0 auto;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  overflow: hidden; // Redondea las esquinas superiores e inferiores del contenedor
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+ion-accordion {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08); // Línea divisoria fina entre elementos
+
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 ion-item {
   --background: #ffffff;
   --color: #333333;
-  border-radius: 10px;
-  margin-bottom: 12px;
+  --inner-padding-end: 20px;
+  margin-bottom: 0; // Se elimina el espacio entre items
+  border-radius: 0; // Elimina el redondeo individual para que formen un solo bloque
   font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  position: relative;
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  }
 
   ion-label {
     font-size: 1.05rem;
@@ -65,20 +96,15 @@ ion-item {
     font-size: 1.2rem;
     transition: transform 0.3s ease;
   }
-
-  &[aria-expanded='true'] ion-icon {
-    transform: rotate(180deg);
-  }
 }
 
 /* --- Contenido desplegado --- */
 .ion-padding {
   background-color: #f8f9fa;
   color: #333333;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0;
   font-size: 0.95rem;
   line-height: 1.6;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
   text-align: left;
   padding: 20px;
 }

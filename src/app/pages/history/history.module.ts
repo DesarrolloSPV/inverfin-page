@@ -12,6 +12,7 @@ import { HistoryValuesComponent } from './history-values/history-values.componen
 import { HistoryProcessComponent } from './history-process/history-process.component';
 import { HistoryDifferentialsComponent } from './history-differentials/history-differentials.component';
 import { HistoryContactComponent } from './history-contact/history-contact.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { HistoryContactComponent } from './history-contact/history-contact.compo
     FormsModule,
     IonicModule,
     HistoryPageRoutingModule,
-    SharedModule
+    SharedModule,
+    TranslateModule,
   ],
   declarations: [
     HistoryPage,

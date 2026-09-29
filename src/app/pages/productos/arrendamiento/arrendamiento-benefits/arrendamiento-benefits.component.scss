@@ -1,8 +1,9 @@
 .beneficios-hover {
-  padding: 40px;
+  padding: 40px 20px;
   text-align: center;
   background-color: var(--ion-color-light);
 }
+
 .beneficios-header {
   max-width: 800px;
   margin: 0 auto 40px auto;
@@ -24,6 +25,7 @@
 .beneficios-grid {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* Permite acomodar círculos en filas si la pantalla es estrecha */
   gap: 20px;
   margin-bottom: 40px;
 }
@@ -37,10 +39,11 @@
   height: 120px;
   border-radius: 50%;
   background-color: #f8f9fa;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 0.3s ease;
   color: var(--ion-color-primary);
+  padding: 10px;
 
   ion-icon {
     font-size: 2rem;
@@ -48,8 +51,9 @@
   }
 
   span {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
+    line-height: 1.2;
   }
 
   &:hover,
@@ -62,7 +66,7 @@
 
 .beneficio-detalle {
   margin-top: 20px;
-  min-height: 250px;
+  min-height: 250px; /* Removido max-height para evitar desbordamiento */
 }
 
 .detalle-content {
@@ -76,8 +80,10 @@
 
   .detalle-img img {
     width: 280px;
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   }
 
   .detalle-text {
@@ -104,24 +110,68 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
+/* --- RESPONSIVE PARA DISPOSITIVOS MÓVILES Y TABLETS --- */
 @media (max-width: 768px) {
+  .beneficios-hover {
+    padding: 30px 15px;
+  }
+
+  .beneficios-header {
+    margin-bottom: 25px;
+
+    h2 {
+      font-size: 1.7rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+
+  .beneficios-grid {
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+
+  .beneficio-item {
+    width: 95px;
+    height: 95px;
+
+    ion-icon {
+      font-size: 1.6rem;
+      margin-bottom: 4px;
+    }
+
+    span {
+      font-size: 0.75rem;
+    }
+  }
+
+  .beneficio-detalle {
+    min-height: auto; /* Permite adaptarse a la altura dinámica en móviles */
+  }
+
   .detalle-content {
     flex-direction: column;
     text-align: center;
     gap: 20px;
 
     .detalle-img img {
-      width: 220px;
+      width: 100%;
+      max-width: 240px;
     }
 
     .detalle-text {
+      text-align: center;
+
       h3 {
         font-size: 1.3rem;
+        margin-bottom: 10px;
       }
+
       p {
-        font-size: 1rem;
-        max-width: 90%;
+        font-size: 0.95rem;
+        max-width: 100%;
         margin: 0 auto;
       }
     }

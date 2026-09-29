@@ -1,12 +1,9 @@
 <section class="cta-contacto">
   <div class="cta-container">
-    <h2>¿Listo para dar el siguiente paso?</h2>
-    <p>
-      En <strong>Inverfin</strong> creemos que cada empresa merece crecer con respaldo financiero sólido.
-      Solicita tu línea de arrendamiento y recibe asesoría personalizada de nuestros ejecutivos.
-    </p>
+    <h2>{{ 'productos.arrendamiento.cta1' | translate }}</h2>
+    <p [innerHTML]="'productos.arrendamiento.cta2' | translate"></p>
     <div class="cta-buttons">
-      <ion-button class="cta-btn">Contáctanos</ion-button>
+      <ion-button (click)="openContactModal()">{{ 'common.contact-us' | translate }}</ion-button>
     </div>
   </div>
 </section>

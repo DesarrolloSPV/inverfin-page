@@ -1,10 +1,9 @@
 <section class="process-section">
   <div class="process-header">
-    <h5>Cómo trabajamos</h5>
-    <h2>Un proceso ágil en 3 pasos</h2>
+    <h5>{{ 'history.process1' | translate }}</h5>
+    <h2>{{ 'history.process2' | translate }}</h2>
     <p>
-      En Inverfin simplificamos tu acceso a liquidez y activos productivos con un
-      acompañamiento personalizado de inicio a fin.
+      {{ 'history.process3' | translate }}
     </p>
   </div>
 
@@ -12,33 +11,33 @@
     <!-- Paso 1 -->
     <div class="process-card">
       <div class="process-icon">
-        <img src="/assets/img/cuentanos.svg" alt="Cuéntanos" />
+        <img src="/assets/img/cuentanos.svg" [attr.alt]="'history.process-timeline1' | translate" />
       </div>
-      <h3>1. Cuéntanos</h3>
+      <h3>1. {{ 'history.process-timeline1' | translate }}</h3>
       <p>
-        Compártenos tus necesidades financieras o de activos. Nuestro equipo escucha y entiende tu negocio.
+        {{ 'history.process-timeline2' | translate }}
       </p>
     </div>
 
     <!-- Paso 2 -->
     <div class="process-card">
       <div class="process-icon">
-        <img src="/assets/img/diseño.svg" alt="Diseñamos contigo" />
+        <img src="/assets/img/diseño.svg" [attr.alt]="'history.process-timeline3' | translate" />
       </div>
-      <h3>2. Lo diseñamos contigo</h3>
+      <h3>2. {{ 'history.process-timeline3' | translate }}</h3>
       <p>
-        Creamos una solución a la medida: Factoraje o Leasing, con esquemas flexibles y beneficios fiscales.
+        {{ 'history.process-timeline4' | translate }}
       </p>
     </div>
 
     <!-- Paso 3 -->
     <div class="process-card">
       <div class="process-icon">
-        <img src="/assets/img/realidad.svg" alt="Hacemos realidad" />
+        <img src="/assets/img/realidad.svg" [attr.alt]="'history.process-timeline5' | translate" />
       </div>
-      <h3>3. Lo hacemos realidad</h3>
+      <h3>3. {{ 'history.process-timeline5' | translate }}</h3>
       <p>
-        Ejecutamos el proceso de forma ágil y transparente, con acompañamiento de un ejecutivo en cada paso.
+        {{ 'history.process-timeline6' | translate }}
       </p>
     </div>
   </div>

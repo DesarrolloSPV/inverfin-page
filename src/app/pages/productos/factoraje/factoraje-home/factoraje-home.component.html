@@ -2,14 +2,8 @@
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <h1>Factoraje Financiero</h1>
-    <p>
-      Convierte tus facturas en liquidez inmediata.
-      Con Inverfin adelanta el cobro de tus cuentas por cobrar,
-      mejora tu flujo de caja y aprovecha descuentos por pronto pago.
-    </p>
-    <ion-button color="light" routerLink="/productos/factoraje">
-      Contáctanos
-    </ion-button>
+    <h1>{{'common.financial-factoring'|translate}}</h1>
+    <p> {{'productos.factoraje.hero1'|translate}} </p>
+    <ion-button (click)="openContactModal()">{{'common.contact-us'|translate}}</ion-button>
   </div>
 </section>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { UtilitiesService } from './../../../shared/services/utilities.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-history-contact',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./history-contact.component.scss'],
   standalone: false,
 })
-export class HistoryContactComponent  implements OnInit {
+export class HistoryContactComponent  {
+  constructor(private utilities: UtilitiesService) {}
 
-  constructor() { }
-
-  ngOnInit() {}
-
+  async openContactModal() {
+    await this.utilities.popContactModal();  // ✅ abre el modal centrado
+  }
 }

@@ -1,34 +1,51 @@
 <section class="beneficios-hover">
-    <!-- Encabezado -->
+  <!-- Encabezado -->
   <div class="beneficios-header">
-    <h2>Beneficios Clave del Arrendamiento</h2>
-    <p>
-          En Inverfin creemos que cada empresa merece crecer con respaldo financiero sólido.<br>
-     Descubre cómo nuestros beneficios impulsan tu operación
-    y fortalecen tu competitividad.
+    <h2>{{ 'productos.arrendamiento.benefits1' | translate }}</h2>
+    <p [innerHTML]="'productos.arrendamiento.benefits2' | translate"></p>
   </div>
 
   <!-- Íconos interactivos -->
   <div class="beneficios-grid">
-    <div class="beneficio-item" (mouseenter)="setActive(1)" [class.active]="active === 1">
+    <div
+      class="beneficio-item"
+      (mouseenter)="setActive(1)"
+      (click)="setActive(1)"
+      [class.active]="active === 1">
       <ion-icon name="cash-outline"></ion-icon>
-      <span>Preserva tu liquidez</span>
+      <span>{{ 'productos.arrendamiento.benefits-card1' | translate }}</span>
     </div>
-    <div class="beneficio-item" (mouseenter)="setActive(2)" [class.active]="active === 2">
+    <div
+      class="beneficio-item"
+      (mouseenter)="setActive(2)"
+      (click)="setActive(2)"
+      [class.active]="active === 2">
       <ion-icon name="construct-outline"></ion-icon>
-      <span>Moderniza tu operación</span>
+      <span>{{ 'productos.arrendamiento.benefits-card2' | translate }}</span>
     </div>
-    <div class="beneficio-item" (mouseenter)="setActive(3)" [class.active]="active === 3">
+    <div
+      class="beneficio-item"
+      (mouseenter)="setActive(3)"
+      (click)="setActive(3)"
+      [class.active]="active === 3">
       <ion-icon name="receipt-outline"></ion-icon>
-      <span>Beneficio fiscal</span>
+      <span>{{ 'productos.arrendamiento.benefits-card3' | translate }}</span>
     </div>
-    <div class="beneficio-item" (mouseenter)="setActive(4)" [class.active]="active === 4">
+    <div
+      class="beneficio-item"
+      (mouseenter)="setActive(4)"
+      (click)="setActive(4)"
+      [class.active]="active === 4">
       <ion-icon name="trending-up-outline"></ion-icon>
-      <span>Rentas adecuadas</span>
+      <span>{{ 'productos.arrendamiento.benefits-card4' | translate }}</span>
     </div>
-    <div class="beneficio-item" (mouseenter)="setActive(5)" [class.active]="active === 5">
+    <div
+      class="beneficio-item"
+      (mouseenter)="setActive(5)"
+      (click)="setActive(5)"
+      [class.active]="active === 5">
       <ion-icon name="cube-outline"></ion-icon>
-      <span>Valor residual</span>
+      <span>{{ 'productos.arrendamiento.benefits-card5' | translate }}</span>
     </div>
   </div>
 
@@ -36,51 +53,51 @@
   <div class="beneficio-detalle">
     <div *ngIf="active === 1" class="detalle-content">
       <div class="detalle-img">
-        <img src="assets/img/liquidez.jpg" alt="Preserva tu liquidez" />
+        <img src="assets/img/1_liquidez.svg" [attr.alt]="'productos.arrendamiento.benefits-card1' | translate" />
       </div>
       <div class="detalle-text">
-        <h3>Preserva tu liquidez</h3>
-        <p>Incorpora activos sin realizar el desembolso total de la inversión. Mantén tu flujo de efectivo disponible para capital de trabajo y nuevas oportunidades.</p>
+        <h3>{{ 'productos.arrendamiento.benefits-card1' | translate }}</h3>
+        <p>{{ 'productos.arrendamiento.benefits-card6' | translate }}</p>
       </div>
     </div>
 
     <div *ngIf="active === 2" class="detalle-content">
       <div class="detalle-img">
-        <img src="assets/img/modernizacion.jpg" alt="Moderniza tu operación" />
+        <img src="assets/img/2_operacion.svg" [attr.alt]="'productos.arrendamiento.benefits-card2' | translate" />
       </div>
       <div class="detalle-text">
-        <h3>Moderniza tu operación</h3>
-        <p>Facilita la renovación y actualización de maquinaria y equipo productivo, manteniendo tu empresa competitiva y eficiente.</p>
+        <h3>{{ 'productos.arrendamiento.benefits-card2' | translate }}</h3>
+        <p>{{ 'productos.arrendamiento.benefits-card7' | translate }}</p>
       </div>
     </div>
 
     <div *ngIf="active === 3" class="detalle-content">
       <div class="detalle-img">
-        <img src="assets/img/fiscal.jpg" alt="Beneficio fiscal" />
+        <img src="assets/img/3_beneficio.svg" [attr.alt]="'productos.arrendamiento.benefits-card3' | translate" />
       </div>
       <div class="detalle-text">
-        <h3>Beneficio fiscal</h3>
-        <p>Conserva tu capacidad financiera y aprovecha deducciones fiscales aplicables conforme a la legislación vigente.</p>
+        <h3>{{ 'productos.arrendamiento.benefits-card3' | translate }}</h3>
+        <p>{{ 'productos.arrendamiento.benefits-card8' | translate }}</p>
       </div>
     </div>
 
     <div *ngIf="active === 4" class="detalle-content">
       <div class="detalle-img">
-        <img src="assets/img/rentas.jpg" alt="Rentas adecuadas" />
+        <img src="assets/img/4_rentas.svg" [attr.alt]="'productos.arrendamiento.benefits-card4' | translate" />
       </div>
       <div class="detalle-text">
-        <h3>Rentas adecuadas</h3>
-        <p>Pagos alineados al perfil financiero y flujo operativo de tu empresa, adaptándose a tus necesidades reales.</p>
+        <h3>{{ 'productos.arrendamiento.benefits-card4' | translate }}</h3>
+        <p>{{ 'productos.arrendamiento.benefits-card9' | translate }}</p>
       </div>
     </div>
 
     <div *ngIf="active === 5" class="detalle-content">
       <div class="detalle-img">
-        <img src="assets/img/residual.jpg" alt="Valor residual" />
+        <img src="assets/img/5_residual.svg" [attr.alt]="'productos.arrendamiento.benefits-card5' | translate" />
       </div>
       <div class="detalle-text">
-        <h3>Valor residual</h3>
-        <p>Opción de adquirir el activo al término del contrato con condiciones preferentes, maximizando tu inversión.</p>
+        <h3>{{ 'productos.arrendamiento.benefits-card5' | translate }}</h3>
+        <p>{{ 'productos.arrendamiento.benefits-card10' | translate }}</p>
       </div>
     </div>
   </div>

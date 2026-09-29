@@ -13,6 +13,7 @@ import { DateTime } from 'luxon';
 import { MexicoStatesByCP } from '../utilities/mexico-estates-cp';
 import { Timestamp } from '@angular/fire/firestore';
 import { ContactFormComponent } from '../components/contact-form/contact-form.component';
+import { ModalController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +34,8 @@ export class UtilitiesService {
     private toastC: ToastController,
     private loadingC: LoadingController,
     private translate: TranslateService,
-    private popC: PopoverController
+    private popC: PopoverController,
+    private modalC: ModalController,
   ) {}
 
   arraySearch(str: string): string[] {
@@ -321,6 +323,18 @@ export class UtilitiesService {
   });
   await pop.present();
 }
+
+async popContactModal(): Promise<void> {
+  const modal = await this.modalC.create({
+    component: ContactFormComponent,   // ✅ tu formulario de contacto
+    cssClass: 'modal-contact',         // clase para estilos personalizados
+    backdropDismiss: true,
+    mode: 'ios',
+  });
+  await modal.present();
+}
+
+
   async tokenHeader(): Promise<HttpHeaders> {
     const user = await this.auth.currentUser;
     const token = await (user as firebase.User).getIdToken(true);

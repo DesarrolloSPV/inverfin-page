@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ProductosPage } from './productos.page';
+import { FactorajePage } from './factoraje/factoraje.page';
+import { ArrendamientoPage } from './arrendamiento/arrendamiento.page';
 
 const routes: Routes = [
   {
@@ -10,13 +12,12 @@ const routes: Routes = [
   },
   {
     path: 'arrendamiento',
-    loadChildren: () => import('./arrendamiento/arrendamiento.module').then( m => m.ArrendamientoPageModule)
+    component: ArrendamientoPage,
   },
   {
     path: 'factoraje',
-    loadChildren: () => import('./factoraje/factoraje.module').then( m => m.FactorajePageModule)
+    component: FactorajePage,
   }
-
 ];
 
 @NgModule({

@@ -1,0 +1,55 @@
+ion-fab {
+  right: 20px; /* ✅ mueve el botón 20px hacia la izquierda */
+  bottom: 20px; /* opcional: ajusta la distancia desde abajo */
+}
+.custom-social-fab {
+  margin-bottom: 12px;
+  margin-end: 12px;
+
+  /* Botón Principal (Azul Inverfin o Primario) */
+  .main-fab {
+    --background: var(--ion-color-primary, #003366);
+    --color: #ffffff;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Colores Oficiales por Marca */
+  ion-fab-button {
+    --color: #ffffff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    /* Facebook */
+    &.facebook {
+      --background: #1877f2;
+    }
+
+    /* Instagram (Gradiente oficial de marca) */
+    &.instagram {
+      --background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+
+    /* X (Twitter) */
+    &.x-twitter {
+      --background: #000000;
+    }
+
+    /* LinkedIn */
+    &.linkedin {
+      --background: #0a66c2;
+    }
+
+    /* WhatsApp */
+    &.whatsapp {
+      --background: #25d366;
+    }
+
+    /* Correo / Email */
+    &.email {
+      --background: #ea4335;
+    }
+  }
+}

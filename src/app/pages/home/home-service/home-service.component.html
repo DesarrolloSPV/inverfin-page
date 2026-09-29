@@ -1,12 +1,9 @@
 <section class="service-section">
   <div class="service-header">
-    <h5>Nuestros servicios</h5>
-    <h2>Liquidez inmediata y activos productivos para crecer</h2>
-    <p>
-      En <strong>Inverfin</strong> apoyamos a las empresas con <strong>procesos ágiles</strong>,
-      <strong>soluciones flexibles</strong> y <strong>atención personalizada</strong>.
-    </p>
-    <p class="trust-line">Más de 10 años impulsando empresas mexicanas.</p>
+    <h5>{{'home.services1'|translate}}</h5>
+    <h2>{{'home.services2'|translate}}</h2>
+    <p [innerHTML]="'home.services3' | translate"></p>
+    <p class="trust-line">{{'home.services4'|translate}}</p>
   </div>
 
   <div class="service-grid">
@@ -16,12 +13,11 @@
         <img src="/assets/img/arrendamiento_home.jpg" alt="Arrendamiento puro" />
       </div>
       <div class="service-content">
-        <h3>Arrendamiento puro</h3>
+        <h3>{{'common.pure-leasing'|translate}}</h3>
         <p>
-          Obtén maquinaria, vehículos o equipo sin comprometer tu liquidez.
-          Paga rentas accesibles y aprovecha beneficios fiscales.
+          {{'home.services-card1'|translate}}
         </p>
-        <ion-button routerLink="/productos/arrendamiento">Conoce más</ion-button>
+        <ion-button routerLink="/productos/arrendamiento">{{'common.learn-more'|translate}}</ion-button>
       </div>
     </div>
 
@@ -31,12 +27,11 @@
         <img src="/assets/img/factoraje_home.jpg" alt="Factoraje financiero" />
       </div>
       <div class="service-content">
-        <h3>Factoraje financiero</h3>
+        <h3>{{'common.financial-factoring'|translate}}</h3>
         <p>
-          Convierte tus facturas en efectivo inmediato.
-          Mejora tu flujo de caja y aprovecha descuentos por pronto pago.
+          {{'home.services-card2'|translate}}
         </p>
-        <ion-button routerLink="/productos/factoraje">Conoce más</ion-button>
+        <ion-button routerLink="/productos/factoraje">{{'common.learn-more'|translate}}</ion-button>
       </div>
     </div>
   </div>

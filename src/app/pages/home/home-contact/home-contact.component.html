@@ -1,17 +1,48 @@
 <section class="contact-section">
   <div class="contact-container">
-    <!-- LADO IZQUIERDO: TEXTO E INFORMACIÓN DE HORARIOS -->
+    <!-- LADO IZQUIERDO: TEXTO, HORARIOS, REDES Y MAPA -->
     <div class="contact-info">
       <p class="subtitle">
-        Obtén asesoramiento confiable y respaldo sólido para tus proyectos financieros, sin
-        complicaciones.
+        {{'home.contact1'|translate}}
       </p>
-      <h2 class="title">¡Contáctanos hoy mismo!</h2>
+      <h2 class="title">{{'home.contact2'|translate}}</h2>
 
       <div class="divider"></div>
 
       <div class="schedule">
-        <p><strong>Horario de Atención:</strong> Lunes a Viernes de 8:30 hrs a 18:00 hrs.</p>
+        <p [innerHTML]='"home.contact3"|translate'></p>
+      </div>
+
+      <!-- REDES SOCIALES -->
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61594676872767" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <a href="https://www.instagram.com/inverfin.soluciones/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="https://x.com/inverfinoficial" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+          <ion-icon name="logo-x"></ion-icon>
+        </a>
+        <a href="https://mx.linkedin.com/company/inverfin-financial-services" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <a href="https://wa.me/525569623238" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </a>
+      </div>
+
+      <!-- MAPA DE GOOGLE -->
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.695266799412!2d-99.18092952501333!3d19.425568281852353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f8af27a9b92f%3A0xb919b0020eca38ad!2sINVERFIN!5e0!3m2!1ses-419!2smx!4v1789757491562!5m2!1ses-419!2smx"
+          width="100%"
+          height="220"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
       </div>
     </div>
 

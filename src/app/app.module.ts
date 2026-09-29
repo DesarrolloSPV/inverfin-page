@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms'; // <-- Agregado para Formularios
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -13,7 +13,7 @@ import { SharedModule } from './shared/shared.module';
 
 // Importaciones de Firebase
 import { AngularFireModule } from '@angular/fire/compat'; // <-- Agregado
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore'; // <-- Agregado
+import { AngularFirestoreModule, SETTINGS } from '@angular/fire/compat/firestore'; // <-- Agregado
 import { environment } from '../environments/environment'; // <-- Agregado
 
 // Importaciones de ngx-translate
@@ -45,7 +45,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: SETTINGS, useValue: {} },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

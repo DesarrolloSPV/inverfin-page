@@ -1,24 +1,147 @@
-.footer-content {
+ion-footer.custom-footer {
+  ion-toolbar {
+    --background: var(--ion-color-light, #f8f9fa);
+    --border-color: rgba(0, 0, 0, 0.08);
+    padding: 1.5rem 1rem 0.5rem;
+  }
+}
+
+.footer-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  padding: 8px;
-  width: 100%;
-  max-width: 400px;
+  gap: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
-  height: 180px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
 
-.footer-logo {
-  height: 60px;
-  width: auto;
-  max-width: 200px;
-  object-fit: contain;
+/* Logotipo / Marca */
+.footer-brand {
+  max-width: 320px;
+
+  .footer-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 0.75rem;
+  }
+
+  .brand-description {
+    font-size: 0.875rem;
+    color: var(--ion-color-medium, #666666);
+    line-height: 1.5;
+    margin: 0;
+  }
 }
 
-.footer-text {
-  font-size: 13px;
-  color: var(--ion-color-secondary);
+/* Columnas de Texto e Links */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+
+  .column-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--ion-color-dark, #1f2937);
+    margin-bottom: 0.75rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+
+      a {
+        font-size: 0.875rem;
+        color: var(--ion-color-secondary, #4b5563);
+        text-decoration: none;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: var(--ion-color-primary, #003366);
+          text-decoration: underline;
+        }
+      }
+
+      .email-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+
+        ion-icon {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+/* Redes Sociales en el Footer */
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: var(--ion-color-light-shade, #e5e7eb);
+    color: var(--ion-color-dark, #374151);
+    font-size: 1.1rem;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--ion-color-primary, #003366);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* Barra Inferior (Derechos y reCAPTCHA) */
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   text-align: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-rights {
+    font-size: 0.8rem;
+    color: var(--ion-color-medium, #6b7280);
+  }
+
+  .recaptcha-notice {
+    font-size: 0.75rem;
+    color: var(--ion-color-medium, #9ca3af);
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
 }

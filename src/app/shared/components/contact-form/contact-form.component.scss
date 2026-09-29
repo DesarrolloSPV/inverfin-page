@@ -1,5 +1,10 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
 .contact-form-card {
-  flex: 1.1;
+  width: 100%;
   background-color: #ffffff;
   padding: 40px;
   border-radius: 16px;
@@ -48,13 +53,9 @@
       }
     }
 
-    /* --- Checkbox y texto alineados perfectamente --- */
     &.checkbox-group {
-      flex-direction: row !important;
-      align-items: center;
-      gap: 10px;
       margin-top: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
 
       ion-checkbox {
         --size: 20px;
@@ -63,42 +64,45 @@
         --checkbox-background: #fff;
         --checkbox-background-checked: var(--ion-color-primary);
         --border-color-checked: var(--ion-color-primary);
-        margin: 0;
 
-        /* Estilo para el texto nativo de ion-checkbox si lo colocas dentro del tag */
-        font-size: 0.95rem;
-        font-weight: 700;
-        color: var(--ion-color-primary);
-        text-transform: uppercase;
-        letter-spacing: 0.3px;
+        /* Asegura la alineación del recuadro a la izquierda */
+        align-items: flex-start;
+        width: 100%;
+        white-space: normal;
+
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #444444;
       }
 
-      label {
-        font-size: 0.95rem;
-        font-weight: 700;
-        color: var(--ion-color-primary);
-        text-transform: uppercase;
-        letter-spacing: 0.3px;
-        cursor: pointer;
-        margin: 0;
-        line-height: 1;
-        transition: color 0.2s ease;
-
-        &:hover {
-          color: #0d47a1;
+      &.terms-checkbox {
+        ion-checkbox {
+          font-weight: normal;
+          text-transform: none;
+          letter-spacing: normal;
         }
-      }
-    }
 
-    /* --- Campo RFC con animación de aparición --- */
-    &.rfc-group {
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: all 0.4s ease;
+        .terms-label {
+          display: inline;
+          line-height: 1.4;
 
-      &.show {
-        opacity: 1;
-        transform: translateY(0);
+          a {
+            color: var(--ion-color-primary);
+            font-weight: 600;
+            text-decoration: underline;
+            cursor: pointer;
+
+            &:hover {
+              color: #0d47a1;
+            }
+          }
+
+          .required {
+            color: #e53935;
+            font-weight: bold;
+            margin-left: 2px;
+          }
+        }
       }
     }
   }
@@ -149,7 +153,11 @@
   }
 }
 
-/* --- RESPONSIVE --- */
+.invalid-group {
+  --border-color: var(--ion-color-danger) !important;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .contact-form-card {
     width: 100%;

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { UtilitiesService } from '../../../../shared/services/utilities.service';
 
 @Component({
   selector: 'app-arrendamiento-home',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./arrendamiento-home.component.scss'],
   standalone: false,
 })
-export class ArrendamientoHomeComponent  implements OnInit {
+export class ArrendamientoHomeComponent {
 
-  constructor() { }
+  constructor(private utilities: UtilitiesService) {}
 
-  ngOnInit() {}
-
+  async openContactModal() {
+    await this.utilities.popContactModal();  // ✅ abre el modal centrado
+  }
 }

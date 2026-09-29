@@ -6,9 +6,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonsFabComponent } from './components/buttons-fab/buttons-fab.component';
-
+import { AppRoutingModule } from '../app-routing.module';
+import { RouterModule } from '@angular/router';
+import { PopServicesComponent } from './components/pop-services/pop-services.component';
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   declarations: [
     PopInfoComponent,
@@ -17,6 +20,7 @@ import { ButtonsFabComponent } from './components/buttons-fab/buttons-fab.compon
     MenuComponent,
     ContactFormComponent,
     ButtonsFabComponent,
+    PopServicesComponent,
   ],
   exports: [
     HeaderComponent,
@@ -26,12 +30,14 @@ import { ButtonsFabComponent } from './components/buttons-fab/buttons-fab.compon
     CommonModule,
     ContactFormComponent,
     ButtonsFabComponent,
-
   ],
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
+    RouterModule,
+    ReactiveFormsModule,
+    TranslateModule,
   ],
 })
 export class SharedModule {}

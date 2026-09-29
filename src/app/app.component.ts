@@ -16,18 +16,21 @@ export class AppComponent {
     this.initTranslate();
   }
 
-
   // Private functions
   // ===========================
 
   // Init Translate Service
   initTranslate(): void {
     this.translate.addLangs(['es', 'en']);
+    this.translate.setDefaultLang('es');
     this.translate.setTranslation('es', translationsES);
     this.translate.setTranslation('en', translationsEN);
-    const browserLang = this.translate.getBrowserLang();
-    this.translate.use(browserLang?.match(/es|en/) ? browserLang : 'es');
+    const currentLang = localStorage.getItem('language')
+    if (currentLang && (currentLang === 'es' || currentLang === 'en')) {
+      this.translate.use(currentLang);
+    } else {
+      const browserLang = this.translate.getBrowserLang();
+      this.translate.use(browserLang?.match(/es|en/) ? browserLang : 'es');
+    }
   }
-
-
 }

@@ -1,37 +1,40 @@
 <ion-header>
   <ion-toolbar color="light">
     <!-- Logo -->
-    <ion-buttons slot="start">
-      <img src="../../../../assets/img/Logo.svg" alt="Inverfin Logo" class="logo" />
-    </ion-buttons>
+    <img
+      src="/assets/img/Logo.svg"
+      alt="Inverfin Logo"
+      class="logo"
+      routerDirection="root"
+      routerLink="/"
+    />
 
     <!-- Menú visible solo en escritorio -->
-    <ion-buttons class="desktop-menu" slot="end">
-      <ion-button routerLink="/home">Inicio</ion-button>
-      <ion-button routerLink="/inverfin">Inverfin</ion-button>
+    <!-- <ion-buttons class="desktop-menu" slot="end"> -->
+    <ion-buttons slot="end">
 
-      <!-- Botón Servicios con popover -->
-      <ion-button id="services-btn">Servicios</ion-button>
-      <ion-popover trigger="services-btn" side="bottom" alignment="center">
-        <ion-content>
-          <ion-list>
-            <ion-item button routerLink="/productos/arrendamiento">
-              Arrendamiento puro
-            </ion-item>
-            <ion-item button routerLink="/productos/factoraje">
-              Factoraje
-            </ion-item>
-          </ion-list>
-        </ion-content>
-      </ion-popover>
+      <!-- Change language -->
+      <ion-button (click)="changeLanguage()">
+        <ion-icon slot="icon-only" name="language"></ion-icon>
+      </ion-button>
 
-      <ion-button routerLink="/blog">Blog</ion-button>
-      <ion-button (click)="openContact($event)">¿Hablamos?</ion-button>
+      <!-- History -->
+      <ion-button class="ion-hide-sm-down" routerDirection="root" routerLink="/history">Inverfin</ion-button>
+
+      <!-- Dropdown Servicios -->
+      <ion-button class="ion-hide-sm-down" (click)="openServices($event)">{{'common.services'|translate}}</ion-button>
+
+      <!-- Blog -->
+      <!-- <ion-button class="ion-hide-sm-down" hidden routerLink="/blog">Blog</ion-button> -->
+
+      <!-- Contact Pop -->
+      <ion-button class="ion-hide-sm-down " (click)="openContact($event)">{{'common.contact-us'|translate}}</ion-button>
+
+      <!-- Botón hamburguesa visible solo en móvil -->
+      <ion-menu-button class="ion-hide-sm-up" menu="menuId"></ion-menu-button>
     </ion-buttons>
 
-    <!-- Botón hamburguesa visible solo en móvil -->
-    <ion-buttons class="mobile-menu" slot="end">
-      <ion-menu-button menu="menuId"></ion-menu-button>
-    </ion-buttons>
+    <!-- <ion-buttons class="mobile-menu" slot="end">
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>

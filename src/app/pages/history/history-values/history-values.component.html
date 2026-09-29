@@ -19,87 +19,96 @@
     <!-- LADO DERECHO: Rueda de Valores (Swiper Vertical) -->
     <div class="values-slider-container">
       <!-- TÍTULO SUPERIOR AGREGADO -->
-      <span class="section-subtitle">Nuestros valores</span>
+      <span class="section-subtitle">{{ 'history.values' | translate }}</span>
 
-        <swiper-container
-          #swiperHero
-          init="true"
-          direction="vertical"
-          loop="true"
-          [autoplay]="{ delay: 3000, disableOnInteraction: false }"
-          speed="800"
-          allow-touch-move="false"
-          class="vertical-swiper"
-        >
+      <swiper-container
+        #swiperHero
+        init="true"
+        direction="vertical"
+        loop="true"
+        [autoplay]="{ delay: 3000, disableOnInteraction: false }"
+        speed="800"
+        allow-touch-move="false"
+        class="vertical-swiper"
+      >
+        <!-- AGILIDAD -->
         <swiper-slide>
           <div class="value-item">
             <div class="icon-circle">
-              <ion-icon name="timer-outline"></ion-icon>
+              <ion-icon name="flash-outline"></ion-icon>
             </div>
             <div class="text-content">
-              <h3>RÁPIDO Y BIEN HECHO</h3>
-              <p>
-                Actuamos rápido, pero con cabeza fría. La urgencia nunca nos gana el control ni la
-                calidad.
-              </p>
+              <h3>{{ 'history.values1' | translate }}</h3>
+              <p>{{ 'history.values2' | translate }}</p>
             </div>
           </div>
         </swiper-slide>
 
+        <!-- FLEXIBILIDAD -->
         <swiper-slide>
           <div class="value-item">
             <div class="icon-circle">
-              <ion-icon name="hand-right-outline"></ion-icon>
+              <ion-icon name="git-branch-outline"></ion-icon>
             </div>
             <div class="text-content">
-              <h3>MANOS AL VOLANTE</h3>
-              <p>
-                Tomamos el control con fuerza y no lo soltamos hasta resolver el problema de raíz.
-              </p>
+              <h3>{{ 'history.values3' | translate }}</h3>
+              <p>{{ 'history.values4' | translate }}</p>
             </div>
           </div>
         </swiper-slide>
 
+        <!-- ATENCIÓN PERSONALIZADA -->
         <swiper-slide>
           <div class="value-item">
             <div class="icon-circle">
               <ion-icon name="people-outline"></ion-icon>
             </div>
             <div class="text-content">
-              <h3>ESCUADRÓN INVERFIN</h3>
-              <p>
-                Solos llegamos rápido; juntos llegamos más lejos. El resultado siempre es de todos.
-              </p>
+              <h3>{{ 'history.values5' | translate }}</h3>
+              <p>{{ 'history.values6' | translate }}</p>
             </div>
           </div>
         </swiper-slide>
 
+        <!-- CONFIANZA -->
         <swiper-slide>
           <div class="value-item">
             <div class="icon-circle">
-              <ion-icon name="time-outline"></ion-icon>
+              <ion-icon name="shield-checkmark-outline"></ion-icon>
             </div>
             <div class="text-content">
-              <h3>24/SIEMPRE</h3>
-              <p>
-                No hay hora ni día que nos detenga. Siempre listos para responder, dispuestos a dar
-                el extra.
-              </p>
+              <h3>{{ 'history.values7' | translate }}</h3>
+              <p>{{ 'history.values8' | translate }}</p>
             </div>
           </div>
         </swiper-slide>
 
+        <!-- CRECIMIENTO -->
         <swiper-slide>
           <div class="value-item">
             <div class="icon-circle">
-              <ion-icon name="eye-outline"></ion-icon>
+              <ion-icon name="trending-up-outline"></ion-icon>
             </div>
             <div class="text-content">
-              <h3>MIRADA 360</h3>
-              <p>Vemos lo que otros pasan por alto. Buscamos ángulos nuevos para resolver mejor.</p>
+              <h3>{{ 'history.values9' | translate }}</h3>
+              <p>{{ 'history.values10' | translate }}</p>
             </div>
           </div>
         </swiper-slide>
+
+        <!-- CERCANÍA -->
+        <swiper-slide>
+          <div class="value-item">
+            <div class="icon-circle">
+              <ion-icon name="heart-outline"></ion-icon>
+            </div>
+            <div class="text-content">
+              <h3>{{ 'history.values11' | translate }}</h3>
+              <p>{{ 'history.values12' | translate }}</p>
+            </div>
+          </div>
+        </swiper-slide>
+
       </swiper-container>
     </div>
   </div>

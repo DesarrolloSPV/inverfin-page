@@ -10,11 +10,17 @@ export class HomeHeroComponent implements AfterViewInit {
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
 
 ngAfterViewInit() {
-  const video = this.heroVideo.nativeElement;
-  document.addEventListener('click', () => {
-    if (video.paused) {
-      video.play().catch(err => console.log('Autoplay bloqueado:', err));
-    }
-  });
+  if (this.heroVideo) {
+    const video = this.heroVideo.nativeElement;
+    document.addEventListener('click', () => {
+      if (video.paused) {
+        video.play().catch(err => console.log('Autoplay bloqueado:', err));
+      }
+    });
+  } else {
+    setTimeout(() => {
+      this.ngAfterViewInit();
+    }, 200);
+  }
 }
 }
