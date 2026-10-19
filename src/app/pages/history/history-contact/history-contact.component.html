@@ -1,15 +1,18 @@
 <section class="cta-section">
   <div class="cta-container">
     <h2>{{ 'history.cta' | translate }}</h2>
-  <p [innerHTML]="'history.cta2' | translate"></p>
+    <p [innerHTML]="'history.cta2' | translate"></p>
 
+    <!-- Botón principal "¿Hablamos?" en Blanco -->
     <div class="cta-buttons">
-      <ion-button (click)="openContactModal()">{{'common.contact-us'|translate}}</ion-button>
+      <ion-button class="contact-btn" (click)="openContactModal()">{{'common.contact-us'|translate}}</ion-button>
     </div>
 
+    <!-- Los 3 botones de productos juntos en color Plata -->
     <div class="cta-secondary">
-      <ion-button color="light" class="secondary-btn" routerLink="/productos/arrendamiento" routerDirection="forward">{{'common.pure-leasing'|translate}}</ion-button>
-      <ion-button color="light" class="secondary-btn" routerLink="/productos/factoraje" routerDirection="forward">{{'common.factoring'|translate}}</ion-button>
+      <ion-button class="secondary-btn" routerLink="/productos/arrendamiento" routerDirection="forward">{{'common.pure-leasing'|translate}}</ion-button>
+      <ion-button class="secondary-btn" routerLink="/productos/factoraje" routerDirection="forward">{{'common.factoring'|translate}}</ion-button>
+      <ion-button class="secondary-btn" routerLink="/productos/seguros" routerDirection="forward">{{'common.insurance'|translate}}</ion-button>
     </div>
   </div>
 </section>

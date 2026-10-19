@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PopoverController, AlertController, ModalController } from '@ionic/angular';
+import { PopoverController, AlertController, ModalController, MenuController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { UtilitiesService } from '../../services/utilities.service';
 import { PopServicesComponent } from '../pop-services/pop-services.component';
@@ -16,18 +16,26 @@ export class MenuComponent {
     private popC: PopoverController,
     private modalCtrl: ModalController,
     private translate: TranslateService,
-    private alertC: AlertController
+    private alertC: AlertController,
+    private menuCtrl: MenuController,
   ) {}
 
-  /**
-   * Abre el formulario/modal de contacto.
+/**
+   * Abre el formulario de contacto en formato MODAL (centrado).
    */
   async openContact(event?: Event): Promise<void> {
     if (event) {
       event.preventDefault();
     }
-    // Delega la apertura del modal al UtilitiesService
-    await this.utilities.popContact(event);
+
+    // 1. Cerrar el menú
+    await this.menuCtrl.close('menuId');
+
+    // 2. Esperar 200ms para que la animación del menú concluya completamente
+    await new Promise((resolve) => setTimeout(resolve, 200));
+
+    // 3. Usar el método que crea un MODAL real y no un Popover
+    await this.utilities.popContactModal();
   }
 
   /**

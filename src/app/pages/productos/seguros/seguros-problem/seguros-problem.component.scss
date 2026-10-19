@@ -1,0 +1,163 @@
+.seguros-categorias-section {
+  padding: 80px 40px;
+  background-color: var(--ion-color-primary);
+  color: var(--ion-color-light);
+
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+
+    .section-badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+    }
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .info-card {
+    background: #ffffff;
+    color: #333333;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 5px solid #0056b3; // Detalle elegante de color superior
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .info-icon {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(0, 86, 179, 0.08);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        ion-icon {
+          font-size: 1.8rem;
+          color: var(--ion-color-primary);
+        }
+      }
+
+      .category-tag {
+        background-color: #f0f4f9;
+        color: var(--ion-color-primary);
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--ion-color-primary);
+      margin-bottom: 20px;
+    }
+
+    .card-content-block {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .info-group {
+        .group-title {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: #777777;
+          text-transform: uppercase;
+          margin-bottom: 5px;
+
+          ion-icon {
+            font-size: 1rem;
+            color: var(--ion-color-primary);
+          }
+        }
+
+        p {
+          font-size: 0.95rem;
+          color: #444444;
+          line-height: 1.5;
+          margin: 0;
+        }
+
+        &.ideal-group {
+          background-color: #f8f9fa;
+          padding: 12px 15px;
+          border-radius: 8px;
+          border-left: 3px solid var(--ion-color-primary);
+        }
+      }
+    }
+  }
+}
+
+/* Ajuste especial para centrar las tarjetas si quedan 2 en la última fila en monitores grandes */
+@media (min-width: 1024px) {
+  .info-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .seguros-categorias-section {
+    padding: 50px 20px;
+
+    .section-header h2 {
+      font-size: 2rem;
+    }
+
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

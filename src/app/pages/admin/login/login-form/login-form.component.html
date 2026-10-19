@@ -1,0 +1,46 @@
+<div class="login-wrapper">
+  <div class="login-card">
+
+    <!-- Encabezado con Icono e Identidad -->
+    <div class="login-header ion-text-center">
+      <div class="icon-avatar">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      </div>
+      <h2>Acceso Administrador</h2>
+      <p>Ingresa tus credenciales para gestionar el Blog</p>
+    </div>
+
+    <!-- Formulario Reactivo -->
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+      <!-- Campo Correo -->
+      <div class="input-group ion-margin-bottom">
+        <ion-item lines="none" class="custom-item">
+          <ion-icon name="mail-outline" slot="start" class="field-icon"></ion-icon>
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+      </div>
+
+      <!-- Campo Contraseña -->
+      <div class="input-group ion-margin-bottom">
+        <ion-item lines="none" class="custom-item">
+          <ion-icon name="key-outline" slot="start" class="field-icon"></ion-icon>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+      </div>
+
+      <!-- Botón de Acción -->
+      <ion-button
+        expand="block"
+        type="submit"
+        [disabled]="loginForm.invalid"
+        class="submit-btn ion-margin-top">
+        Iniciar Sesión
+        <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+      </ion-button>
+
+    </form>
+  </div>
+</div>

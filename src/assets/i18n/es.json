@@ -23,8 +23,10 @@
     "invalid-email": "Correo invalido",
     "phone":"Teléfono",
     "state": "Estado",
-    "select":"Selecciona"
-
+    "select":"Selecciona",
+    "insurance":"Seguros",
+    "solutions-included":"Soluciones incluidas",
+    "ideal-for":"Ideal para"
 
   },
   "home": {
@@ -39,7 +41,7 @@
     "services4": "Más de 10 años impulsando empresas mexicanas.",
     "services-card1": "Obtén maquinaria, vehículos o equipo sin comprometer tu liquidez. Paga rentas accesibles y aprovecha beneficios fiscales.",
     "services-card2": "Convierte tus facturas en efectivo inmediato. Mejora tu flujo de caja y aprovecha descuentos por pronto pago.",
-
+    "services-card3":"Evaluamos de forma independiente el mercado para conectarte con la cobertura ideal según tus necesidades y presupuesto.",
 
     "process1":"Cómo trabajamos",
     "process2":"Un proceso ágil en 3 pasos",
@@ -47,7 +49,7 @@
     "process-timeline1": "Cuéntanos",
     "process-timeline2": "Compártenos tus necesidades financieras o de activos. Nuestro equipo escucha y entiende tu negocio.",
     "process-timeline3": "Lo diseñamos contigo",
-    "process-timeline4": "Creamos una solución a la medida: Factoraje o Leasing, con esquemas flexibles y beneficios fiscales.",
+    "process-timeline4": "Diseñamos una propuesta financiera personalizada con esquemas flexibles que optimizan tu capital de trabajo y perfil fiscal.",
     "process-timeline5": "Lo hacemos realidad",
     "process-timeline6": "Ejecutamos el proceso de forma ágil y transparente, con acompañamiento de un ejecutivo en cada paso.",
 
@@ -79,7 +81,7 @@
     "q1_question": "¿Qué es Inverfin y qué servicios ofrece?",
     "q1_answer": "Inverfin es una financiera especializada en <strong>arrendamiento puro</strong> y <strong>factoraje financiero</strong>, ayudando a las empresas a crecer sin descapitalizarse.",
     "q2_question": "¿Qué tipo de empresas pueden acceder?",
-    "q2_answer": "Personas físicas con actividad empresarial y empresas de todos tamaños que requieran liquidez o activos productivos para su operación.",
+    "q2_answer": "Empresas de todos tamaños y personas físicas con actividad empresarial que requieran liquidez o activos productivos para su operación.",
     "q3_question": "¿Las rentas o anticipos son deducibles?",
     "q3_answer": "Sí. Las rentas de arrendamiento y los costos de factoraje pueden ser deducibles conforme a la legislación fiscal vigente.",
     "q4_question": "¿Cuánto tiempo tarda la autorización?",
@@ -120,7 +122,7 @@
     "process-timeline1": "Cuéntanos",
     "process-timeline2": "Compártenos tus necesidades financieras o de activos. Nuestro equipo escucha y entiende tu negocio.",
     "process-timeline3": "Lo diseñamos contigo",
-    "process-timeline4": "Creamos una solución a la medida: Factoraje o Leasing, con esquemas flexibles y beneficios fiscales.",
+    "process-timeline4": "Diseñamos una propuesta financiera personalizada con esquemas flexibles que optimizan tu capital de trabajo y perfil fiscal.",
     "process-timeline5": "Lo hacemos realidad",
     "process-timeline6": "Ejecutamos el proceso de forma ágil y transparente, con acompañamiento de un ejecutivo en cada paso.",
 
@@ -294,6 +296,87 @@
 
 
 
+    },
+    "seguros":{
+      "hero1":"En un mundo lleno de imprevistos, asegurar tu patrimonio, tu familia y tu empresa no debe ser complicado.",
+
+      "benefits1":"Beneficios Clave de Seguros",
+      "benefits2":"<strong>Somos tu agente de seguros independiente.</strong>Trabajamos con varias aseguradoras, así que comparamos alternativas del mercado y te recomendamos la que mejor se ajusta a lo que necesitas proteger y a tu presupuesto. Te acompañamos en la contratación, las renovaciones y, sobre todo, cuando ocurre un siniestro.",
+      "beneficio-item1":"Análisis de Riesgo",
+      "beneficio-item2":"Cuadro Comparativo",
+      "beneficio-item3":"Gestión de Trámites",
+      "beneficio-item4":"Siniestros y Renovaciones",
+      "benefits-card1":"Análisis de Riesgo Personalizado",
+      "benefits-card2":"Evaluamos exactamente lo que necesitas proteger antes de cotizar.",
+      "benefits-card3":"Cuadro Comparativo Imparcial",
+      "benefits-card4":"Recibes un desglose visual con precios, deducibles y ventajas entre las principales aseguradoras.",
+      "benefits-card5":"Gestión de Trámites",
+      "benefits-card6":"Nos encargamos de todo el proceso de emisión, cobro y papeleo.",
+      "benefits-card7":"Soporte en Siniestros y Renovaciones",
+      "benefits-card8":"Te guiamos paso a paso sobre cómo actuar ante un imprevisto y revisamos anualmente que tu póliza mantenga costos competitivos.",
+
+      "problem1":"Nuestros Seguros",
+      "problem2":"Protegemos tu patrimonio, tu salud y la continuidad de tu empresa con soluciones a la medida.",
+      "problem-card1-catergory":"Movilidad",
+      "problem-card1-title":"Seguro de Auto / Flotillas",
+      "problem-card1-text1":"Cobertura amplia, limitada, daños a terceros y protección legal.",
+      "problem-card1-text2":"Conductores particulares, familias, jóvenes, profesionales y flotillas comerciales.",
+      "problem-card2-catergory":"Empresas",
+      "problem-card2-title":"Empresarial y Pyme",
+      "problem-card2-text1":"Daños a instalaciones, maquinaria, responsabilidad civil y seguro colectivo para colaboradores.",
+      "problem-card2-text2":"Emprendedores, pymes y grandes empresas.",
+      "problem-card3-catergory":"Salud",
+      "problem-card3-title":"Gastos Médicos Mayores",
+      "problem-card3-text1":"Atención en los mejores hospitales, coberturas nacionales e internacionales.",
+      "problem-card3-text2":"Personas y familias que buscan cuidar su salud y patrimonio.",
+      "problem-card4-catergory":"Patrimonio",
+      "problem-card4-title":"Hogar e Inmuebles",
+      "problem-card4-text1":"Protección contra incendios, desastres naturales, robo y responsabilidad civil.",
+      "problem-card4-text2":"Propietarios y arrendatarios de viviendas o locales.",
+      "problem-card5-catergory":"Futuro",
+      "problem-card5-title":"Vida y Retiro",
+      "problem-card5-text1":"Blindaje financiero para dependientes, seguros de vida con ahorro para el retiro.",
+      "problem-card5-text2":"Jefes de familia, profesionistas e inversionistas.",
+
+      "process1":"Nuestro Proceso de Trabajo",
+      "process2":"Te acompañamos paso a paso en 5 sencillos momentos para encontrar la cobertura ideal.",
+      "process-card1":"Paso 1: Diagnóstico",
+      "process-card2":"Escuchamos tus necesidades, prioridades y presupuesto para entender exactamente qué requieres.",
+      "process-card3":"Paso 2: Análisis de Mercado",
+      "process-card4":"Buscamos las mejores alternativas disponibles en las principales aseguradoras del país.",
+      "process-card5":"Paso 3: Comparativa Transparente",
+      "process-card6":"Te presentamos las opciones explicándote claramente qué incluye y qué no en cada propuesta.",
+      "process-card7":"Paso 4: Selección Informada",
+      "process-card8":"Elegimos juntos la póliza que te brinda mayor seguridad y protección al costo justo.",
+      "process-card9":"Paso 5: Emisión y Seguimiento",
+      "process-card10":"Gestionamos la emisión de tu póliza con la aseguradora y te acompañamos durante toda su vigencia y ante cualquier siniestro.",
+
+      "faq1":"RESUELVE TUS DUDAS",
+      "faq2":"Preguntas Frecuentes sobre Seguros",
+      "faq3":"Conoce más sobre nuestros servicios, coberturas y cómo te acompañamos en la elección de tu protección ideal.",
+      "q1_question":"¿Tiene algún costo la asesoría?",
+      "q1_answer":"No, nuestra asesoría es totalmente gratuita y sin compromiso. Te ayudamos a comparar opciones y encontrar el seguro ideal sin ningún cargo adicional para ti.",
+      "q2_question":"¿Es más caro contratar a través de un broker que directo con la aseguradora?",
+      "q2_answer":"No. Los precios son exactamente los mismos o incluso menores, ya que tenemos acceso a promociones y esquemas preferenciales. La diferencia es que con nosotros obtienes asesoría experta sin costo extra.",
+      "q3_question":"¿Puedo comparar varias aseguradoras antes de decidir?",
+      "q3_answer":" Totalmente. Te presentaremos un cuadro comparativo donde verás diferencias claras en coberturas, deducibles y precios de distintas compañías.",
+      "q4_question":"¿Qué pasa si sufro un accidente o siniestro?",
+      "q4_answer":"Te brindamos orientación inmediata sobre los pasos a seguir y los canales de atención de tu aseguradora para asegurar que el proceso de reclamo o indemnización sea ágil y justo.",
+      "q5_question":"¿Cuentan con opciones para presupuestos limitados?",
+      "q5_answer":"Sí. Ajustamos las coberturas al presupuesto que tengas disponible, garantizando que tengas la mejor protección posible dentro de tus posibilidades.",
+      "q6_question":"¿Pueden brindar servicio a empresas?",
+      "q6_answer":"Sí, estructuramos soluciones integrales para proteger instalaciones, flotillas, equipos, responsabilidad civil y planes de salud o vida para empleados.",
+      "q7_question":"¿Quién respalda este servicio?",
+      "q7_answer":"Los seguros se contratan con aseguradoras autorizadas en México. La intermediación la realiza Sé Más Seguros, Agente de Seguros, S.A. de C.V., agente de seguros persona moral autorizado por la Comisión Nacional de Seguros y Fianzas (CNSF).",
+
+      "cta1":"¿Listo para asegurar lo que más importa?",
+      "cta2":"Solicita tu cotización personalizada sin compromiso o habla directamente con uno de nuestros asesores expertos para resolver tus dudas.",
+      "cta3":"Solicitar Cotización",
+      "cta4":"Contactar por WhatsApp"
+
+
+
+
     }
   },
   "form":{
@@ -311,45 +394,73 @@
       "hero1":"Aviso de privacidad",
 
       "title":"Aviso de Privacidad Integral",
-      "update":"Última actualización: Septiembre de 2026",
+      "update":"Última actualización: Octubre de 2026",
 
-      "section1.title":"Identidad y Domicilio del Responsable",
-      "section1.description1": "(en lo sucesivo, \"El Responsable\"), con domicilio fiscal y operativo en la República Mexicana y portal web oficial <a href=\"https://inverfin.com.mx\" target=\"_blank\" rel=\"noopener\">https://inverfin.com.mx</a>, es responsable de la recolección, uso, almacenamiento, transferencia y protección de sus datos personales, en estricto apego a la <em>Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)</em>, su Reglamento y normatividad conexa.",
+      "section1.title":"Identidad y Domicilio de los Responsables",
+      "section1.description1":"<strong>Inverstart Arrendadora, S.A. de C.V.</strong> (en lo sucesivo, \"Inverfin\"), con domicilio en Av. Mariano Escobedo 748, Piso 7, Col. Anzures, Alcaldía Miguel Hidalgo, C.P. 11590, Ciudad de México, y portal web oficial <a href=\"https://inverfin.com.mx\" target=\"_blank\" rel=\"noopener\">https://inverfin.com.mx</a>, es responsable del tratamiento de los datos personales que usted nos proporcione a través de este sitio en relación con los servicios de <strong>arrendamiento puro y factoraje financiero</strong>.",
+      "section1.description2":"Cuando usted solicite información, una cotización o la contratación de un <strong>seguro</strong>, el responsable del tratamiento de sus datos para esa finalidad será <strong>Sé Más Seguros, Agente de Seguros, S.A. de C.V.</strong> (en lo sucesivo, \"Sé Más Seguros\"), agente de seguros persona moral autorizado por la Comisión Nacional de Seguros y Fianzas [oficio de autorización: NÚMERO], con domicilio en [DOMICILIO DE SÉ MÁS SEGUROS]. Inverfin únicamente recaba su solicitud a través de este sitio y la transfiere a Sé Más Seguros, conforme a la sección V.",
+      "section1.description3":"Ambos tratan sus datos conforme a la <em>Ley Federal de Protección de Datos Personales en Posesión de los Particulares</em> vigente y demás normatividad aplicable.",
 
       "section2.title":"Datos Personales Objeto de Tratamiento",
-      "section2.description1":"Para llevar a cabo las finalidades descritas en este documento, recabamos las siguientes categorías de datos personales:",
-      "section2.list1":"<strong>Datos de Identificación y Contacto:</strong> Nombre completo o Razón Social, correo electrónico, número telefónico (fijo o móvil) y asunto recabados vía el formulario de contacto.",
-      "section2.list2":"<strong>Datos Fiscales y de Identificación Financiera:</strong> Registro Federal de Contribuyentes (RFC), Clave Única de Registro de Población (CURP), Cédula de Identificación Fiscal (CIF), Contraseña de Acceso SAT (CIEC) y/o e.firma (en caso de evaluación formal).",
-      "section2.list3":"<strong>Información Financiera, Patrimonial y Analítica:</strong> Comprobantes de ingresos, declaraciones fiscales, constancias de situación fiscal, facturas emitidas/recibidas, reporte de opinión de cumplimiento fiscal y comportamiento e historial crediticio.",
-      "section2.list4":"<strong>Datos de Navegación y Seguridad Técnica:</strong> Dirección IP, tipo de navegador, sistema operativo e interacción de validación de seguridad a través de la API de <strong>Google reCAPTCHA</strong>.",
+      "section2.description1":"Para cumplir con las finalidades de este aviso, podemos recabar las siguientes categorías de datos personales:",
+      "section2.list1":"<strong>Datos de identificación y contacto:</strong> nombre completo o razón social, correo electrónico, número telefónico, estado de residencia, tipo de persona (física, física con actividad empresarial o moral), servicio de interés y descripción de su necesidad, recabados a través del formulario de contacto.",
+      "section2.list2":"<strong>Datos fiscales y de identificación financiera:</strong> Registro Federal de Contribuyentes (RFC), Clave Única de Registro de Población (CURP), Constancia de Situación Fiscal y, en caso de evaluación formal, Contraseña SAT (CIEC) y/o e.firma.",
+      "section2.list3":"<strong>Información financiera y patrimonial:</strong> comprobantes de ingresos, declaraciones fiscales, facturas emitidas y recibidas, opinión de cumplimiento fiscal e historial crediticio.",
+      "section2.list4":"<strong>Datos para seguros:</strong> información de los bienes que desea asegurar (vehículos, flotillas, inmuebles, maquinaria, equipo o mercancía), datos de las personas a asegurar y de sus beneficiarios, pólizas vigentes o anteriores e historial de siniestros.",
+      "section2.list5":"<strong>Datos personales sensibles (solo seguros de vida, gastos médicos y accidentes):</strong> información sobre el estado de salud, antecedentes médicos y hábitos de las personas a asegurar. Estos datos solo se recabarán cuando sean indispensables para cotizar o contratar el seguro solicitado y <strong>únicamente con su consentimiento expreso y por escrito</strong>, que se le solicitará en el formato correspondiente antes de recabarlos. Este sitio web no solicita datos de salud.",
+      "section2.list6":"<strong>Datos de navegación y seguridad técnica:</strong> dirección IP, tipo de navegador, sistema operativo, páginas visitadas, origen de la visita (incluidos los identificadores de anuncios de Google) e interacción con la verificación de seguridad de <strong>Google reCAPTCHA</strong>.",
 
-      "section3.title":"Finalidades del Tratamiento de Datos y Evaluación Crediticia",
-      "section3.description1":"Los datos personales recabados serán utilizados para las siguientes finalidades primarias:",
-      "section3.sectionA":"Finalidades Primarias (Originarias y Necesarias):",
-      "section3.sectionA.list1":"Atender, dar seguimiento y dar respuesta a las solicitudes enviadas a través de nuestro formulario web.",
-      "section3.sectionA.list2":"<strong>Evaluación de Viabilidad Financiera y Crediticia:</strong> Al proporcionarnos su RFC e información fiscal/financiera, los datos serán procesados e integrados para iniciar el análisis crediticio, evaluación de riesgo patrimonial y dictamen de viabilidad para el otorgamiento de líneas de financiamiento, arrendamiento u otros productos corporativos solicitados.",
-      "section3.sectionA.list3":"<strong>Consulta ante Autoridades Fiscales y Sociedades de Información Crediticia:</strong> Con su consentimiento previo, sus datos personales y fiscales podrán ser contrastados e investigados ante el Servicio de Administración Tributaria (SAT) y Sociedades de Información Crediticia (tales como Buró de Crédito y/o Círculo de Crédito).",
-      "section3.sectionA.list4":"Prevenir ciberataques, tráfico masivo automatizado y fraudes mediante el uso de <strong>Google reCAPTCHA</strong>.",
-      "section3.sectionA.list5":"Dar cumplimiento a obligaciones de prevención de lavado de dinero, auditoría regulatoria e informes ante autoridades competentes según la legislación mexicana.",
-      "section3.sectionB":"Finalidades Secundarias (Opcionales):",
-      "section3.sectionB.list1":"Prospección comercial, envío de boletines de mercado, promociones y novedades sobre servicios de arrendamiento o financiamiento de Inverfin.",
+      "section3.title":"Finalidades del Tratamiento",
+      "section3.sectionA":"Finalidades primarias (necesarias para atender su solicitud)",
+      "section3.sectionA.subtitle1":"Arrendamiento puro y factoraje (Inverfin):",
+      "section3.sectionA.list1":"Atender, dar seguimiento y responder las solicitudes enviadas a través del sitio.",
+      "section3.sectionA.list2":"<strong>Evaluación de viabilidad financiera y crediticia:</strong> con su RFC e información fiscal y financiera, iniciar el análisis de crédito, la evaluación de riesgo y el dictamen para el otorgamiento de líneas de arrendamiento, factoraje u otros productos solicitados.",
+      "section3.sectionA.list3":"<strong>Consulta ante autoridades fiscales y Sociedades de Información Crediticia:</strong> con su consentimiento previo, consultar su información ante el Servicio de Administración Tributaria (SAT) y ante Sociedades de Información Crediticia (como Buró de Crédito o Círculo de Crédito).",
+      "section3.sectionA.list4":"Formalizar, administrar y dar seguimiento a los contratos que, en su caso, se celebren.",
+      "section3.sectionA.subtitle2":"Seguros (Sé Más Seguros):",
+      "section3.sectionA.list5":"Analizar sus necesidades de protección y los riesgos a asegurar.",
+      "section3.sectionA.list6":"Solicitar, comparar y presentarle cotizaciones de distintas aseguradoras.",
+      "section3.sectionA.list7":"Gestionar ante la aseguradora elegida la contratación, emisión, endosos y renovación de su póliza.",
+      "section3.sectionA.list8":"Brindarle asesoría y acompañamiento en caso de siniestro, así como en la atención de reclamaciones.",
+      "section3.sectionA.subtitle3":"Para todos los servicios:",
+      "section3.sectionA.list9":"Prevenir ataques informáticos, tráfico automatizado y fraudes mediante <strong>Google reCAPTCHA</strong>.",
+      "section3.sectionA.list10":"Cumplir con obligaciones legales, incluidas las de prevención de operaciones con recursos de procedencia ilícita, auditoría y requerimientos de autoridades competentes.",
+      "section3.sectionB":"Finalidades secundarias (opcionales)",
+      "section3.sectionB.list1":"Enviarle información comercial, boletines, promociones y novedades sobre arrendamiento, factoraje y seguros.",
+      "section3.sectionB.list2":"Medir el desempeño de nuestro sitio y de nuestras campañas de publicidad digital.",
+      "section3.sectionB.description1":"Si no desea que sus datos se usen para estas finalidades secundarias, puede indicarlo en cualquier momento escribiendo a <a href=\"mailto:info&#64;inverfin.com.mx\">info&#64;inverfin.com.mx</a>. Su negativa no afectará la atención de su solicitud.",
 
-      "section4.title":"Transferencia de Datos Personales a Terceros y Proveedores Especializados",
-      "section4.description1":"Le informamos que para la ejecución del análisis de viabilidad crediticia y consulta fiscal, <strong>Inverfin realiza transferencias de datos con el proveedor tecnológico Syntage (SATWS, S.A.P.I. de C.V.)</strong>, infraestructura tecnológica autorizada que facilita la interconexión y extracción automatizada de información fiscal directamente con los servidores del SAT y la recopilación de datos para perfiles de riesgo crediticio.",
-      "section4.description2":"Syntage actúa en calidad de encargado de tratamiento bajo estándares de encriptación y seguridad técnica equivalentes, sujeto a las disposiciones de la LFPDPPP y su propio aviso de privacidad disponible en <a href=\"https://syntage.com/aviso-de-privacidad\" target=\"_blank\" rel=\"noopener\">syntage.com/aviso-de-privacidad",
-      "section4.description3":"Salvo por los requerimientos legales dictados por autoridades o la transferencia requerida a las Sociedades de Información Crediticia y a Syntage para la evaluación del crédito, Inverfin no venderá, comercializará ni transferirá sus datos personales a ningún otro tercero no relacionado.",
+      "section4.title":"Proveedores que tratan datos por nuestra cuenta",
+      "section4.description1":"Para operar este sitio y nuestros servicios, nos apoyamos en proveedores que tratan datos personales únicamente por nuestra cuenta, bajo nuestras instrucciones y con medidas de seguridad equivalentes:",
+      "section4.list1":"<strong>Syntage (SATWS, S.A.P.I. de C.V.):</strong> plataforma que facilita la consulta automatizada de información fiscal ante el SAT para el análisis de crédito. Su aviso de privacidad está disponible en <a href=\"https://syntage.com/aviso-de-privacidad\" target=\"_blank\" rel=\"noopener\">syntage.com/aviso-de-privacidad</a>.",
+      "section4.list2":"<strong>Google (Google Cloud / Firebase):</strong> alojamiento del sitio y almacenamiento de las solicitudes enviadas a través del formulario. Los servidores de este proveedor pueden ubicarse fuera de México.",
+      "section4.list3":"<strong>Google reCAPTCHA, Google Analytics y Google Ads:</strong> seguridad del formulario, estadísticas de uso del sitio y medición de campañas publicitarias, conforme a la sección VI.",
 
-      "section5.title":"Uso de Cookies y Medidas de Seguridad",
-      "section5.description1":"Nuestro sitio web utiliza <em>cookies</em> técnicas y analíticas para optimizar la navegación. El uso de los formularios de contacto está protegido por la tecnología de Google reCAPTCHA v3/v2. La interacción técnica con dicha herramienta queda sujeta a los <a href=\"https://policies.google.com/terms\" target=\"_blank\" rel=\"noopener\">Términos de Servicio</a> y <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Política de Privacidad de Google",
+      "section5.title":"Transferencia de Datos Personales",
+      "section5.description1":"Sus datos personales podrán ser transferidos a los siguientes terceros:",
+      "section5.list1":"<strong>A Sé Más Seguros, Agente de Seguros, S.A. de C.V.</strong>, cuando usted solicite información o cotización de un seguro, para que pueda atender su solicitud.",
+      "section5.list2":"<strong>A instituciones de seguros autorizadas en México</strong>, por parte de Sé Más Seguros, para cotizar, contratar, emitir, renovar y dar trámite a siniestros de las pólizas que usted solicite.",
+      "section5.list3":"<strong>A Sociedades de Información Crediticia</strong>, con su autorización previa, para la evaluación de crédito.",
+      "section5.list4":"<strong>A autoridades competentes</strong>, cuando así lo exija la ley o una resolución de autoridad.",
+      "section5.description2":"Estas transferencias son necesarias para atender la solicitud o la relación que usted establece con nosotros, o derivan de una obligación legal. Salvo lo anterior, ni Inverfin ni Sé Más Seguros venderán, rentarán ni transferirán sus datos personales a terceros no relacionados.",
 
-      "section6.title":"Ejercicio de Derechos ARCO y Revocación del Consentimiento",
-      "section6.description1":"Usted tiene derecho a conocer qué datos personales tenemos de usted, para qué los utilizamos y las condiciones del uso que les damos (Acceso); solicitar la corrección de su información personal (Rectificación); que la eliminemos de nuestros registros o bases de datos (Cancelación); así como oponerse al uso de sus datos para fines específicos (Oposición).",
-      "section6.description2":"Para el ejercicio de cualquiera de los derechos ARCO o la revocación del consentimiento para el análisis fiscal y crediticio, deberá enviar una solicitud formal al correo oficial de atención:",
-      "section6.description3":"Oficina de Protección de Datos Personales: <a href=\"mailto:desarrollo&#64;inverfin.com.mx\">desarrollo&#64;inverfin.com.mx</a>",
-      "section6.description4":"La solicitud deberá incluir: (i) Nombre del titular y correo de respuesta, (ii) Documento oficial vigente que acredite su identidad, (iii) Descripción clara de los datos sobre los que busca ejercer el derecho. El tiempo de respuesta será de un máximo de 20 días hábiles.",
+      "section6.title":"Uso de Cookies y Tecnologías Similares",
+      "section6.description1":"Nuestro sitio utiliza cookies y tecnologías similares para:",
+      "section6.list1":"<strong>Funcionamiento y seguridad:</strong> operación del sitio y protección del formulario mediante Google reCAPTCHA.",
+      "section6.list2":"<strong>Estadísticas:</strong> conocer cómo se usa el sitio mediante Google Analytics.",
+      "section6.list3":"<strong>Publicidad:</strong> medir si una visita que llegó desde un anuncio de Google Ads terminó en una solicitud de contacto y, en su caso, mostrarle anuncios relacionados con nuestros servicios.",
+      "section6.description2":"Estas herramientas pueden recabar su dirección IP, tipo de dispositivo y navegador, páginas visitadas e identificadores de anuncios. Puede deshabilitar o eliminar las cookies desde la configuración de su navegador y administrar la personalización de anuncios en <a href=\"https://adssettings.google.com\" target=\"_blank\" rel=\"noopener\">adssettings.google.com</a>. El uso de estas herramientas está sujeto también a la <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Política de Privacidad</a> y a los <a href=\"https://policies.google.com/terms\" target=\"_blank\" rel=\"noopener\">Términos de Servicio</a> de Google.",
 
-      "section7.title":"Cambios al Aviso de Privacidad",
-      "section7.description1":"El presente aviso de privacidad puede sufrir modificaciones o actualizaciones derivadas de requerimientos legales o de nuestras propias prácticas operativas. Dichas modificaciones estarán disponibles en el sitio web oficial: <a href=\"https://inverfin.com.mx/aviso-privacidad\">https://inverfin.com.mx/aviso-privacidad"
+      "section7.title":"Ejercicio de Derechos ARCO y Revocación del Consentimiento",
+      "section7.description1":"Usted tiene derecho a conocer qué datos personales tenemos de usted, para qué los utilizamos y las condiciones del uso que les damos (Acceso); solicitar la corrección de su información (Rectificación); que la eliminemos de nuestros registros cuando no se esté utilizando adecuadamente (Cancelación); y oponerse a su uso para fines específicos (Oposición). También puede revocar el consentimiento que nos haya otorgado.",
+      "section7.description2":"Para ejercer estos derechos, envíe su solicitud a:",
+      "section7.list1":"<strong>Arrendamiento y factoraje (Inverfin):</strong> <a href=\"mailto:info&#64;inverfin.com.mx\">info&#64;inverfin.com.mx</a>",
+      "section7.list2":"<strong>Seguros (Sé Más Seguros):</strong> [CORREO DE PRIVACIDAD DE SÉ MÁS SEGUROS]",
+      "section7.description3":"La solicitud deberá incluir: (i) nombre del titular y correo para recibir la respuesta; (ii) documento oficial vigente que acredite su identidad o, en su caso, la de su representante legal; (iii) descripción clara de los datos y del derecho que desea ejercer; y (iv) cualquier documento que facilite la localización de sus datos. Le responderemos en un plazo máximo de 20 días hábiles.",
+      "section7.description4":"La revocación del consentimiento o la cancelación de datos podrán no proceder cuando el tratamiento sea necesario para cumplir obligaciones legales o derivadas de un contrato vigente, como una póliza de seguro en vigor.",
+
+      "section8.title":"Cambios al Aviso de Privacidad",
+      "section8.description1":"Este aviso puede modificarse por cambios legales o en nuestras prácticas. Cualquier modificación se publicará en <a href=\"https://inverfin.com.mx/aviso-privacidad\">https://inverfin.com.mx/aviso-privacidad</a>, indicando la fecha de la última actualización."
     },
     "terms":{
       "hero1":"Términos y Condiciones",
@@ -393,6 +504,12 @@
       "section8.title":"Legislación Aplicable y Jurisdicción",
       "section8.description1":"Para la interpretación, cumplimiento y resolución de controversias derivadas del uso de este portal web y de los presentes Términos y Condiciones, las partes se someten a las leyes aplicables de la República Mexicana y a la jurisdicción de los tribunales competentes en la Ciudad de México, renunciando expresamente a cualquier otro fuero que por razón de sus domicilios presentes o futuros pudiera corresponderles.",
       "section8.description2":"<strong>Atención y Soporte Técnico:</strong> <a href=\"mailto:desarrollo&#64;inverfin.com.mx\">desarrollo&#64;inverfin.com.mx</a>"
+
+    },
+    "footer":{
+      "description":"Soluciones integrales de arrendamiento y financiamiento corporativo para impulsar el crecimiento de tu empresa.",
+      "legal":"Legal",
+      "contact-us":"Contacto"
 
     }
 

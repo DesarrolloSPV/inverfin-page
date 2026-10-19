@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -23,6 +23,13 @@ import { FactorajeHomeComponent } from './factoraje/factoraje-home/factoraje-hom
 import { FactorajeProblemComponent } from './factoraje/factoraje-problem/factoraje-problem.component';
 import { FactorajeProcessComponent } from './factoraje/factoraje-process/factoraje-process.component';
 import { FactorajeQuestionsComponent } from './factoraje/factoraje-questions/factoraje-questions.component';
+import { SegurosHomeComponent } from './seguros/seguros-home/seguros-home.component';
+import { SegurosPage } from './seguros/seguros.page';
+import { SegurosBenefitsComponent } from './seguros/seguros-benefits/seguros-benefits.component';
+import { SegurosProblemComponent } from './seguros/seguros-problem/seguros-problem.component';
+import { SegurosProcessComponent } from './seguros/seguros-process/seguros-process.component';
+import { SegurosQuestionsComponent } from './seguros/seguros-questions/seguros-questions.component';
+import { SegurosContactComponent } from './seguros/seguros-contact/seguros-contact.component';
 
 @NgModule({
   imports: [
@@ -49,6 +56,14 @@ import { FactorajeQuestionsComponent } from './factoraje/factoraje-questions/fac
     FactorajeProblemComponent,
     FactorajeProcessComponent,
     FactorajeQuestionsComponent,
+    SegurosPage,
+    SegurosHomeComponent,
+    SegurosBenefitsComponent,
+    SegurosProblemComponent,
+    SegurosProcessComponent,
+    SegurosQuestionsComponent,
+    SegurosContactComponent,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ProductosPageModule {}

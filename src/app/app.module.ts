@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title, Meta } from '@angular/platform-browser'; // <-- Agregados Title y Meta
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms'; // <-- Agregado para Formularios
 
@@ -14,11 +14,15 @@ import { SharedModule } from './shared/shared.module';
 // Importaciones de Firebase
 import { AngularFireModule } from '@angular/fire/compat'; // <-- Agregado
 import { AngularFirestoreModule, SETTINGS } from '@angular/fire/compat/firestore'; // <-- Agregado
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'; // <--
 import { environment } from '../environments/environment'; // <-- Agregado
 
 // Importaciones de ngx-translate
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// Servicio SEO
+import { SeoService } from './shared/services/seo.service'; // <-- Ajusta la ruta según la ubicación de tu servicio
 
 // Creador del cargador de traducciones
 export function HttpLoaderFactory(http: HttpClient) {
@@ -36,6 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SharedModule,
     AngularFireModule.initializeApp(environment.firebase), // <-- Inicializador de Firebase
     AngularFirestoreModule, // <-- Módulo de Firestore
+    AngularFireAuthModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -45,9 +50,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [
+providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: SETTINGS, useValue: {} },
+    Title,      // <-- Provider para actualizar el <title> de la página
+    Meta,       // <-- Provider para manipular las metaetiquetas y Open Graph
+    SeoService, // <-- SeoService registrado como Provider global
   ],
   bootstrap: [AppComponent],
 })

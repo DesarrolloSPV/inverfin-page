@@ -1,3 +1,17 @@
+:host ::ng-deep {
+  swiper-container {
+    .swiper-wrapper {
+      display: flex;
+      align-items: stretch;
+    }
+
+    swiper-slide {
+      height: auto !important;
+      display: flex;
+    }
+  }
+}
+
 .testimonials-section {
   padding: 80px 40px;
   background-color: #f8f9fa;
@@ -6,7 +20,7 @@
 }
 
 .testimonials-header {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 
   h5 {
     color: var(--ion-color-primary);
@@ -35,55 +49,77 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 40px;
+  padding-bottom: 50px;
 }
 
 .testimonial-card {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  width: 100%;
 }
 
 .testimonial-content {
   background-color: #ffffff;
-  color: #000000;
   border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  padding: 30px 25px;
-  max-width: 340px;
-  min-height: 400px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 35px 30px;
+  width: 100%;
+  max-width: 360px;
   margin: 0 auto;
-  transition: all 0.4s ease;
+
+  /* Flexbox vertical con espacio distribuido de forma limpia */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+
+  transition: all 0.35s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+
+    .quote-mark {
+      color: var(--ion-color-primary);
+      transform: scale(1.1);
+    }
   }
 
-  .testimonial-logo {
-    height: 60px;
-    margin-bottom: 15px;
-  }
-
-  h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
+  .quote-mark {
+    font-size: 3.5rem;
+    line-height: 1;
     color: var(--ion-color-primary);
-    margin-bottom: 5px;
-  }
-
-  span {
-    font-size: 0.9rem;
-    color: #666666;
-    margin-bottom: 15px;
-    display: block;
+    font-family: Georgia, serif;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
   }
 
   p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #333333;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #444444;
+    white-space: pre-line;
+    margin: 0 0 25px 0;
+    text-align: center;
+    font-style: italic;
+    flex-grow: 1; /* Absorbe el espacio sobrante para mantener equilibrado el pie */
+    display: flex;
+    align-items: center;
+  }
+
+  .card-footer-accent {
+    width: 100%;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+
+    span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #888888;
+    }
   }
 }
 
@@ -97,31 +133,8 @@
     font-size: 1.8rem;
   }
 
-  .testimonials-swiper {
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  /* ✅ Forzar Swiper a mostrar 1 slide en mobile */
-  swiper-container {
-    --swiper-slides-per-view: 1;
-    --swiper-space-between: 20px;
-    --swiper-pagination-bottom: 10px;
-  }
-
   .testimonial-content {
     max-width: 90%;
-    min-height: auto;
-  }
-
-  /* ✅ Scroll suave para móvil */
-  swiper-slide {
-    scroll-snap-align: center;
-  }
-
-  swiper-container {
-    scroll-snap-type: x mandatory;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
+    padding: 30px 20px;
   }
 }

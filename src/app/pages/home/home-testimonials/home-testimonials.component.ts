@@ -1,23 +1,14 @@
 import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
-export interface TestimonialHeader {
-  subtitle: string;
-  title: string;
-  description: string;
-}
-
 export interface LocalizedText {
-  [key: string]: string; 
+  [key: string]: string;
   es: string;
   en: string;
 }
 
 export interface Testimonial {
   id: number;
-  logo: string;
-  name: string;
-  role: LocalizedText;
   comment: LocalizedText;
 }
 
@@ -30,58 +21,33 @@ export interface Testimonial {
 export class HomeTestimonialsComponent implements AfterViewInit {
   @ViewChild('swiperTestimonials') swiperEl!: ElementRef;
 
-  // Arreglo de testimonios
   testimonialsList: Testimonial[] = [
     {
       id: 1,
-      logo: '/assets/img/Logo.svg',
-      name: 'Natalia Paredes',
-      role: {
-        es: 'Consultora Financiera',
-        en: 'Financial Consultant',
-      },
       comment: {
-        es: '“Inverfin transformó mi forma de ver las finanzas personales.”',
-        en: '“Inverfin transformed the way I look at personal finances.”',
+        es: '“Destacamos la atención personalizada, el seguimiento oportuno y la claridad durante todo el proceso. \n El equipo siempre ha mostrado disposición para resolver nuestras dudas y buscar alternativas financieras acordes con las necesidades de nuestra empresa. \n Valoramos mucho la comunicación, la agilidad y el acompañamiento que nos han brindado. \n Sin duda, ha sido una experiencia positiva y los consideramos un proveedor confiable y profesional.”',
+        en: '“We highlight the personalized attention, timely follow-up, and clarity throughout the entire process. \n The team has always shown a willingness to address our questions and seek financial alternatives tailored to our company\'s needs. \n We greatly value the communication, agility, and support they have provided us. Without a doubt, it has been a positive experience, and we consider them a reliable and professional partner.”',
       },
     },
     {
       id: 2,
-      logo: '/assets/img/Logo.svg',
-      name: 'Luisa Mendoza',
-      role: {
-        es: 'Empresaria',
-        en: 'Entrepreneur',
-      },
       comment: {
-        es: '“Sentí un acompañamiento real en todo el proceso de inversión.”',
-        en: '“I felt genuine guidance throughout the entire investment process.”',
+        es: '“Sentí un acompañamiento real y cercano en todo el proceso de estructuración de la inversión.”',
+        en: '“I felt genuine and close guidance throughout the entire investment structuring process.”',
       },
     },
     {
       id: 3,
-      logo: '/assets/img/Logo.svg',
-      name: 'Carlos Núñez',
-      role: {
-        es: 'Contador',
-        en: 'Accountant',
-      },
       comment: {
-        es: '“Su enfoque claro y confiable me dio la seguridad que necesitaba.”',
-        en: '“Their clear and reliable approach gave me the confidence I needed.”',
+        es: '“Hemos tenido una excelente experiencia colaborando juntos. \n \n Su enfoque claro, oportuno y confiable nos dio la seguridad operativa que necesitábamos.”',
+        en: '“We have had an excellent experience collaborating together. \n \n Their clear, timely, and reliable approach gave us the operational confidence we needed.”',
       },
     },
     {
       id: 4,
-      logo: '/assets/img/Logo.svg',
-      name: 'María Torres',
-      role: {
-        es: 'Inversionista',
-        en: 'Investor',
-      },
       comment: {
-        es: '“Inverfin me ayudó a invertir con confianza y respaldo profesional.”',
-        en: '“Inverfin helped me invest with confidence and professional support.”',
+        es: '“Inverfin nos ayudó a acceder a liquidez y herramientas financieras con total confianza y respaldo profesional.”',
+        en: '“Inverfin helped us access liquidity and financial tools with complete confidence and professional support.”',
       },
     },
   ];

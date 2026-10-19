@@ -1,173 +1,207 @@
-<div class="contact-form-card" [formGroup]="formContact">
+<div class="contact-wrapper" [class.modal-layout]="isModal">
 
-  <!-- Campo Nombre -->
-  <div class="form-group">
-    <label>{{'common.name'|translate}}<span class="required">*</span></label>
-    <ion-input
-      type="text"
-      placeholder="{{'form.your-name'|translate}}"
-      fill="outline"
-      formControlName="nombre"
-    ></ion-input>
-  </div>
+  <!-- Contenedor scrollable principal -->
+  <div class="modal-body-container">
 
-  <!-- Correo electrónico -->
-  <div class="form-group">
-    <label>{{'common.email' |translate}}<span class="required">*</span></label>
-    <ion-input
-      type="email"
-      placeholder="ejemplo@correo.com"
-      fill="outline"
-      formControlName="email"
-    ></ion-input>
-    <ion-text color="danger">
-      <span *ngIf="formContact.controls['email'].touched && formContact.controls['email'].invalid">
-        {{'common.invalid-email'|translate}}
-      </span>
-    </ion-text>
-  </div>
+    <!-- Formulario (Aparecerá primero en móviles) -->
+    <div class="contact-form-card" [formGroup]="formContact">
+      <div class="form-group">
+        <label>{{'common.name'|translate}}<span class="required">*</span></label>
+        <ion-input type="text" placeholder="{{'form.your-name'|translate}}" fill="outline" formControlName="nombre"></ion-input>
+      </div>
 
-  <!-- Teléfono y Estado -->
-  <div class="form-row">
-    <div class="form-group">
-      <label>{{'common.phone'|translate}}<span class="required">*</span></label>
-      <ion-input
-        type="tel"
-        placeholder="55 0000 0000"
-        fill="outline"
-        formControlName="telefono"
-      ></ion-input>
+      <div class="form-group">
+        <label>{{'common.email' |translate}}<span class="required">*</span></label>
+        <ion-input type="email" placeholder="ejemplo@correo.com" fill="outline" formControlName="email"></ion-input>
+        <ion-text color="danger">
+          <span *ngIf="formContact.controls['email'].touched && formContact.controls['email'].invalid">
+            {{'common.invalid-email'|translate}}
+          </span>
+        </ion-text>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{'common.phone'|translate}}<span class="required">*</span></label>
+          <ion-input type="tel" placeholder="55 0000 0000" fill="outline" formControlName="telefono"></ion-input>
+        </div>
+
+        <div class="form-group">
+          <label>{{'common.state'|translate}}<span class="required">*</span></label>
+          <ion-select placeholder="{{'common.select'|translate}}" interface="popover" fill="outline" formControlName="estado">
+            <ion-select-option value="Aguascalientes">Aguascalientes</ion-select-option>
+            <ion-select-option value="Baja California">Baja California</ion-select-option>
+            <ion-select-option value="Baja California Sur">Baja California Sur</ion-select-option>
+            <ion-select-option value="Campeche">Campeche</ion-select-option>
+            <ion-select-option value="Chiapas">Chiapas</ion-select-option>
+            <ion-select-option value="Chihuahua">Chihuahua</ion-select-option>
+            <ion-select-option value="Ciudad de México">Ciudad de México</ion-select-option>
+            <ion-select-option value="Coahuila">Coahuila</ion-select-option>
+            <ion-select-option value="Colima">Colima</ion-select-option>
+            <ion-select-option value="Durango">Durango</ion-select-option>
+            <ion-select-option value="Guanajuato">Guanajuato</ion-select-option>
+            <ion-select-option value="Guerrero">Guerrero</ion-select-option>
+            <ion-select-option value="Hidalgo">Hidalgo</ion-select-option>
+            <ion-select-option value="Jalisco">Jalisco</ion-select-option>
+            <ion-select-option value="Estado de México">Estado de México</ion-select-option>
+            <ion-select-option value="Michoacán">Michoacán</ion-select-option>
+            <ion-select-option value="Morelos">Morelos</ion-select-option>
+            <ion-select-option value="Nayarit">Nayarit</ion-select-option>
+            <ion-select-option value="Nuevo León">Nuevo León</ion-select-option>
+            <ion-select-option value="Oaxaca">Oaxaca</ion-select-option>
+            <ion-select-option value="Puebla">Puebla</ion-select-option>
+            <ion-select-option value="Querétaro">Querétaro</ion-select-option>
+            <ion-select-option value="Quintana Roo">Quintana Roo</ion-select-option>
+            <ion-select-option value="San Luis Potosí">San Luis Potosí</ion-select-option>
+            <ion-select-option value="Sinaloa">Sinaloa</ion-select-option>
+            <ion-select-option value="Sonora">Sonora</ion-select-option>
+            <ion-select-option value="Tabasco">Tabasco</ion-select-option>
+            <ion-select-option value="Tamaulipas">Tamaulipas</ion-select-option>
+            <ion-select-option value="Tlaxcala">Tlaxcala</ion-select-option>
+            <ion-select-option value="Veracruz">Veracruz</ion-select-option>
+            <ion-select-option value="Yucatán">Yucatán</ion-select-option>
+            <ion-select-option value="Zacatecas">Zacatecas</ion-select-option>
+          </ion-select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>{{'form.entity-type'|translate}}<span class="required">*</span></label>
+          <ion-select placeholder="{{'common.select'|translate}}" interface="popover" fill="outline" formControlName="tipoPersona">
+            <ion-select-option value="Persona Física">{{'form.individual'|translate}}</ion-select-option>
+            <ion-select-option value="Persona Moral">{{'form.legal-entity'|translate}}</ion-select-option>
+          </ion-select>
+        </div>
+
+        <div class="form-group">
+          <label>{{'form.service-interest'|translate}}<span class="required">*</span></label>
+          <ion-select placeholder="{{'common.select'|translate}}" interface="popover" fill="outline" formControlName="servicio">
+            <ion-select-option value="Arrendamiento Puro">{{'common.pure-leasing'|translate}}</ion-select-option>
+            <ion-select-option value="Factoraje">{{'common.factoring'|translate}}</ion-select-option>
+            <ion-select-option value="Seguros">{{'common.insurance'|translate}}</ion-select-option>
+          </ion-select>
+        </div>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <ion-checkbox formControlName="solicitaPreautorizacion" labelPlacement="end">
+          {{'form.pre-apply'|translate}}
+        </ion-checkbox>
+      </div>
+
+      <div class="form-group" *ngIf="formContact.value?.solicitaPreautorizacion">
+        <label>RFC<span class="required">*</span></label>
+        <ion-input type="text" placeholder="RFC" fill="outline" formControlName="rfc"></ion-input>
+      </div>
+
+      <div class="form-group">
+        <label>{{'form.description'|translate}}</label>
+        <ion-textarea placeholder="{{'form.tell-us-about'|translate}}" autoGrow="true" fill="outline" formControlName="descripcionFinanciamiento"></ion-textarea>
+      </div>
+
+      <div class="form-group checkbox-group terms-checkbox">
+        <ion-checkbox formControlName="aceptaTerminos" labelPlacement="end">
+          <span class="terms-label">
+            Acepto los
+            <a routerLink="/terminos-condiciones" (click)="$event.stopPropagation()">Términos y Condiciones</a>
+            y el
+            <a routerLink="/aviso-privacidad" (click)="$event.stopPropagation()">Aviso de Privacidad</a>
+            <span class="required">*</span>
+          </span>
+        </ion-checkbox>
+      </div>
+
+      <div class="form-group captcha-container">
+        <div #recaptchaContainer></div>
+      </div>
+
+      <ion-button expand="block" class="submit-btn" color="primary" [disabled]="isSending || formContact.invalid" (click)="onSubmit()">
+        {{ isSending ? 'Enviando...' : 'Enviar' }}
+      </ion-button>
     </div>
 
-    <div class="form-group">
-      <label>{{'common.state'|translate}}<span class="required">*</span></label>
-      <ion-select
-        placeholder="{{'common.select'|translate}}"
-        interface="popover"
-        fill="outline"
-        formControlName="estado"
-      >
-        <ion-select-option value="Aguascalientes">Aguascalientes</ion-select-option>
-        <ion-select-option value="Baja California">Baja California</ion-select-option>
-        <ion-select-option value="Baja California Sur">Baja California Sur</ion-select-option>
-        <ion-select-option value="Campeche">Campeche</ion-select-option>
-        <ion-select-option value="Chiapas">Chiapas</ion-select-option>
-        <ion-select-option value="Chihuahua">Chihuahua</ion-select-option>
-        <ion-select-option value="Ciudad de México">Ciudad de México</ion-select-option>
-        <ion-select-option value="Coahuila">Coahuila</ion-select-option>
-        <ion-select-option value="Colima">Colima</ion-select-option>
-        <ion-select-option value="Durango">Durango</ion-select-option>
-        <ion-select-option value="Guanajuato">Guanajuato</ion-select-option>
-        <ion-select-option value="Guerrero">Guerrero</ion-select-option>
-        <ion-select-option value="Hidalgo">Hidalgo</ion-select-option>
-        <ion-select-option value="Jalisco">Jalisco</ion-select-option>
-        <ion-select-option value="Estado de México">Estado de México</ion-select-option>
-        <ion-select-option value="Michoacán">Michoacán</ion-select-option>
-        <ion-select-option value="Morelos">Morelos</ion-select-option>
-        <ion-select-option value="Nayarit">Nayarit</ion-select-option>
-        <ion-select-option value="Nuevo León">Nuevo León</ion-select-option>
-        <ion-select-option value="Oaxaca">Oaxaca</ion-select-option>
-        <ion-select-option value="Puebla">Puebla</ion-select-option>
-        <ion-select-option value="Querétaro">Querétaro</ion-select-option>
-        <ion-select-option value="Quintana Roo">Quintana Roo</ion-select-option>
-        <ion-select-option value="San Luis Potosí">San Luis Potosí</ion-select-option>
-        <ion-select-option value="Sinaloa">Sinaloa</ion-select-option>
-        <ion-select-option value="Sonora">Sonora</ion-select-option>
-        <ion-select-option value="Tabasco">Tabasco</ion-select-option>
-        <ion-select-option value="Tamaulipas">Tamaulipas</ion-select-option>
-        <ion-select-option value="Tlaxcala">Tlaxcala</ion-select-option>
-        <ion-select-option value="Veracruz">Veracruz</ion-select-option>
-        <ion-select-option value="Yucatán">Yucatán</ion-select-option>
-        <ion-select-option value="Zacatecas">Zacatecas</ion-select-option>
-      </ion-select>
+    <!-- Bloque de información (Aparecerá después en móviles) -->
+    <div class="contact-info-side" *ngIf="isModal">
+      <div class="info-header">
+        <h3>Información de Contacto</h3>
+        <p>Ponte en contacto directamente con nuestros asesores por línea de atención o visítanos.</p>
+      </div>
+
+      <div class="info-items">
+        <!-- Teléfonos -->
+        <div class="contact-card-group">
+          <div class="contact-subcard">
+            <div class="subcard-header">
+              <span class="badge-tag">Arrendamiento & Factoraje</span>
+            </div>
+            <a href="https://wa.me/525563478226" target="_blank" rel="noopener noreferrer" class="phone-link">
+              <ion-icon name="call-outline" class="phone-icon"></ion-icon>
+              <strong>+52 55 6347 8226</strong>
+              <span class="wa-badge" title="Enviar WhatsApp">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </span>
+            </a>
+          </div>
+
+          <div class="contact-subcard">
+            <div class="subcard-header">
+              <span class="badge-tag seguros">Seguros</span>
+            </div>
+            <a href="https://wa.me/525569622740" target="_blank" rel="noopener noreferrer" class="phone-link">
+              <ion-icon name="call-outline" class="phone-icon"></ion-icon>
+              <strong>+52 55 6962 2740</strong>
+              <span class="wa-badge" title="Enviar WhatsApp">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Correo Electrónico -->
+        <div class="info-item">
+          <div class="icon-box">
+            <ion-icon name="mail-outline"></ion-icon>
+          </div>
+          <div>
+            <span>CORREO ELECTRÓNICO</span>
+            <strong><a href="mailto:info@inverfin.com.mx">info&#64;inverfin.com.mx</a></strong>
+          </div>
+        </div>
+
+        <!-- Ubicación -->
+        <div class="info-item location-item">
+          <div class="icon-box">
+            <ion-icon name="location-outline"></ion-icon>
+          </div>
+          <div>
+            <span>UBICACIÓN CORPORATIVA</span>
+            <p class="address-text">
+              Calz. Gral. Mariano Escobedo 748 - Piso 7, Anáhuac I Secc, Miguel Hidalgo, 11590 Ciudad de México, CDMX
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Redes Sociales -->
+      <div class="social-section">
+        <span>Síguenos</span>
+        <div class="social-circles">
+          <a href="https://mx.linkedin.com/company/inverfin-financial-services" target="_blank" rel="noopener noreferrer" class="social-circle-btn linkedin" title="LinkedIn">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+          <a href="https://x.com/inverfinoficial" target="_blank" rel="noopener noreferrer" class="social-circle-btn x-twitter" title="X (Twitter)">
+            <ion-icon name="logo-x"></ion-icon>
+          </a>
+          <a href="https://www.instagram.com/inverfin.soluciones/" target="_blank" rel="noopener noreferrer" class="social-circle-btn instagram" title="Instagram">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61594676872767" target="_blank" rel="noopener noreferrer" class="social-circle-btn facebook" title="Facebook">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a>
+        </div>
+      </div>
     </div>
+
   </div>
-
-  <!-- Persona y Servicio -->
-  <div class="form-row">
-    <div class="form-group">
-      <label>{{'form.entity-type'|translate}}<span class="required">*</span></label>
-      <ion-select
-        placeholder="{{'common.select'|translate}}"
-        interface="popover"
-        fill="outline"
-        formControlName="tipoPersona"
-      >
-        <ion-select-option value="Persona Física">{{'form.individual'|translate}}</ion-select-option>
-        <ion-select-option value="Persona Moral">{{'form.legal-entity'|translate}}</ion-select-option>
-      </ion-select>
-    </div>
-
-    <div class="form-group">
-      <label>{{'form.service-interest'|translate}}<span class="required">*</span></label>
-      <ion-select
-        placeholder="{{'common.select'|translate}}"
-        interface="popover"
-        fill="outline"
-        formControlName="servicio"
-      >
-        <ion-select-option value="Arrendamiento puro">{{'common.pure-leasing'|translate}}</ion-select-option>
-        <ion-select-option value="Factoraje financiero">{{'common.financial-factoring'|translate}}</ion-select-option>
-      </ion-select>
-    </div>
-  </div>
-
-  <!-- Checkbox: Presolicitud -->
-  <div class="form-group checkbox-group">
-    <ion-checkbox formControlName="solicitaPreautorizacion" labelPlacement="end">
-      {{'form.pre-apply'|translate}}
-    </ion-checkbox>
-  </div>
-
-  <!-- Campo RFC -->
-  <div class="form-group" *ngIf="formContact.value?.solicitaPreautorizacion">
-    <label>RFC<span class="required">*</span></label>
-    <ion-input
-      type="text"
-      placeholder="RFC"
-      fill="outline"
-      formControlName="rfc"
-    ></ion-input>
-  </div>
-
-  <!-- Descripción -->
-  <div class="form-group">
-    <label>{{'form.description'|translate}}</label>
-    <ion-textarea
-      placeholder="{{'form.tell-us-about'|translate}}"
-      autoGrow="true"
-      fill="outline"
-      formControlName="descripcionFinanciamiento"
-    ></ion-textarea>
-  </div>
-
-  <!-- Checkbox: Términos, Condiciones y Aviso de Privacidad -->
-  <div class="form-group checkbox-group terms-checkbox">
-    <ion-checkbox formControlName="aceptaTerminos" labelPlacement="end">
-      <span class="terms-label">
-        Acepto los
-        <a routerLink="/terminos-condiciones" (click)="$event.stopPropagation()">Términos y Condiciones</a>
-        y el
-        <a routerLink="/aviso-privacidad" (click)="$event.stopPropagation()">Aviso de Privacidad</a>
-        <span class="required">*</span>
-      </span>
-    </ion-checkbox>
-  </div>
-
-  <!-- Captcha -->
-  <div class="form-group captcha-container">
-    <div #recaptchaContainer></div>
-  </div>
-
-  <!-- Botón enviar -->
-  <ion-button
-    expand="block"
-    class="submit-btn"
-    color="primary"
-    [disabled]="isSending || formContact.invalid"
-    (click)="onSubmit()"
-  >
-    {{ isSending ? 'Enviando...' : 'Enviar' }}
-  </ion-button>
-
 </div>

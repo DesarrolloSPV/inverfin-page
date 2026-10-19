@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { SeoService } from './shared/services/seo.service';
 import translationsEN from '../assets/i18n/en.json';
 import translationsES from '../assets/i18n/es.json';
 
@@ -11,6 +12,7 @@ import translationsES from '../assets/i18n/es.json';
 })
 export class AppComponent {
   private translate = inject(TranslateService);
+  private seoService = inject(SeoService);
 
   constructor() {
     this.initTranslate();
@@ -18,6 +20,11 @@ export class AppComponent {
 
   // Private functions
   // ===========================
+
+  // Init SEO Listener
+  private initSeo(): void {
+    this.seoService.init(); // Arranca el router subscribe para páginas estáticas
+  }
 
   // Init Translate Service
   initTranslate(): void {
@@ -32,5 +39,12 @@ export class AppComponent {
       const browserLang = this.translate.getBrowserLang();
       this.translate.use(browserLang?.match(/es|en/) ? browserLang : 'es');
     }
+  }
+
+  ngOnInit() {
+  const gclid = new URLSearchParams(window.location.search).get('gclid');
+  if (gclid) {
+    try { localStorage.setItem('gclid', gclid); } catch {}
+  }
   }
 }

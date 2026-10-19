@@ -1,0 +1,130 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title>{{ post ? 'Editar Artículo' : 'Nuevo Artículo' }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+
+    <!-- Título y Slug -->
+    <ion-item class="custom-item ion-margin-bottom">
+      <ion-label position="floating">Título *</ion-label>
+      <ion-input type="text" formControlName="titulo"></ion-input>
+    </ion-item>
+
+    <ion-item class="custom-item ion-margin-bottom">
+      <ion-label position="floating">Slug (URL)</ion-label>
+      <ion-input type="text" formControlName="slug" readonly></ion-input>
+    </ion-item>
+
+    <!-- Autor -->
+    <ion-item class="custom-item ion-margin-bottom">
+      <ion-label position="floating">Autor *</ion-label>
+      <ion-input type="text" formControlName="autor"></ion-input>
+    </ion-item>
+
+    <!-- Extracto -->
+    <ion-item class="custom-item ion-margin-bottom">
+      <ion-label position="floating">Extracto (Resumen) *</ion-label>
+      <ion-textarea formControlName="extracto" rows="3" [counter]="true" maxlength="250"></ion-textarea>
+    </ion-item>
+
+    <!-- Sección de Tags / Etiquetas -->
+    <div class="tags-section ion-margin-bottom">
+      <ion-label class="field-label">Etiquetas (Tags para filtros)</ion-label>
+      <p class="section-subtitle">Se sugieren automáticamente del título. Puedes agregar o quitar las que prefieras:</p>
+
+      <!-- Input para agregar nuevo tag -->
+      <ion-item class="custom-item">
+        <ion-input
+          type="text"
+          [(ngModel)]="newTagInput"
+          [ngModelOptions]="{standalone: true}"
+          placeholder="Escribe un tag y presiona Enter..."
+          (keyup)="onTagInputKeyup($event)">
+        </ion-input>
+        <ion-button slot="end" fill="clear" (click)="addTag(newTagInput)" *ngIf="newTagInput">
+          <ion-icon name="add-circle-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <!-- Chips de Etiquetas Activas -->
+      <div class="tags-chips-container" *ngIf="tagsList.length > 0">
+        <ion-chip *ngFor="let tag of tagsList" color="primary" outline="true">
+          <ion-label>{{ tag }}</ion-label>
+          <ion-icon name="close-circle" (click)="removeTag(tag)"></ion-icon>
+        </ion-chip>
+      </div>
+    </div>
+
+    <!-- Sección Selección de Imagen de Portada -->
+    <div class="image-selector-section">
+      <label class="field-label">Imagen de Portada</label>
+      <p class="section-subtitle">Selecciona una tarjeta o sube una imagen personalizada:</p>
+
+      <!-- Tarjetas precargadas -->
+      <div class="preset-grid">
+        <div
+          *ngFor="let preset of presetImages"
+          class="preset-card"
+          [class.selected]="imageOption === 'preset' && previewUrl === preset.path"
+          (click)="selectPresetImage(preset.path)">
+          <ion-icon [name]="preset.icon"></ion-icon>
+          <span>{{ preset.label }}</span>
+        </div>
+      </div>
+
+      <!-- Carga de archivo personalizado -->
+      <div class="custom-file-upload">
+        <span class="divider-text">O sube tu propio archivo</span>
+        <label class="file-dropzone" [class.active]="imageOption === 'custom'">
+          <ion-icon name="cloud-upload-outline"></ion-icon>
+          <span>Haz clic aquí para seleccionar una imagen local</span>
+          <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+        </label>
+      </div>
+
+      <!-- Previsualización centrada -->
+      <div class="preview-container" *ngIf="previewUrl">
+        <span class="preview-label">Vista previa seleccionada:</span>
+        <div class="preview-box">
+          <img [src]="previewUrl" alt="Vista previa de portada" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="quill-container ion-margin-bottom">
+      <ion-label class="quill-label">Contenido *</ion-label>
+      <quill-editor
+        [modules]="quillConfig"
+        (onEditorCreated)="onEditorCreated($event)"
+        placeholder="Escribe aquí el contenido del artículo...">
+      </quill-editor>
+    </div>
+
+    <!-- Estado de publicación -->
+    <ion-item lines="none" class="ion-margin-bottom">
+      <ion-label>Publicar Ahora</ion-label>
+      <ion-toggle slot="end" formControlName="publicado"></ion-toggle>
+    </ion-item>
+
+    <!-- Botones del Modal -->
+    <div class="modal-actions">
+      <ion-button fill="outline" color="medium" (click)="dismiss()">Cancelar</ion-button>
+      <ion-button
+        type="submit"
+        color="primary"
+        [disabled]="blogForm.invalid">
+        {{ post ? 'GUARDAR' : 'PUBLICAR' }}
+      </ion-button>
+    </div>
+
+  </form>
+</ion-content>

@@ -1,0 +1,24 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "blogs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "search",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "fechaCreacion",
+          "order": "DESCENDING"
+        },
+        {
+          "fieldPath": "__name__",
+          "order": "DESCENDING"
+        }
+      ],
+      "density": "SPARSE_ALL"
+    }
+  ],
+  "fieldOverrides": []
+}

@@ -12,6 +12,6 @@ export class FactorajeHomeComponent {
   constructor(private utilities: UtilitiesService) {}
 
   async openContactModal() {
-    await this.utilities.popContactModal();  // ✅ abre el modal centrado
+    await this.utilities.popContactModal('Factoraje');  // ✅ abre el modal centrado
   }
 }

@@ -4,6 +4,12 @@ ion-toolbar {
   backdrop-filter: blur(10px);
   padding: 6px 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
 
   /* Logo */
   .logo {
@@ -13,6 +19,7 @@ ion-toolbar {
     margin-left: 8px;
     cursor: pointer;
     transition: transform 0.2s ease;
+    margin-top: 5px;
 
     &:hover {
       transform: scale(1.02);

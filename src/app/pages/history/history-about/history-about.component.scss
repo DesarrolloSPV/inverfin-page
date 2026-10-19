@@ -4,8 +4,8 @@
   padding: 80px 20px;
 
   .container {
-    max-width: 1200px; /* límite de ancho */
-    margin: 0 auto; /* centrado */
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 20px;
   }
 
@@ -18,17 +18,12 @@
     letter-spacing: 0.5px;
   }
 
-
-
-  p {
+  .p-content {
     max-width: 900px;
     margin: 0 auto 60px auto;
-    color: var(--ion-color-light);
+    color: #555555;
     font-size: 1.1rem;
     line-height: 1.7;
-  }
-    .p-content{
-    color: var(--ion-color-dark);
   }
 
   /* --- Tarjetas --- */
@@ -42,52 +37,51 @@
   }
 
   .about-card {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
-    overflow: hidden;
-    min-height: 320px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    color: #fff;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
+    text-align: center;
+    border-top: 5px solid var(--ion-color-primary); // Detalle de acento corporativo superior
 
     &:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
     }
 
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(107, 111, 113, 0.8); /* azul corporativo con opacidad */
-      z-index: 1;
+    .card-icon-header {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(0, 86, 179, 0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
+
+      ion-icon {
+        font-size: 1.8rem;
+        color: var(--ion-color-primary);
+      }
     }
 
     .card-content {
-      position: relative;
-      z-index: 2;
-      padding: 30px;
-      text-align: center;
-
       h3 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-weight: 800;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
         color: var(--ion-color-primary);
       }
 
       p {
-        font-size: 1.2rem;
-        line-height: 1.4;
-        max-width: 600px;
-        margin: 0 auto;
-
+        font-size: 0.98rem;
+        line-height: 1.6;
+        color: #555555;
+        margin: 0;
       }
     }
   }
@@ -102,13 +96,9 @@
       font-size: 1.8rem;
     }
 
-    p {
+    .p-content {
       font-size: 1rem;
       margin-bottom: 40px;
-    }
-
-    .about-card {
-      min-height: 280px;
     }
   }
 }

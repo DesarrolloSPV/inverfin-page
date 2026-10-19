@@ -57,23 +57,42 @@
                 <ion-label>{{ 'common.factoring' | translate }}</ion-label>
               </ion-item>
             </ion-menu-toggle>
+
+
+            <!-- Seguros -->
+            <ion-menu-toggle menu="menuId">
+              <ion-item button routerLink="/productos/seguros" routerDirection="root" detail="false">
+                <ion-icon slot="start" name="medical-outline"></ion-icon>
+                <ion-label>{{ 'common.insurance' | translate }}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
           </div>
         </ion-accordion>
       </ion-accordion-group>
 
+
+
+      <!-- Blog -->
+      <ion-menu-toggle menu="menuId">
+        <ion-item button routerLink="/blog" routerDirection="root" detail="false">
+          <ion-icon slot="start" name="business-outline"></ion-icon>
+          <ion-label>Blog</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
     </ion-list>
   </ion-content>
 
-  
+
 <!-- Footer del Menú: Anclado abajo en la pantalla -->
 <ion-footer class="ion-no-border menu-footer-container">
   <div class="menu-footer">
-    <ion-menu-toggle menu="menuId">
-      <ion-button expand="block" class="btn-contact" (click)="openContact()">
-        <ion-icon slot="start" name="mail-outline"></ion-icon>
-        {{ 'common.contact-us' | translate }}
-      </ion-button>
-    </ion-menu-toggle>
+
+    <!-- Se eliminó <ion-menu-toggle> para controlar el cierre mediante TS -->
+    <ion-button expand="block" class="btn-contact" (click)="openContact($event)">
+      <ion-icon slot="start" name="mail-outline"></ion-icon>
+      {{ 'common.contact-us' | translate }}
+    </ion-button>
 
     <div class="lang-selector" (click)="changeLanguage()">
       <ion-icon name="language-outline"></ion-icon>

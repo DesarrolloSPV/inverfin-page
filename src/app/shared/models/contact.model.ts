@@ -8,6 +8,7 @@ export interface Contact extends Metadata {
   tipoPersona: string;
   servicio: string;
   solicitaPreautorizacion: boolean;
+  gclid?: string;
   rfc: string;
   descripcionFinanciamiento: string;
 }

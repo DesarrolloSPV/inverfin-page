@@ -324,10 +324,14 @@ export class UtilitiesService {
   await pop.present();
 }
 
-async popContactModal(): Promise<void> {
+async popContactModal(producto: string = 'General'): Promise<void> {
   const modal = await this.modalC.create({
-    component: ContactFormComponent,   // ✅ tu formulario de contacto
-    cssClass: 'modal-contact',         // clase para estilos personalizados
+    component: ContactFormComponent,  // ✅ tu formulario de contacto
+    componentProps: {
+      isModal: true,
+      selectedProduct: producto // 👈 Ahora sí reconocerá la variable
+    },
+    cssClass: 'modal-contact',  // clase CSS distinta para estilos
     backdropDismiss: true,
     mode: 'ios',
   });

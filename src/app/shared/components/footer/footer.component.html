@@ -6,36 +6,48 @@
       <div class="footer-brand">
         <img src="../../../../assets/img/Logo.svg" alt="Inverfin Logo" class="footer-logo" />
         <p class="brand-description">
-          Soluciones integrales de arrendamiento y financiamiento corporativo para impulsar el crecimiento de tu empresa.
+          {{'footer.description'|translate}}
         </p>
       </div>
 
-      <!-- SECCIÓN 2: LEGALES -->
-      <div class="footer-column">
-        <span class="column-title">Legales</span>
-        <ul>
-          <li>
-            <a routerLink="/aviso-privacidad">Aviso de Privacidad</a>
-          </li>
-          <li>
-            <a routerLink="/terminos-condiciones">Términos y Condiciones</a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- SECCIÓN 3: CONTACTO Y REDES SOCIALES -->
-      <div class="footer-column">
-        <span class="column-title">Contacto</span>
-        <ul class="contact-list">
-          <li>
-            <a href="mailto:info&#64;inverfin.com.mx" class="email-link">
+      <!-- SECCIÓN 2: DATOS FISCALES Y DE CONTACTO (NUEVO) -->
+      <div class="footer-column fiscal-info">
+        <div class="fiscal-details">
+          <p class="company-name"><strong>INVERSTART ARRENDADORA, S.A. DE C.V.</strong> (Inverfin)</p>
+          <p class="address-line">
+            <ion-icon name="location-outline"></ion-icon>
+            Av. Mariano Escobedo 748 - Piso 7, Col. Anzures, Miguel Hidalgo, C.P. 11590, Ciudad de México.
+          </p>
+          <p class="phone-line">
+            <ion-icon name="call-outline"></ion-icon>
+            <span>Arrendamiento/Factoraje: +52 55 6347 8226</span>
+          </p>
+          <p class="phone-line">
+            <ion-icon name="call-outline"></ion-icon>
+            <span>Seguros: +52 55 6962 2740</span>
+          </p>
+          <p class="email-line">
+            <a href="mailto:info&#64;inverfin.com.mx">
               <ion-icon name="mail-outline"></ion-icon>
               info&#64;inverfin.com.mx
             </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- SECCIÓN 3: LEGALES Y REDES SOCIALES -->
+      <div class="footer-column links-column">
+        <span class="column-title">Legal </span>
+        <ul>
+          <li>
+            <a routerLink="/aviso-privacidad">{{'privacy.hero1'|translate}}</a>
+          </li>
+          <li>
+            <a routerLink="/terminos-condiciones">{{'terms.hero1'|translate}}</a>
           </li>
         </ul>
 
-        <!-- Íconos de Redes Sociales Reales -->
+        <span class="column-title social-title">Redes Sociales</span>
         <div class="footer-social-links">
           <a href="https://www.facebook.com/profile.php?id=61594676872767" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <ion-icon name="logo-facebook"></ion-icon>
@@ -49,7 +61,7 @@
           <a href="https://mx.linkedin.com/company/inverfin-financial-services" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <ion-icon name="logo-linkedin"></ion-icon>
           </a>
-          <a href="https://wa.me/525569623238" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <a href="https://wa.me/525563478226" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
             <ion-icon name="logo-whatsapp"></ion-icon>
           </a>
         </div>
@@ -60,7 +72,7 @@
     <!-- BARRA INFERIOR: DERECHOS Y PROTECCIÓN RECAPTCHA -->
     <div class="footer-bottom">
       <ion-text class="footer-rights">
-        © 2026 Inverfin Financial Services. Todos los derechos reservados.
+        © 2026 Inverstart Arrendadora, S.A. de C.V. Todos los derechos reservados.
       </ion-text>
       <ion-text class="recaptcha-notice">
         Protegido por Google reCAPTCHA. Ver

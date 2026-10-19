@@ -1,0 +1,131 @@
+<div class="blog-wrapper">
+  <div class="blog-container">
+
+    <!-- Carga / Loader -->
+    <div *ngIf="loading" class="ion-text-center ion-padding my-5">
+      <ion-spinner name="crescent" color="primary"></ion-spinner>
+      <p class="loading-text">Cargando publicaciones...</p>
+    </div>
+
+    <div *ngIf="!loading">
+
+      <!-- BARRA DE BÚSQUEDA Y FILTRADO -->
+      <div class="search-filter-container ion-margin-bottom">
+        <ion-searchbar
+          [(ngModel)]="searchTerm"
+          (ionInput)="onFilterChange()"
+          placeholder="Buscar artículos por título, autor o contenido..."
+          animated="true"
+          class="custom-blog-searchbar">
+        </ion-searchbar>
+      </div>
+
+      <!-- Contenido si hay publicaciones filtradas -->
+      <ng-container *ngIf="filteredPosts.length > 0">
+
+        <!-- 1. ARTÍCULO DESTACADO (HERO CARD) -->
+        <section class="featured-section ion-margin-bottom" *ngIf="filteredPosts[0] as featuredPost">
+          <div class="featured-card" (click)="openPostDetail(featuredPost)">
+
+            <div class="featured-image-col">
+              <img *ngIf="featuredPost.imagenPortada" [src]="featuredPost.imagenPortada" [alt]="featuredPost.titulo" />
+              <div *ngIf="!featuredPost.imagenPortada" class="image-placeholder">
+                <ion-icon name="newspaper-outline"></ion-icon>
+              </div>
+            </div>
+
+            <div class="featured-content-col">
+              <div class="badge-wrapper">
+                <span class="category-badge">{{ featuredPost.autor || 'Inverfin' }}</span>
+              </div>
+
+              <h2 class="featured-title">{{ featuredPost.titulo }}</h2>
+
+              <time class="featured-date">
+                {{ formatFecha(featuredPost.fechaCreacion) | date:'dd/MM/yyyy' }}
+              </time>
+
+              <p class="featured-extract">{{ featuredPost.extracto }}</p>
+
+              <button class="btn-read-pill">
+                <span>Leer más</span>
+                <div class="arrow-circle">
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 2. GRILLA SECUNDARIA (PAGINADA) -->
+        <section class="secondary-section" *ngIf="secondaryPosts.length > 0">
+          <h3 class="section-subtitle">Más publicaciones</h3>
+
+          <div class="blog-grid">
+            <div *ngFor="let post of paginatedPosts" class="blog-card" (click)="openPostDetail(post)">
+
+              <div class="card-image-wrapper" *ngIf="post.imagenPortada">
+                <img [src]="post.imagenPortada" [alt]="post.titulo" />
+              </div>
+              <div class="card-image-placeholder" *ngIf="!post.imagenPortada">
+                <ion-icon name="newspaper-outline"></ion-icon>
+              </div>
+
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="author-tag">{{ post.autor }}</span>
+                </div>
+                <h3 class="card-title">{{ post.titulo }}</h3>
+                <p class="card-extract">{{ post.extracto }}</p>
+
+                <div class="card-footer-link">
+                  <span>Leer artículo</span>
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- CONTROLES DE PAGINACIÓN -->
+          <div class="pagination-container" *ngIf="totalPages > 1">
+            <button
+              class="pagination-btn arrow"
+              [disabled]="currentPage === 1"
+              (click)="goToPage(currentPage - 1)">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+
+            <button
+              *ngFor="let page of pagesArray"
+              class="pagination-btn number"
+              [class.active]="currentPage === page"
+              (click)="goToPage(page)">
+              {{ page }}
+            </button>
+
+            <button
+              class="pagination-btn arrow"
+              [disabled]="currentPage === totalPages"
+              (click)="goToPage(currentPage + 1)">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+          </div>
+
+        </section>
+
+      </ng-container>
+
+      <!-- Estado Vacío por Búsqueda o por Cero Publicaciones -->
+      <div *ngIf="filteredPosts.length === 0" class="empty-state ion-text-center ion-padding my-5">
+        <ion-icon name="search-outline" style="font-size: 3rem; color: #999;"></ion-icon>
+        <h3>No se encontraron publicaciones</h3>
+        <p *ngIf="searchTerm">No hay artículos que coincidan con "{{ searchTerm }}".</p>
+        <p *ngIf="!searchTerm">Pronto estaremos compartiendo nuevas noticias y artículos.</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>

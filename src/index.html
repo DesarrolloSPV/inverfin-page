@@ -2,27 +2,53 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <title>INVERFIN - Financial Services</title>
+    <title>Arrendamiento Puro y Factoraje para Empresas | Inverfin</title>
+    <meta
+      name="description"
+      content="Arrendamiento puro y factoraje financiero para empresas y PFAE en México. Obtén liquidez y activos productivos sin descapitalizarte."
+    />
 
     <base href="/" />
 
     <meta name="color-scheme" content="light dark" />
     <meta
       name="viewport"
-      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0"
     />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
 
-    <link rel="icon" type="image/png" href="assets/icon/favicon-IF.svg" />
+    <!-- Vista previa al compartir (valores generales) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Inverfin" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:title" content="Arrendamiento Puro y Factoraje para Empresas | Inverfin" />
+    <meta property="og:description" content="Liquidez y activos productivos para tu empresa sin descapitalizarte." />
+    <meta property="og:image" content="https://inverfin.com.mx/assets/img/og-default.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="assets/icon/favicon-IF.svg" />
 
     <!-- add to homescreen for ios -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!-- Google tag (gtag.js): Analytics + Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X1TJD287Q4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-X1TJD287Q4');
+      gtag('config', 'AW-18513922418');
+    </script>
+
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
   </head>
 
   <body>
     <app-root></app-root>
   </body>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </html>

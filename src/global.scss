@@ -14,6 +14,10 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+/* Estilos de Quill Editor */
+@import 'quill/dist/quill.core.css';
+@import 'quill/dist/quill.snow.css';
+
 :root {
 	--ion-color-primary: #1E4C8B;
 	--ion-color-primary-rgb: 30,76,139;
@@ -105,6 +109,71 @@
       box-shadow: none !important;
       border: none !important;
       padding: 20px 15px !important;
+    }
+  }
+}
+
+/* Tamaño estilizado para el modal de vista previa */
+.blog-preview-modal {
+  --width: 90%;
+  --max-width: 850px;
+  --height: 90%;
+  --max-height: 900px;
+  --border-radius: 12px;
+}
+
+/* Centrado estricto para modales Ionic */
+ion-modal {
+  align-items: center !important;
+  justify-content: center !important;
+
+  &::part(content) {
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: auto !important;
+  }
+}
+
+/* Estilo para ajustar el tamaño del modal en la pantalla */
+ion-modal.modal-contact {
+  --width: 80vw;
+  --max-width: 950px;
+  --height: auto;
+  --max-height: 85vh;
+  --border-radius: 16px;
+
+  &::part(content) {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+}
+
+ion-modal.modal-contact {
+  --width: 92vw;
+  --max-width: 600px;
+  --height: auto;
+  --max-height: 88vh;
+  --border-radius: 16px;
+
+  &::part(content) {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  ion-modal.modal-contact {
+    --width: 94vw !important;
+    --max-width: 94vw !important;
+    --height: auto !important;
+    --max-height: 85vh !important;
+    --border-radius: 12px !important;
+
+    &::part(content) {
+      border-radius: 12px !important;
+      overflow-x: hidden !important; // Evita scroll horizontal
     }
   }
 }

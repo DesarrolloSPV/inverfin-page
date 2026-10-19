@@ -12,6 +12,6 @@ export class ArrendamientoHomeComponent {
   constructor(private utilities: UtilitiesService) {}
 
   async openContactModal() {
-    await this.utilities.popContactModal();  // ✅ abre el modal centrado
-  }
+    // Pasamos el producto actual como parámetro
+  await this.utilities.popContactModal('Arrendamiento Puro');  }
 }

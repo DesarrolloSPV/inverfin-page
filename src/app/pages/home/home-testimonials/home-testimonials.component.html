@@ -11,6 +11,7 @@
     slides-per-view="3"
     space-between="30"
     centered-slides="false"
+    auto-height="false"
     [autoplay]="{ delay: 5000, disableOnInteraction: false }"
     speed="800"
     pagination="true"
@@ -23,10 +24,11 @@
   >
     <swiper-slide *ngFor="let item of testimonialsList" class="testimonial-card">
       <div class="testimonial-content">
-        <img [src]="item.logo" [alt]="item.name" class="testimonial-logo" />
-        <h3>{{ item.name }}</h3>
-        <span>{{ item.role[translate.currentLang || 'es'] }}</span>
-        <p>{{ item.comment[translate.currentLang || 'es'] }}</p>
+        <div class="quote-mark">“</div>
+        <p [innerHTML]="item.comment[translate.currentLang || 'es']"></p>
+        <div class="card-footer-accent">
+          <span>Caso de Éxito</span>
+        </div>
       </div>
     </swiper-slide>
   </swiper-container>

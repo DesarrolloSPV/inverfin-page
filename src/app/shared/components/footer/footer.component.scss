@@ -2,7 +2,7 @@ ion-footer.custom-footer {
   ion-toolbar {
     --background: var(--ion-color-light, #f8f9fa);
     --border-color: rgba(0, 0, 0, 0.08);
-    padding: 1.5rem 1rem 0.5rem;
+    padding: 2rem 1rem 1rem;
   }
 }
 
@@ -10,11 +10,11 @@ ion-footer.custom-footer {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
   width: 100%;
 
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
@@ -23,24 +23,72 @@ ion-footer.custom-footer {
 
 /* Logotipo / Marca */
 .footer-brand {
-  max-width: 320px;
+  max-width: 280px;
 
   .footer-logo {
-    height: 50px;
+    height: 48px;
     width: auto;
     object-fit: contain;
     margin-bottom: 0.75rem;
   }
 
   .brand-description {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     color: var(--ion-color-medium, #666666);
     line-height: 1.5;
     margin: 0;
   }
 }
 
-/* Columnas de Texto e Links */
+/* Columna de Datos Fiscales y Domicilio */
+.fiscal-info {
+  flex: 1;
+  max-width: 380px;
+
+  .fiscal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    p {
+      font-size: 0.82rem;
+      color: #4b5563;
+      margin: 0;
+      line-height: 1.4;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+
+      ion-icon {
+        font-size: 1rem;
+        color: var(--ion-color-primary, #003366);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+    }
+
+    .company-name {
+      font-size: 0.85rem;
+      color: var(--ion-color-dark, #1f2937);
+      margin-bottom: 2px;
+    }
+
+    .email-line a {
+      color: #4b5563;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+
+      &:hover {
+        color: var(--ion-color-primary, #003366);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Columnas de Texto y Enlaces */
 .footer-column {
   display: flex;
   flex-direction: column;
@@ -52,6 +100,10 @@ ion-footer.custom-footer {
     letter-spacing: 0.5px;
     color: var(--ion-color-dark, #1f2937);
     margin-bottom: 0.75rem;
+
+    &.social-title {
+      margin-top: 1rem;
+    }
   }
 
   ul {
@@ -63,7 +115,7 @@ ion-footer.custom-footer {
       margin-bottom: 0.5rem;
 
       a {
-        font-size: 0.875rem;
+        font-size: 0.85rem;
         color: var(--ion-color-secondary, #4b5563);
         text-decoration: none;
         transition: color 0.2s ease-in-out;
@@ -71,16 +123,6 @@ ion-footer.custom-footer {
         &:hover {
           color: var(--ion-color-primary, #003366);
           text-decoration: underline;
-        }
-      }
-
-      .email-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-
-        ion-icon {
-          font-size: 1rem;
         }
       }
     }
@@ -92,7 +134,6 @@ ion-footer.custom-footer {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 0.75rem;
 
   a {
     display: inline-flex;

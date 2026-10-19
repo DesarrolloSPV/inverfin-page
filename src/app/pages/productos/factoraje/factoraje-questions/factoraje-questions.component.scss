@@ -19,7 +19,23 @@
     }
   }
 
+  ion-accordion-group {
+    background: transparent;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* Cada categoría/acordeón ahora es una tarjeta independiente */
+  ion-accordion {
+    background: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 8px; /* 👈 Aquí está la separación exacta entre grupos */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+  }
+
   ion-item {
+    --background: #ffffff;
     --color: var(--ion-color-primary);
     font-weight: 700;
     font-size: 1.1rem;
@@ -57,7 +73,7 @@
   }
 }
 
-/* Responsivo */
+/* Responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
   .faq-section {
     padding: 40px 15px;
