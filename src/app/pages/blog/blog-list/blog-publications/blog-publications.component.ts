@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy, ChangeDetectorRef, NgZone } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { BlogService } from '../../../../shared/services/blog.service';
@@ -15,6 +16,7 @@ export class BlogPublicationsComponent implements OnInit, OnDestroy {
   posts: BlogPost[] = [];
   loading = true;
   private postsSub?: Subscription;
+  private routeSub?: Subscription; //  Para limpiar la suscripción de la ruta
 
   // Propiedad para la barra de búsqueda
   searchTerm: string = '';
@@ -27,15 +29,26 @@ export class BlogPublicationsComponent implements OnInit, OnDestroy {
     private blogService: BlogService,
     private modalCtrl: ModalController,
     private cdr: ChangeDetectorRef,
-    private zone: NgZone
+    private zone: NgZone,
+    private route: ActivatedRoute // Inyectar ActivatedRoute para escuchar los parámetros de la URL
   ) {}
 
   ngOnInit() {
+    // Escuchar los parámetros de la URL al iniciar
+    this.routeSub = this.route.queryParams.subscribe(params => {
+      const searchParam = params['search'];
+      if (searchParam) {
+        this.searchTerm = searchParam;
+        this.currentPage = 1; // Reinicia a la página 1 al filtrar
+      }
+    });
+
     this.loadPublishedPosts();
   }
 
   ngOnDestroy() {
     this.postsSub?.unsubscribe();
+    this.routeSub?.unsubscribe(); //Limpiar suscripción
   }
 
   loadPublishedPosts() {
@@ -58,7 +71,7 @@ export class BlogPublicationsComponent implements OnInit, OnDestroy {
     });
   }
 
-  // 👈 Filtra los posts en tiempo real según el título, autor o extracto
+  //  Filtra los posts en tiempo real según el título, autor o hashtags
   get filteredPosts(): BlogPost[] {
     if (!this.searchTerm || this.searchTerm.trim() === '') {
       return this.posts;
@@ -67,8 +80,8 @@ export class BlogPublicationsComponent implements OnInit, OnDestroy {
     return this.posts.filter((post) => {
       const titulo = post.titulo ? post.titulo.toLowerCase() : '';
       const autor = post.autor ? post.autor.toLowerCase() : '';
-      const extracto = post.extracto ? post.extracto.toLowerCase() : '';
-      return titulo.includes(term) || autor.includes(term) || extracto.includes(term);
+      const tags = post.tags ? post.tags.join(' ').toLowerCase() : '';
+      return titulo.includes(term) || autor.includes(term) || tags.includes(term);
     });
   }
 
@@ -110,7 +123,7 @@ export class BlogPublicationsComponent implements OnInit, OnDestroy {
     const modal = await this.modalCtrl.create({
       component: BlogDetailPage,
       componentProps: { post },
-      cssClass: 'blog-detail-modal'
+      cssClass: 'blog-preview-modal'
     });
     await modal.present();
   }

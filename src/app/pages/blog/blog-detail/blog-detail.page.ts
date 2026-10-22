@@ -157,6 +157,20 @@ export class BlogDetailPage implements OnInit {
       }
     }
   }
+  async filtrarPorTag(tag: string) {
+    // Limpiamos el '#' para mandar el término limpio al filtro si es necesario
+    const cleanTag = tag.startsWith('#') ? tag.substring(1) : tag;
+
+    if (this.isModal) {
+      // Si está abierto como modal, cerramos el modal primero
+      await this.modalCtrl.dismiss();
+    }
+
+    // Navegamos al listado del blog pasando el tag como parámetro de consulta (query param)
+    this.router.navigate(['/blog'], {
+      queryParams: { search: cleanTag }
+    });
+  }
 
   dismiss() {
     if (this.isModal) {

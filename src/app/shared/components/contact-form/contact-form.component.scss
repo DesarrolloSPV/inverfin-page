@@ -302,10 +302,13 @@
     }
   }
 
-  .captcha-container {
+.captcha-container {
     margin-top: 16px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden; // Previene que cualquier desbordamiento rebase la tarjeta
   }
 
   .submit-btn {
@@ -313,6 +316,24 @@
     --border-radius: 8px;
     font-weight: 700;
     height: 46px;
+  }
+}
+/* --- AJUSTE RESPONSIVO PARA RECAPTCHA EN MÓVILES --- */
+.g-recaptcha,
+div[style*="width: 304px"] {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+
+  iframe {
+    transform: scale(0.82); // Escala el widget para ajustarse al recuadro blanco
+    transform-origin: center center; // Centra el escalado
+  }
+}
+@media (max-width: 400px) {
+  .g-recaptcha iframe,
+  div[style*="width: 304px"] iframe {
+    transform: scale(0.75); // Para pantallas muy estrechas (p. ej. iPhone SE)
   }
 }
 

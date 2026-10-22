@@ -12,7 +12,7 @@
     position: absolute;
     inset: 0;
     /* Degradado corporativo profesional para mejor lectura */
-    background: linear-gradient(135deg, rgba(13, 58, 92, 0.92) 0%, rgba(19, 90, 140, 0.8) 100%);
+    background: rgba(var(--ion-color-primary-rgb), 0.7); /* ✅ azul institucional con transparencia */
   }
 
   .hero-content {
@@ -61,8 +61,8 @@
       ion-button {
         font-weight: 600;
         font-size: 1.05rem;
-        --background: #ffc107;
-        --color: #0d3a5c;
+        --background: var(--inverfin-gris);
+        --color: #ffffff;
         --border-radius: 10px;
         --padding-start: 28px;
         --padding-end: 28px;
@@ -72,7 +72,7 @@
 
         &:hover {
           transform: translateY(-2px);
-          --background: #ffcd39;
+          --background: #5f6163;
           --box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
         }
 

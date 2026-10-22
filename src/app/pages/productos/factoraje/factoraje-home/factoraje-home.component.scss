@@ -10,7 +10,7 @@
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(19, 90, 140, 0.8); /* azul institucional con transparencia */
+    background: rgba(var(--ion-color-primary-rgb), 0.7); /* ✅ azul institucional con transparencia */
   }
 
   .hero-content {
@@ -36,13 +36,13 @@
 
     ion-button {
       font-weight: 600;
-      --background: #ffc107; /* amarillo institucional */
-      --color: #0d3a5c;      /* azul oscuro institucional */
+      --background: #6C6E70; /* 👈 Gris institucional de Inverfin */
+      --color: #ffffff;      /* 👈 Texto blanco para contraste */
       border-radius: 8px;
 
       &:hover {
-        --background: #ffffff;
-        --color: var(--ion-color-primary);
+        --background: #5f6163; /* 👈 Tono gris más oscuro al pasar el cursor (shade) */
+        --color: #ffffff;
       }
     }
   }

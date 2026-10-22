@@ -1,40 +1,37 @@
 <ion-header>
   <ion-toolbar color="light">
-    <!-- Logo -->
-    <img
-      src="/assets/img/Logo.svg"
-      alt="Inverfin Logo"
-      class="logo"
-      routerDirection="root"
-      routerLink="/"
-    />
+    <div class="toolbar-container">
+      <!-- Logo -->
+      <img
+        src="/assets/img/Logo.svg"
+        alt="Inverfin Logo"
+        class="logo"
+        routerDirection="root"
+        routerLink="/"
+      />
 
-    <!-- Menú visible solo en escritorio -->
-    <!-- <ion-buttons class="desktop-menu" slot="end"> -->
-    <ion-buttons slot="end">
+      <!-- Menú visible solo en escritorio -->
+      <ion-buttons slot="end">
+        <!-- Change language -->
+        <ion-button (click)="changeLanguage()">
+          <ion-icon slot="icon-only" name="language"></ion-icon>
+        </ion-button>
 
-      <!-- Change language -->
-      <ion-button (click)="changeLanguage()">
-        <ion-icon slot="icon-only" name="language"></ion-icon>
-      </ion-button>
+        <!-- History -->
+        <ion-button class="ion-hide-sm-down" routerDirection="root" routerLink="/history">Inverfin</ion-button>
 
-      <!-- History -->
-      <ion-button class="ion-hide-sm-down" routerDirection="root" routerLink="/history">Inverfin</ion-button>
+        <!-- Dropdown Servicios -->
+        <ion-button class="ion-hide-sm-down" (click)="openServices($event)">{{'common.services'|translate}}</ion-button>
 
-      <!-- Dropdown Servicios -->
-      <ion-button class="ion-hide-sm-down" (click)="openServices($event)">{{'common.services'|translate}}</ion-button>
+        <!-- Blog -->
+        <ion-button class="ion-hide-sm-down" hidden routerLink="/blog">Blog</ion-button>
 
-      <!-- Blog -->
-      <ion-button class="ion-hide-sm-down" hidden routerLink="/blog">Blog</ion-button>
+        <!-- Contact Pop -->
+        <ion-button class="ion-hide-sm-down" (click)="openContact($event)">{{'common.contact-us'|translate}}</ion-button>
 
-      <!-- Contact Pop -->
-      <ion-button class="ion-hide-sm-down " (click)="openContact($event)">{{'common.contact-us'|translate}}</ion-button>
-
-      <!-- Botón hamburguesa visible solo en móvil -->
-      <ion-menu-button class="ion-hide-sm-up" menu="menuId"></ion-menu-button>
-    </ion-buttons>
-
-    <!-- <ion-buttons class="mobile-menu" slot="end">
-    </ion-buttons> -->
+        <!-- Botón hamburguesa visible solo en móvil -->
+        <ion-menu-button class="ion-hide-sm-up" menu="menuId"></ion-menu-button>
+      </ion-buttons>
+    </div>
   </ion-toolbar>
 </ion-header>

@@ -44,6 +44,17 @@
       </span>
       <h1 class="article-title">{{ post.titulo }}</h1>
 
+      <!-- LISTA DE TAGS CON HASHTAGS INTERACTIVOS -->
+        <div class="article-tags-inline" *ngIf="post.tags && post.tags.length > 0">
+          <span
+            class="article-tag-pill clickable-tag"
+            *ngFor="let tag of post.tags"
+            (click)="filtrarPorTag(tag)"
+            title="Filtrar por {{ tag }}">
+            {{ tag.startsWith('#') ? tag : '#' + tag }}
+          </span>
+        </div>
+
       <div class="blog-meta">
         <div class="author-info">
           <ion-icon name="person-circle-outline"></ion-icon>

@@ -18,34 +18,58 @@
 @import 'quill/dist/quill.core.css';
 @import 'quill/dist/quill.snow.css';
 
+/* ==========================================================
+   INVERFIN · Paleta de marca 2026
+   Azul #0E2246 · Gris #6C6E70 · Blanco #FFFFFF · Negro #07090B
+   ========================================================== */
+
 :root {
-	--ion-color-primary: #1E4C8B;
-	--ion-color-primary-rgb: 30,76,139;
+	/* ---------- Colores de marca (para usar en tus SCSS) ---------- */
+	--inverfin-azul: #0E2246;
+	--inverfin-azul-rgb: 14,34,70;
+	--inverfin-gris: #6C6E70;
+	--inverfin-gris-rgb: 108,110,112;
+	--inverfin-blanco: #FFFFFF;
+	--inverfin-negro: #07090B;
+	--inverfin-negro-rgb: 7,9,11;
+
+	/* ---------- Base de Ionic ---------- */
+	--ion-background-color: #ffffff;
+	--ion-background-color-rgb: 255,255,255;
+	--ion-text-color: #07090B;
+	--ion-text-color-rgb: 7,9,11;
+
+	/* Primary · Azul de marca */
+	--ion-color-primary: #0E2246;
+	--ion-color-primary-rgb: 14,34,70;
 	--ion-color-primary-contrast: #ffffff;
 	--ion-color-primary-contrast-rgb: 255,255,255;
-	--ion-color-primary-shade: #1a437a;
-	--ion-color-primary-tint: #355e97;
+	--ion-color-primary-shade: #0c1e3e;
+	--ion-color-primary-tint: #263858;
 
-	--ion-color-secondary: #3A6FB0;
-	--ion-color-secondary-rgb: 58,111,176;
+	/* Secondary · Azul de marca aclarado (misma tonalidad) para enlaces, íconos y acentos */
+	--ion-color-secondary: #35548C;
+	--ion-color-secondary-rgb: 53,84,140;
 	--ion-color-secondary-contrast: #ffffff;
 	--ion-color-secondary-contrast-rgb: 255,255,255;
-	--ion-color-secondary-shade: #33629b;
-	--ion-color-secondary-tint: #4e7db8;
+	--ion-color-secondary-shade: #2f4a7b;
+	--ion-color-secondary-tint: #496598;
 
-	--ion-color-tertiary: #7A7A7A;
-	--ion-color-tertiary-rgb: 122,122,122;
-	--ion-color-tertiary-contrast: #000000;
-	--ion-color-tertiary-contrast-rgb: 0,0,0;
-	--ion-color-tertiary-shade: #6b6b6b;
-	--ion-color-tertiary-tint: #878787;
+	/* Tertiary · Gris de marca */
+	--ion-color-tertiary: #6C6E70;
+	--ion-color-tertiary-rgb: 108,110,112;
+	--ion-color-tertiary-contrast: #ffffff;
+	--ion-color-tertiary-contrast-rgb: 255,255,255;
+	--ion-color-tertiary-shade: #5f6163;
+	--ion-color-tertiary-tint: #7b7c7e;
 
+	/* Estados (sin cambio: solo para mensajes de éxito, aviso y error) */
 	--ion-color-success: #2E7D32;
 	--ion-color-success-rgb: 46,125,50;
 	--ion-color-success-contrast: #ffffff;
 	--ion-color-success-contrast-rgb: 255,255,255;
 	--ion-color-success-shade: #286e2c;
-	--ion-color-success-tint: #438a47;
+	--ion-color-success-tint: #438a46;
 
 	--ion-color-warning: #FBC02D;
 	--ion-color-warning-rgb: 251,192,45;
@@ -61,27 +85,29 @@
 	--ion-color-danger-shade: #ae2323;
 	--ion-color-danger-tint: #cc3e3e;
 
-	--ion-color-light: #f6f8fc;
-	--ion-color-light-rgb: 246,248,252;
-	--ion-color-light-contrast: #000000;
-	--ion-color-light-contrast-rgb: 0,0,0;
-	--ion-color-light-shade: #d8dade;
-	--ion-color-light-tint: #f7f9fc;
+	/* Light · Fondo de secciones alternas (blanco con un toque frío) */
+	--ion-color-light: #F4F6F9;
+	--ion-color-light-rgb: 244,246,249;
+	--ion-color-light-contrast: #07090B;
+	--ion-color-light-contrast-rgb: 7,9,11;
+	--ion-color-light-shade: #d7d8db;
+	--ion-color-light-tint: #f5f7fa;
 
-	--ion-color-medium: #5f5f5f;
-	--ion-color-medium-rgb: 95,95,95;
+	/* Medium · Texto secundario (gris de marca) */
+	--ion-color-medium: #6C6E70;
+	--ion-color-medium-rgb: 108,110,112;
 	--ion-color-medium-contrast: #ffffff;
 	--ion-color-medium-contrast-rgb: 255,255,255;
-	--ion-color-medium-shade: #545454;
-	--ion-color-medium-tint: #6f6f6f;
+	--ion-color-medium-shade: #5f6163;
+	--ion-color-medium-tint: #7b7c7e;
 
-	--ion-color-dark: #2f2f2f;
-	--ion-color-dark-rgb: 47,47,47;
+	/* Dark · Negro de marca */
+	--ion-color-dark: #07090B;
+	--ion-color-dark-rgb: 7,9,11;
 	--ion-color-dark-contrast: #ffffff;
 	--ion-color-dark-contrast-rgb: 255,255,255;
-	--ion-color-dark-shade: #292929;
-	--ion-color-dark-tint: #444444;
-
+	--ion-color-dark-shade: #06080a;
+	--ion-color-dark-tint: #202223;
 }
 
 
@@ -113,12 +139,12 @@
   }
 }
 
-/* Tamaño estilizado para el modal de vista previa */
+/* Tamaño estilizado para el modal de vista previa de artículos */
 .blog-preview-modal {
-  --width: 90%;
-  --max-width: 850px;
-  --height: 90%;
-  --max-height: 900px;
+  --width: 95vw;        /* Subido de 90% a 95vw */
+  --max-width: 1100px;  /* Subido de 850px a 1100px */
+  --height: 92vh;       /* Subido de 90% a 92vh */
+  --max-height: 950px;
   --border-radius: 12px;
 }
 

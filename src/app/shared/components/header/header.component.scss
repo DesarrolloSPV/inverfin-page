@@ -1,75 +1,87 @@
-ion-toolbar {
-  --background: rgba(255, 255, 255, 0.95);
-  --border-width: 0;
+/* El ion-header o ion-toolbar abarca el 100% de la pantalla */
+ion-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  padding: 6px 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+ion-toolbar {
+  --background: transparent; /* Dejamos transparente el toolbar para que mande el header */
+  --border-width: 0;
+  padding: 6px 16px;
+  width: 100%;
+}
+
+/* Creamos un contenedor interno para limitar el ancho y centrar los elementos */
+.toolbar-container {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
   max-width: 1300px;
   margin: 0 auto;
   width: 100%;
+}
 
-  /* Logo */
-  .logo {
-    height: 42px;
-    width: auto;
-    object-fit: contain;
-    margin-left: 8px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    margin-top: 5px;
+/* Logo */
+.logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-top: 5px;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* Contenedor de botones */
+ion-buttons[slot="end"] {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  /* Estilo para los botones de texto (Inverfin, Servicios, Contacto) */
+  ion-button:not(.btn-close):not(ion-menu-button) {
+    --color: #2c3e50;
+    --border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: none;
+    letter-spacing: 0.2px;
+    transition: all 0.2s ease;
 
     &:hover {
-      transform: scale(1.02);
+      --color: var(--ion-color-primary);
+      --background: var(--ion-color-light-shade, #f4f5f8);
     }
   }
 
-  /* Contenedor de botones */
-  ion-buttons[slot="end"] {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  /* Botón específico de cambio de idioma (Solo Ícono) */
+  ion-button:first-child {
+    --color: #555;
+    --border-radius: 50%;
+    width: 40px;
+    height: 40px;
 
-    /* Estilo para los botones de texto (Inverfin, Servicios, Contacto) */
-    ion-button:not(.btn-close):not(ion-menu-button) {
-      --color: #2c3e50;
-      --border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-transform: none;
-      letter-spacing: 0.2px;
-      transition: all 0.2s ease;
-
-
-      &:hover {
-        --color: var(--ion-color-primary);
-        --background: var(--ion-color-light-shade, #f4f5f8);
-      }
+    ion-icon {
+      font-size: 1.3rem;
     }
 
-    /* Botón específico de cambio de idioma (Solo Ícono) */
-    ion-button:first-child {
-      --color: #555;
-      --border-radius: 50%;
-      width: 40px;
-      height: 40px;
-
-      ion-icon {
-        font-size: 1.3rem;
-      }
-
-      &:hover {
-        --color: var(--ion-color-primary);
-      }
-    }
-
-    /* Botón de Menú Hamburguesa en Móvil */
-    ion-menu-button {
+    &:hover {
       --color: var(--ion-color-primary);
-      font-size: 1.4rem;
     }
+  }
+
+  /* Botón de Menú Hamburguesa en Móvil */
+  ion-menu-button {
+    --color: var(--ion-color-primary);
+    font-size: 1.4rem;
   }
 }
 
