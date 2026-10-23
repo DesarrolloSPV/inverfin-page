@@ -1,16 +1,16 @@
-import { Timestamp } from '@angular/fire/firestore';
+import firebase from 'firebase/compat/app';
 
 /**
  * Aditional Data
  *
  * @export
- * @interface MetaData
+ * @interface Metadata
  */
 export interface Metadata {
   uid?: string;
-  createdAt?: Timestamp;
+  createdAt?: firebase.firestore.Timestamp;
   createdBy?: string;
-  updatedAt?: Timestamp;
+  updatedAt?: firebase.firestore.Timestamp;
   updatedBy?: string;
   disabled?: boolean;
   search?: string[];

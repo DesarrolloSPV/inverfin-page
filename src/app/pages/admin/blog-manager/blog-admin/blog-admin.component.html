@@ -1,0 +1,120 @@
+<div class="admin-container ion-padding">
+
+  <!-- Encabezado con título y acciones principales -->
+  <div class="header-actions ion-margin-bottom">
+    <h2>Sistema de Gestión de Contenido</h2>
+    <div class="buttons-group">
+      <ion-button color="primary" (click)="onOpenModal()">
+        <ion-icon name="add-outline" slot="start"></ion-icon>
+        Nuevo Artículo
+      </ion-button>
+      <ion-button color="danger" fill="outline" (click)="onLogout()">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        Cerrar Sesión
+      </ion-button>
+    </div>
+  </div>
+
+  <!-- Filtros de Búsqueda y Estado -->
+  <ion-grid class="ion-no-padding ion-margin-bottom">
+    <ion-row>
+      <ion-col size="12" size-md="8">
+        <ion-searchbar
+          [(ngModel)]="searchTerm"
+          (ionInput)="onFilterChange()"
+          placeholder="Buscar por título, autor o slug...">
+        </ion-searchbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Tabla de publicaciones -->
+  <div class="table-responsive">
+    <table class="admin-table custom-table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Autor</th>
+          <th>Slug</th>
+          <th>Estado</th>
+          <th class="ion-text-center">Vistas</th> <!-- 👈 Nueva Columna -->
+          <th>Creación</th>
+          <th>Actualización</th>
+          <th class="ion-text-center">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of paginatedPosts">
+
+          <td class="col-title">
+            <span class="text-truncate" [title]="post.titulo">{{ post.titulo }}</span>
+          </td>
+
+          <td>{{ post.autor }}</td>
+
+          <td class="col-slug">
+            <code class="text-truncate" [title]="post.slug">{{ post.slug }}</code>
+          </td>
+
+          <td>
+            <ion-badge [color]="post.publicado ? 'success' : 'medium'">
+              {{ post.publicado ? 'Publicado' : 'Borrador' }}
+            </ion-badge>
+          </td>
+
+          <!-- 👈 Celda de contador de vistas -->
+          <td class="ion-text-center">
+            <ion-chip outline color="primary" style="font-weight: 600;">
+              <ion-icon name="eye-outline"></ion-icon>
+              <ion-label>{{ post.vistasCount || 0 }}</ion-label>
+            </ion-chip>
+          </td>
+
+          <td>{{ formatFecha(post.fechaCreacion) | date:'dd/MM/yyyy HH:mm' }}</td>
+          <td>{{ post.fechaActualizacion ? (formatFecha(post.fechaActualizacion) | date:'dd/MM/yyyy HH:mm') : '-' }}</td>
+
+          <td class="col-actions">
+            <div class="actions-wrapper">
+              <ion-button fill="clear" color="primary" size="small" (click)="verVistaPrevia(post)" title="Ver">
+                <ion-icon name="eye-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" color="primary" size="small" (click)="onOpenModal(post)" title="Editar">
+                <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" color="danger" size="small" (click)="onDeletePost(post)" title="Eliminar">
+                <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+              </ion-button>
+            </div>
+          </td>
+
+        </tr>
+
+        <tr *ngIf="paginatedPosts.length === 0 && !isLoading">
+          <td colspan="8" class="empty-state">
+            No se encontraron artículos.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Paginación -->
+  <div class="pagination-container ion-margin-top" *ngIf="paginatedPosts.length > 0">
+    <ion-button
+      fill="clear"
+      [disabled]="pagination.page <= 1"
+      (click)="changePage('prev')">
+      <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
+    </ion-button>
+
+    <span class="page-info">Página {{ pagination.page }}</span>
+
+    <ion-button
+      fill="clear"
+      [disabled]="pagination.onLast"
+      (click)="changePage('next')">
+      <ion-icon name="chevron-forward-outline" slot="icon-only"></ion-icon>
+    </ion-button>
+  </div>
+
+</div>

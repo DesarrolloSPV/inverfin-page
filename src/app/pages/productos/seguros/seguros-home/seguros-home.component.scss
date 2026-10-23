@@ -1,0 +1,123 @@
+.seguros-hero {
+  position: relative;
+  min-height: 520px;
+  padding: 80px 20px;
+  background: url('/assets/img/seguros_home.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    /* Degradado corporativo profesional para mejor lectura */
+    background: rgba(var(--ion-color-primary-rgb), 0.7); /* ✅ azul institucional con transparencia */
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    color: #ffffff;
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 193, 7, 0.15);
+      color: #ffc107;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 193, 7, 0.3);
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin-bottom: 35px;
+      color: #e9ecef;
+      font-weight: 300;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-actions {
+      margin-bottom: 30px;
+
+      ion-button {
+        font-weight: 600;
+        font-size: 1.05rem;
+        --background: var(--inverfin-gris);
+        --color: #ffffff;
+        --border-radius: 10px;
+        --padding-start: 28px;
+        --padding-end: 28px;
+        --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        height: 52px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+          --background: #5f6163;
+          --box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        ion-icon {
+          margin-left: 8px;
+        }
+      }
+    }
+
+    .hero-legal {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 15px;
+      max-width: 100%;
+    }
+  }
+}
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 768px) {
+  .seguros-hero {
+    min-height: 450px;
+    padding: 60px 15px;
+
+    .hero-content {
+      .hero-badge {
+        font-size: 0.75rem;
+        margin-bottom: 12px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 1.05rem;
+        margin-bottom: 25px;
+      }
+
+      .hero-legal {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}

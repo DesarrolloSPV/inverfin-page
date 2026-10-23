@@ -1,0 +1,102 @@
+<ion-menu contentId="menuId" menuId="menuId" side="end" type="overlay" class="custom-mobile-menu">
+  <!-- Encabezado del Menú Móvil -->
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="light" class="menu-toolbar">
+      <img src="/assets/img/Logo.svg" alt="Inverfin Logo" class="menu-logo" />
+      <ion-buttons slot="end">
+        <ion-menu-toggle menu="menuId">
+          <ion-button class="btn-close">
+            <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+          </ion-button>
+        </ion-menu-toggle>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Contenido de Navegación -->
+  <ion-content class="menu-content">
+    <ion-list lines="none" class="menu-list">
+
+      <!-- Inicio -->
+      <ion-menu-toggle menu="menuId">
+        <ion-item button routerLink="/" routerDirection="root" detail="false">
+          <ion-icon slot="start" name="home-outline"></ion-icon>
+          <ion-label>{{ 'common.home' | translate }}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <!-- Inverfin -->
+      <ion-menu-toggle menu="menuId">
+        <ion-item button routerLink="/history" routerDirection="root" detail="false">
+          <ion-icon slot="start" name="business-outline"></ion-icon>
+          <ion-label>Inverfin</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+      <!-- Servicios (Acordeón) -->
+      <ion-accordion-group class="services-accordion">
+        <ion-accordion value="servicios">
+          <ion-item slot="header" lines="none">
+            <ion-icon slot="start" name="grid-outline"></ion-icon>
+            <ion-label>{{ 'common.services' | translate }}</ion-label>
+          </ion-item>
+
+          <div class="ion-padding-start" slot="content">
+            <!-- Arrendamiento -->
+            <ion-menu-toggle menu="menuId">
+              <ion-item button routerLink="/productos/arrendamiento" routerDirection="root" detail="false">
+                <ion-icon slot="start" name="key-outline"></ion-icon>
+                <ion-label>{{ 'common.pure-leasing' | translate }}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+
+            <!-- Factoraje -->
+            <ion-menu-toggle menu="menuId">
+              <ion-item button routerLink="/productos/factoraje" routerDirection="root" detail="false">
+                <ion-icon slot="start" name="cash-outline"></ion-icon>
+                <ion-label>{{ 'common.factoring' | translate }}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+
+
+            <!-- Seguros -->
+            <ion-menu-toggle menu="menuId">
+              <ion-item button routerLink="/productos/seguros" routerDirection="root" detail="false">
+                <ion-icon slot="start" name="medical-outline"></ion-icon>
+                <ion-label>{{ 'common.insurance' | translate }}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+
+
+
+      <!-- Blog -->
+      <ion-menu-toggle menu="menuId">
+        <ion-item button routerLink="/blog" routerDirection="root" detail="false">
+          <ion-icon slot="start" name="business-outline"></ion-icon>
+          <ion-label>Blog</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+    </ion-list>
+  </ion-content>
+
+
+<!-- Footer del Menú: Anclado abajo en la pantalla -->
+<ion-footer class="ion-no-border menu-footer-container">
+  <div class="menu-footer">
+
+    <!-- Se eliminó <ion-menu-toggle> para controlar el cierre mediante TS -->
+    <ion-button expand="block" class="btn-contact" (click)="openContact($event)">
+      <ion-icon slot="start" name="mail-outline"></ion-icon>
+      {{ 'common.contact-us' | translate }}
+    </ion-button>
+
+    <div class="lang-selector" (click)="changeLanguage()">
+      <ion-icon name="language-outline"></ion-icon>
+      <span>Cambiar Idioma</span>
+    </div>
+  </div>
+</ion-footer>

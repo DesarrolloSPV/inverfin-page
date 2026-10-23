@@ -1,0 +1,23 @@
+<section class="cta-contacto">
+  <div class="cta-container">
+    <h2>¿Listo para asegurar lo que más importa?</h2>
+    <p>
+      Solicita tu cotización personalizada sin compromiso o habla directamente con uno de nuestros asesores expertos para resolver tus dudas.
+    </p>
+
+    <div class="cta-buttons">
+      <!-- Botón Principal: Formulario/Modal -->
+      <ion-button class="cta-btn btn-solicitar" (click)="openContactModal()">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        Solicitar Cotización
+      </ion-button>
+
+      <!-- Botón Secundario: WhatsApp -->
+      <ion-button class="cta-btn btn-whatsapp" (click)="openWhatsApp()">
+        <ion-icon name="logo-whatsapp" slot="start"></ion-icon>
+        Contactar por WhatsApp
+      </ion-button>
+    </div>
+    <p><small>{{'productos.seguros.legal'|translate}}</small></p>
+  </div>
+</section>

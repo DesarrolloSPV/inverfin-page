@@ -1,0 +1,106 @@
+.cta-section {
+  background-color: var(--ion-color-primary, #3880ff);
+  color: var(--ion-color-primary-contrast, #ffffff);
+  padding: 3rem 1.5rem;
+  text-align: center;
+
+  .cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0;
+      color: inherit;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 0;
+      opacity: 0.95;
+
+      strong {
+        font-weight: 700;
+      }
+    }
+
+    /* Botón principal "¿Hablamos?" en Blanco */
+    .cta-buttons {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      .contact-btn {
+        width: 35%;
+        min-width: 200px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        --border-radius: 8px;
+        --color: var(--ion-color-primary);
+        --background: #ffffff;
+        --background-hover: #f1f3f5;
+        --background-activated: #e9ecef;
+        --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    /* Botones secundarios (Los 3 productos) */
+    .cta-secondary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      width: 100%;
+
+      .secondary-btn {
+        width: 100%;
+        margin: 0;
+        font-weight: 600;
+        font-size: 0.95rem;
+        --border-radius: 8px;
+        --color: #333333;
+        --background: #cbccce;
+        --background-hover: #dae0e5;
+        --background-activated: #d6d8db;
+        --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        --padding-start: 8px;
+        --padding-end: 8px;
+        white-space: normal; /* Permite que el texto se ajuste sin cortarse */
+      }
+    }
+  }
+}
+
+/* --- RESPONSIVO MÓVIL --- */
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 2.5rem 1rem;
+
+    .cta-container {
+      /* Pasa los 3 botones secundarios a una fila vertical en móvil */
+      .cta-secondary {
+        grid-template-columns: 1fr !important; /* Muestra un botón por fila */
+        gap: 0.6rem;
+        max-width: 320px; /* Ancho cómodo centrado */
+
+        .secondary-btn {
+          font-size: 1rem;
+          height: 44px;
+        }
+      }
+
+      .cta-buttons {
+        .contact-btn {
+          width: 100%;
+          max-width: 320px;
+        }
+      }
+    }
+  }
+}

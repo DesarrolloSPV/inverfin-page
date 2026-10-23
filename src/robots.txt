@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Bloquear rutas de administración y gestión
+Disallow: /admin/login
+Disallow: /admin/blog
+
+# Enlace al sitemap oficial
+Sitemap: https://inverfin.com.mx/sitemap.xml

@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Regla para la colección de contactos
+    match /contactos/{document=**} {
+      allow create: if true;          // Permite que cualquiera envíe un mensaje
+      allow read, update, delete: if request.auth != null; // Solo administradores pueden ver/editar
+    }
+
+    // Regla para los blogs
+    match /blogs/{blogId} {
+      allow read: if true;
+      allow create, delete: if request.auth != null;
+      
+      // Permitimos actualizar 'vistasCount' a cualquier usuario público, y otros campos solo a administradores
+      allow update: if request.auth != null || 
+                    request.resource.data.diff(resource.data).affectedKeys().hasOnly(['vistasCount']);
+
+      // Permitir leer y escribir en la subcolección de vistas (control de IP de 24 horas)
+      match /vistas/{ipDocId} {
+        allow read, write: if true;
+      }
+    }
+  }
+}

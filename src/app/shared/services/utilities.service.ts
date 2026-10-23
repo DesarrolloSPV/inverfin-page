@@ -12,6 +12,8 @@ import { QuerySnapshot } from '@angular/fire/compat/firestore';
 import { DateTime } from 'luxon';
 import { MexicoStatesByCP } from '../utilities/mexico-estates-cp';
 import { Timestamp } from '@angular/fire/firestore';
+import { ContactFormComponent } from '../components/contact-form/contact-form.component';
+import { ModalController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +34,8 @@ export class UtilitiesService {
     private toastC: ToastController,
     private loadingC: LoadingController,
     private translate: TranslateService,
-    private popC: PopoverController
+    private popC: PopoverController,
+    private modalC: ModalController,
   ) {}
 
   arraySearch(str: string): string[] {
@@ -309,6 +312,32 @@ export class UtilitiesService {
     });
     await pop.present();
   }
+
+ async popContact(event: any): Promise<void> {
+  const pop = await this.popC.create({
+    component: ContactFormComponent,   // ✅ tu formulario de contacto
+    event,
+    mode: 'ios',
+    size: 'auto',
+    cssClass: 'pop-contact',           // clase CSS distinta para estilos
+  });
+  await pop.present();
+}
+
+async popContactModal(producto: string = 'General'): Promise<void> {
+  const modal = await this.modalC.create({
+    component: ContactFormComponent,  // ✅ tu formulario de contacto
+    componentProps: {
+      isModal: true,
+      selectedProduct: producto // 👈 Ahora sí reconocerá la variable
+    },
+    cssClass: 'modal-contact',  // clase CSS distinta para estilos
+    backdropDismiss: true,
+    mode: 'ios',
+  });
+  await modal.present();
+}
+
 
   async tokenHeader(): Promise<HttpHeaders> {
     const user = await this.auth.currentUser;

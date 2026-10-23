@@ -1,0 +1,72 @@
+.cta-contacto {
+  background-color: var(--ion-color-light); /* ✅ fondo light */
+  text-align: center;
+  padding: 80px 40px;
+
+  .cta-container {
+    max-width: 900px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--ion-color-primary);
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      ion-button.cta-btn {
+        --background: var(--ion-color-primary); /* ✅ solo primary */
+        --color: var(--ion-color-primary-contrast, #fff);
+        --box-shadow: none; /* ✅ elimina sombra interna */
+        --border-radius: 8px;
+        --padding-start: 24px;
+        --padding-end: 24px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cta-contacto {
+    padding: 60px 20px;
+
+    .cta-container h2 {
+      font-size: 1.8rem;
+    }
+
+    .cta-container p {
+      font-size: 1rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      gap: 15px;
+
+      ion-button.cta-btn {
+        width: 100%;
+      }
+    }
+  }
+}

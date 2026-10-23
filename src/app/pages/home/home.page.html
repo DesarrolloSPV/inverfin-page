@@ -1,22 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      {{'home.intro' | translate}}
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+  <app-header></app-header>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{'common.welcome' | translate}}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>
-      {{'common.yes' | translate}}
-    </p>
-  </div>
+<ion-content>
+  <app-home-hero></app-home-hero>
+  <app-home-service></app-home-service>
+  <app-home-process></app-home-process>
+  <app-home-differentials></app-home-differentials>
+  <app-home-testimonials></app-home-testimonials>
+  <!-- <app-home-about></app-home-about>
+  <app-home-values></app-home-values> -->
+  <app-home-contact></app-home-contact>
+  <!-- <app-home-blog></app-home-blog> -->
+  <app-home-faq></app-home-faq>
+  <app-footer></app-footer>
 </ion-content>
+  <app-buttons-fab></app-buttons-fab>

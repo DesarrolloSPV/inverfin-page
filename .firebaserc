@@ -1,0 +1,22 @@
+{
+  "projects": {
+    "dev": "inverfin-develop",
+    "prod": "inverfin-5f4d0"
+  },
+  "targets": {
+    "inverfin-develop": {
+      "hosting": {
+        "dev": [
+          "inverfin-develop"
+        ]
+      }
+    },
+    "inverfin-5f4d0": {
+      "hosting": {
+        "prod": [
+          "inverfin-5f4d0"
+        ]
+      }
+    }
+  }
+}

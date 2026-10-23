@@ -1,0 +1,63 @@
+<section class="faq-section">
+  <div class="faq-header">
+    <h5>{{ 'home.faq1' | translate }}</h5>
+    <h2>{{ 'home.faq2' | translate }}</h2>
+    <p [innerHTML]="'home.faq3' | translate"></p>
+  </div>
+
+  <ion-accordion-group expand="inset">
+    <!-- Pregunta 1 -->
+    <ion-accordion value="q1">
+      <ion-item slot="header" color="light">
+        <ion-label>{{ 'home.q1_question' | translate }}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content" [innerHTML]="'home.q1_answer' | translate"></div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <ion-accordion-group expand="inset">
+    <!-- Pregunta 2 -->
+    <ion-accordion value="q2">
+      <ion-item slot="header" color="light">
+        <ion-label>{{ 'home.q2_question' | translate }}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        {{ 'home.q2_answer' | translate }}
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <ion-accordion-group expand="inset">
+    <!-- Pregunta 3 -->
+    <ion-accordion value="q3">
+      <ion-item slot="header" color="light">
+        <ion-label>{{ 'home.q3_question' | translate }}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        {{ 'home.q3_answer' | translate }}
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <ion-accordion-group expand="inset">
+    <!-- Pregunta 4 -->
+    <ion-accordion value="q4">
+      <ion-item slot="header" color="light">
+        <ion-label>{{ 'home.q4_question' | translate }}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content" [innerHTML]="'home.q4_answer' | translate"></div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <ion-accordion-group expand="inset">
+    <!-- Pregunta 5 -->
+    <ion-accordion value="q5">
+      <ion-item slot="header" color="light">
+        <ion-label>{{ 'home.q5_question' | translate }}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        {{ 'home.q5_answer' | translate }}
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</section>

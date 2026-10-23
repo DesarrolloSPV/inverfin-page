@@ -1,0 +1,104 @@
+<section class="beneficios-hover">
+  <!-- Encabezado -->
+  <div class="beneficios-header">
+    <h2>{{ 'productos.arrendamiento.benefits1' | translate }}</h2>
+    <p [innerHTML]="'productos.arrendamiento.benefits2' | translate"></p>
+  </div>
+
+  <!-- Íconos interactivos -->
+  <div class="beneficios-grid">
+    <div
+      class="beneficio-item"
+      (mouseenter)="setActive(1)"
+      (click)="setActive(1)"
+      [class.active]="active === 1">
+      <ion-icon name="cash-outline"></ion-icon>
+      <span>{{ 'productos.arrendamiento.benefits-card1' | translate }}</span>
+    </div>
+    <div
+      class="beneficio-item"
+      (mouseenter)="setActive(2)"
+      (click)="setActive(2)"
+      [class.active]="active === 2">
+      <ion-icon name="construct-outline"></ion-icon>
+      <span>{{ 'productos.arrendamiento.benefits-card2' | translate }}</span>
+    </div>
+    <div
+      class="beneficio-item"
+      (mouseenter)="setActive(3)"
+      (click)="setActive(3)"
+      [class.active]="active === 3">
+      <ion-icon name="receipt-outline"></ion-icon>
+      <span>{{ 'productos.arrendamiento.benefits-card3' | translate }}</span>
+    </div>
+    <div
+      class="beneficio-item"
+      (mouseenter)="setActive(4)"
+      (click)="setActive(4)"
+      [class.active]="active === 4">
+      <ion-icon name="trending-up-outline"></ion-icon>
+      <span>{{ 'productos.arrendamiento.benefits-card4' | translate }}</span>
+    </div>
+    <div
+      class="beneficio-item"
+      (mouseenter)="setActive(5)"
+      (click)="setActive(5)"
+      [class.active]="active === 5">
+      <ion-icon name="cube-outline"></ion-icon>
+      <span>{{ 'productos.arrendamiento.benefits-card5' | translate }}</span>
+    </div>
+  </div>
+
+  <!-- Bloque dinámico con imagen + texto -->
+  <div class="beneficio-detalle">
+    <div *ngIf="active === 1" class="detalle-content">
+      <div class="detalle-img">
+        <img src="assets/img/1_liquidez.svg" [attr.alt]="'productos.arrendamiento.benefits-card1' | translate" />
+      </div>
+      <div class="detalle-text">
+        <h3>{{ 'productos.arrendamiento.benefits-card1' | translate }}</h3>
+        <p>{{ 'productos.arrendamiento.benefits-card6' | translate }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="active === 2" class="detalle-content">
+      <div class="detalle-img">
+        <img src="assets/img/2_operacion.svg" [attr.alt]="'productos.arrendamiento.benefits-card2' | translate" />
+      </div>
+      <div class="detalle-text">
+        <h3>{{ 'productos.arrendamiento.benefits-card2' | translate }}</h3>
+        <p>{{ 'productos.arrendamiento.benefits-card7' | translate }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="active === 3" class="detalle-content">
+      <div class="detalle-img">
+        <img src="assets/img/3_beneficio.svg" [attr.alt]="'productos.arrendamiento.benefits-card3' | translate" />
+      </div>
+      <div class="detalle-text">
+        <h3>{{ 'productos.arrendamiento.benefits-card3' | translate }}</h3>
+        <p>{{ 'productos.arrendamiento.benefits-card8' | translate }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="active === 4" class="detalle-content">
+      <div class="detalle-img">
+        <img src="assets/img/4_rentas.svg" [attr.alt]="'productos.arrendamiento.benefits-card4' | translate" />
+      </div>
+      <div class="detalle-text">
+        <h3>{{ 'productos.arrendamiento.benefits-card4' | translate }}</h3>
+        <p>{{ 'productos.arrendamiento.benefits-card9' | translate }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="active === 5" class="detalle-content">
+      <div class="detalle-img">
+        <img src="assets/img/5_residual.svg" [attr.alt]="'productos.arrendamiento.benefits-card5' | translate" />
+      </div>
+      <div class="detalle-text">
+        <h3>{{ 'productos.arrendamiento.benefits-card5' | translate }}</h3>
+        <p>{{ 'productos.arrendamiento.benefits-card10' | translate }}</p>
+      </div>
+    </div>
+  </div>
+</section>

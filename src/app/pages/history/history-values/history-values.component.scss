@@ -1,0 +1,203 @@
+.valores-section {
+  width: 100%;
+  height: 500px;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.valores-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  padding: 0 20px;
+}
+
+/* --- LADO IZQUIERDO: LOGO FIJO --- */
+.logo-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  padding-right: 80px;
+}
+
+.main-logo {
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--ion-color-primary);
+  letter-spacing: -1.5px;
+  margin: 0;
+}
+
+.dotted-line {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 400px;
+  width: 100px;
+  opacity: 0.8;
+}
+
+/* --- LADO DERECHO: SLIDER VERTICAL --- */
+.values-slider-container {
+  flex: 1.2;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Cambiado para posicionar el subtítulo arriba */
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+/* Subtítulo "Nuestros valores" arriba de la rueda */
+.section-subtitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--ion-color-primary);
+  margin: 0 0 8px 0;
+}
+
+.vertical-swiper {
+  width: 100%;
+  height: 180px;
+}
+
+/* --- ANIMACIÓN DE DIFUMINADO (FADE IN / FADE OUT) --- */
+swiper-slide {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+/* El primer slide es visible por defecto si aún no existe la clase activa */
+swiper-slide:first-child,
+swiper-slide.swiper-slide-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- ESTILO DE LOS VALORES --- */
+.value-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  height: 100%;
+}
+
+.icon-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  min-width: 75px;
+  border-radius: 50%;
+  background-color: var(--ion-color-primary);
+  color: var(--ion-color-light);
+  font-size: 2.2rem;
+  box-shadow: 0 8px 20px rgba(10, 31, 51, 0.15);
+}
+
+.text-content {
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--ion-color-primary);
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #555555;
+    margin: 0;
+    font-weight: 400;
+    max-width: 380px;
+  }
+}
+
+/* --- RESPONSIVE PARA CELULAR --- */
+@media (max-width: 768px) {
+  .valores-section {
+    height: auto; // ✅ elimina altura fija
+    padding: 50px 20px 60px; // más espacio arriba y abajo
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .dotted-line {
+    display: none !important; // ✅ oculta la línea en todos los tamaños
+  }
+
+  .valores-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px; // más separación entre logo y slider
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .logo-container {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .main-logo {
+    font-size: 2.4rem; // un poco más grande para equilibrio visual
+    text-align: center;
+  }
+
+  .values-slider-container {
+    align-items: center;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .section-subtitle {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 20px; // más espacio debajo del título
+  }
+
+  .vertical-swiper {
+    height: 260px; // ✅ más altura para que los valores respiren
+    overflow: hidden;
+  }
+
+  .value-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px; // más espacio entre ícono y texto
+  }
+
+  .icon-circle {
+    width: 65px;
+    height: 77px;
+    font-size: 1.8rem;
+  }
+
+  .text-content {
+    h3 {
+      font-size: 1.1rem;
+    }
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<section class="service-section">
+  <div class="service-header">
+    <h2>{{'home.services2'|translate}}</h2>
+    <p [innerHTML]="'home.services3' | translate"></p>
+    <p class="trust-line">{{'home.services4'|translate}}</p>
+  </div>
+
+  <div class="service-grid">
+    <!-- Arrendamiento puro -->
+    <div class="service-card arrendamiento">
+      <div class="service-image">
+        <img src="/assets/img/arrendamiento_home.jpg" alt="Arrendamiento puro" />
+      </div>
+      <div class="service-content">
+        <h3>{{'common.pure-leasing'|translate}}</h3>
+        <p>
+          {{'home.services-card1'|translate}}
+        </p>
+        <ion-button routerLink="/productos/arrendamiento">{{'common.learn-more'|translate}}</ion-button>
+      </div>
+    </div>
+
+    <!-- Factoraje financiero -->
+    <div class="service-card factoraje">
+      <div class="service-image">
+        <img src="/assets/img/factoraje_home.png" alt="Factoraje financiero" />
+      </div>
+      <div class="service-content">
+        <h3>{{'common.factoring'|translate}}</h3>
+        <p>
+          {{'home.services-card2'|translate}}
+        </p>
+        <ion-button routerLink="/productos/factoraje">{{'common.learn-more'|translate}}</ion-button>
+      </div>
+    </div>
+
+
+    <!-- Seguros -->
+    <div class="service-card seguros">
+      <div class="service-image">
+        <img src="/assets/img/seguros_home.png" alt="Seguros" />
+      </div>
+      <div class="service-content">
+        <h3>{{'common.insurance'|translate}}</h3>
+        <p>
+          {{'home.services-card3'|translate}}
+        </p>
+        <ion-button routerLink="/productos/seguros">{{'common.learn-more'|translate}}</ion-button>
+      </div>
+    </div>
+
+  </div>
+</section>

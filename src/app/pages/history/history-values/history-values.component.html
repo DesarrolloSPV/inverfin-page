@@ -1,0 +1,115 @@
+<section class="valores-section">
+  <div class="valores-container">
+    <!-- LADO IZQUIERDO: Logo Estático y Curva -->
+    <div class="logo-container">
+      <h1 class="main-logo">INVERFIN</h1>
+
+      <svg class="dotted-line" viewBox="0 0 100 400">
+        <path
+          d="M 0 0 Q 100 200 0 400"
+          fill="none"
+          stroke="var(--ion-color-primary)"
+          stroke-width="3"
+          stroke-dasharray="0 12"
+          stroke-linecap="round"
+        />
+      </svg>
+    </div>
+
+    <!-- LADO DERECHO: Rueda de Valores (Swiper Vertical) -->
+    <div class="values-slider-container">
+      <!-- TÍTULO SUPERIOR AGREGADO -->
+      <span class="section-subtitle">{{ 'history.values' | translate }}</span>
+
+      <swiper-container
+        #swiperHero
+        init="true"
+        direction="vertical"
+        loop="true"
+        [autoplay]="{ delay: 3000, disableOnInteraction: false }"
+        speed="800"
+        allow-touch-move="false"
+        class="vertical-swiper"
+      >
+        <!-- AGILIDAD -->
+        <swiper-slide>
+          <div class="value-item">
+            <div class="icon-circle">
+              <ion-icon name="flash-outline"></ion-icon>
+            </div>
+            <div class="text-content">
+              <h3>{{ 'history.values1' | translate }}</h3>
+              <p>{{ 'history.values2' | translate }}</p>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <!-- FLEXIBILIDAD -->
+        <swiper-slide>
+          <div class="value-item">
+            <div class="icon-circle">
+              <ion-icon name="git-branch-outline"></ion-icon>
+            </div>
+            <div class="text-content">
+              <h3>{{ 'history.values3' | translate }}</h3>
+              <p>{{ 'history.values4' | translate }}</p>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <!-- ATENCIÓN PERSONALIZADA -->
+        <swiper-slide>
+          <div class="value-item">
+            <div class="icon-circle">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
+            <div class="text-content">
+              <h3>{{ 'history.values5' | translate }}</h3>
+              <p>{{ 'history.values6' | translate }}</p>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <!-- CONFIANZA -->
+        <swiper-slide>
+          <div class="value-item">
+            <div class="icon-circle">
+              <ion-icon name="shield-checkmark-outline"></ion-icon>
+            </div>
+            <div class="text-content">
+              <h3>{{ 'history.values7' | translate }}</h3>
+              <p>{{ 'history.values8' | translate }}</p>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <!-- CRECIMIENTO -->
+        <swiper-slide>
+          <div class="value-item">
+            <div class="icon-circle">
+              <ion-icon name="trending-up-outline"></ion-icon>
+            </div>
+            <div class="text-content">
+              <h3>{{ 'history.values9' | translate }}</h3>
+              <p>{{ 'history.values10' | translate }}</p>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <!-- CERCANÍA -->
+        <swiper-slide>
+          <div class="value-item">
+            <div class="icon-circle">
+              <ion-icon name="heart-outline"></ion-icon>
+            </div>
+            <div class="text-content">
+              <h3>{{ 'history.values11' | translate }}</h3>
+              <p>{{ 'history.values12' | translate }}</p>
+            </div>
+          </div>
+        </swiper-slide>
+
+      </swiper-container>
+    </div>
+  </div>
+</section>

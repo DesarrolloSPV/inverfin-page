@@ -1,0 +1,129 @@
+.faq-section {
+  position: relative; /* Para posicionar el fondo internamente */
+  padding: 80px 40px;
+  background-color: var(--ion-color-primary);
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+
+  /* Capa de fondo fija */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+      url('/assets/img/fondo_Q.png');
+    background-repeat: no-repeat;
+    background-position: center top; /* O center center */
+    background-size: cover;
+    z-index: 0;
+  }
+
+  /* Asegura que el contenido quede por encima de la imagen */
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.faq-header {
+  margin-bottom: 40px;
+
+  h5 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: #e0e0e0;
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+/* --- Acordeón --- */
+ion-accordion-group {
+  background: transparent;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  overflow: hidden; // Redondea las esquinas superiores e inferiores del contenedor
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+ion-accordion {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08); // Línea divisoria fina entre elementos
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+ion-item {
+  --background: #ffffff;
+  --color: #333333;
+  --inner-padding-end: 20px;
+  margin-bottom: 0; // Se elimina el espacio entre items
+  border-radius: 0; // Elimina el redondeo individual para que formen un solo bloque
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  ion-label {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ion-color-primary);
+  }
+
+  /* Ícono de flecha */
+  ion-icon {
+    color: var(--ion-color-primary);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+}
+
+/* --- Contenido desplegado --- */
+.ion-padding {
+  background-color: #f8f9fa;
+  color: #333333;
+  border-radius: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
+  padding: 20px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 60px 20px;
+  }
+
+  .faq-header h2 {
+    font-size: 2rem;
+  }
+
+  ion-item {
+    font-size: 0.95rem;
+  }
+
+  ion-label {
+    font-size: 1rem;
+  }
+}

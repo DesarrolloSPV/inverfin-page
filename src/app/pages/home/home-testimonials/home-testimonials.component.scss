@@ -1,0 +1,140 @@
+:host ::ng-deep {
+  swiper-container {
+    .swiper-wrapper {
+      display: flex;
+      align-items: stretch;
+    }
+
+    swiper-slide {
+      height: auto !important;
+      display: flex;
+    }
+  }
+}
+
+.testimonials-section {
+  padding: 80px 40px;
+  background-color: #f8f9fa;
+  color: #000000;
+  text-align: center;
+}
+
+.testimonials-header {
+  margin-bottom: 50px;
+
+  h5 {
+    color: var(--ion-color-primary);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--ion-color-primary);
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: #555555;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+.testimonials-swiper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.testimonial-card {
+  display: flex;
+  width: 100%;
+}
+
+.testimonial-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 35px 30px;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+
+  /* Flexbox vertical con espacio distribuido de forma limpia */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+
+  transition: all 0.35s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+
+    .quote-mark {
+      color: var(--ion-color-primary);
+      transform: scale(1.1);
+    }
+  }
+
+  .quote-mark {
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--ion-color-primary);
+    font-family: Georgia, serif;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+  }
+
+  p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #444444;
+    white-space: pre-line;
+    margin: 0 0 25px 0;
+    text-align: center;
+    font-style: italic;
+    flex-grow: 1; /* Absorbe el espacio sobrante para mantener equilibrado el pie */
+    display: flex;
+    align-items: center;
+  }
+
+  .card-footer-accent {
+    width: 100%;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+
+    span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #888888;
+    }
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 50px 20px;
+  }
+
+  .testimonials-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .testimonial-content {
+    max-width: 90%;
+    padding: 30px 20px;
+  }
+}

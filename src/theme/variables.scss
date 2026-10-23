@@ -1,2 +1,5 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+.h-line-dark {
+  height: 1px;
+  border-radius: 50%;
+  background-color: var(--ion-color-dark);
+}

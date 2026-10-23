@@ -1,0 +1,98 @@
+<!-- 1. SI SE ABRE COMO MODAL: Muestra una barra superior básica con botón de cerrar -->
+<ion-header *ngIf="isModal">
+  <ion-toolbar color="primary">
+    <ion-title size="small">Inverfin Blog</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="compartirArticulo()" title="Compartir artículo" *ngIf="post">
+        <ion-icon name="share-social-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- 2. SI ENTRA POR RUTA DIRECTA (URL Compartida): Usa tu Header de la App -->
+<app-header *ngIf="!isModal"></app-header>
+
+<ion-content class="article-content-wrapper">
+
+  <!-- Estado de carga -->
+  <div *ngIf="loading" class="loading-state ion-text-center ion-padding ion-margin-top">
+    <ion-spinner name="crescent" color="primary"></ion-spinner>
+    <p>Cargando artículo...</p>
+  </div>
+
+  <!-- Contenido principal del Artículo -->
+  <article class="blog-container" *ngIf="!loading && post">
+
+    <header class="blog-header">
+      <div class="header-top-bar" *ngIf="!isModal">
+        <ion-button fill="clear" color="primary" (click)="goBack()" class="back-link">
+          <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+          Volver al Blog
+        </ion-button>
+        <ion-button fill="clear" color="primary" (click)="compartirArticulo()">
+          <ion-icon name="share-social-outline" slot="start"></ion-icon>
+          Compartir
+        </ion-button>
+      </div>
+
+      <span class="category-badge" *ngIf="$any(post).categoria">
+        {{ $any(post).categoria }}
+      </span>
+      <h1 class="article-title">{{ post.titulo }}</h1>
+
+      <!-- LISTA DE TAGS CON HASHTAGS INTERACTIVOS -->
+        <div class="article-tags-inline" *ngIf="post.tags && post.tags.length > 0">
+          <span
+            class="article-tag-pill clickable-tag"
+            *ngFor="let tag of post.tags"
+            (click)="filtrarPorTag(tag)"
+            title="Filtrar por {{ tag }}">
+            {{ tag.startsWith('#') ? tag : '#' + tag }}
+          </span>
+        </div>
+
+      <div class="blog-meta">
+        <div class="author-info">
+          <ion-icon name="person-circle-outline"></ion-icon>
+          <span>Por <strong>{{ post.autor || 'Inverfin' }}</strong></span>
+        </div>
+        <span class="dot">•</span>
+        <time class="publish-date">{{ formatFecha(post.fechaCreacion) | date:'dd/MM/yyyy' }}</time>
+      </div>
+    </header>
+
+    <!-- Imagen de portada -->
+    <div class="blog-cover" *ngIf="post.imagenPortada">
+      <img [src]="post.imagenPortada" [alt]="post.titulo" />
+    </div>
+
+    <!-- Contenido en HTML enriquecido -->
+    <div class="blog-body ql-editor" [innerHTML]="post.contenido"></div>
+
+    <!-- Navegación final al terminar el artículo -->
+    <div class="article-footer-nav ion-text-center ion-margin-top">
+      <ion-button fill="outline" color="primary" (click)="goBack()">
+        <ion-icon name="newspaper-outline" slot="start"></ion-icon>
+        Ver más publicaciones
+      </ion-button>
+    </div>
+
+  </article>
+
+  <!-- Estado cuando no existe el artículo -->
+  <div *ngIf="!loading && !post" class="empty-state ion-text-center ion-padding">
+    <ion-icon name="document-text-outline" class="empty-icon"></ion-icon>
+    <h3>Artículo no encontrado</h3>
+    <ion-button fill="clear" color="primary" (click)="goBack()">
+      Ir al Blog de Inverfin
+    </ion-button>
+  </div>
+
+  <!-- FOOTER DE TU APP (Sólo si NO es modal) -->
+  <app-footer *ngIf="!isModal"></app-footer>
+
+</ion-content>

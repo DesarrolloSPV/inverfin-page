@@ -1,14 +1,3 @@
-/*
- * App Global CSS
- * ----------------------------------------------------------------------------
- * Put style rules here that you want to apply globally. These styles are for
- * the entire app and not just one component. Additionally, this file can be
- * used as an entry point to import other CSS/Sass files to be included in the
- * output CSS.
- * For more information on global stylesheets, visit the documentation:
- * https://ionicframework.com/docs/layout/global-stylesheets
- */
-
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
 
@@ -25,13 +14,192 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
+/* Estilos de Quill Editor */
+@import 'quill/dist/quill.core.css';
+@import 'quill/dist/quill.snow.css';
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+/* ==========================================================
+   INVERFIN · Paleta de marca 2026
+   Azul #0E2246 · Gris #6C6E70 · Blanco #FFFFFF · Negro #07090B
+   ========================================================== */
+
+:root {
+	/* ---------- Colores de marca (para usar en tus SCSS) ---------- */
+	--inverfin-azul: #0E2246;
+	--inverfin-azul-rgb: 14,34,70;
+	--inverfin-gris: #6C6E70;
+	--inverfin-gris-rgb: 108,110,112;
+	--inverfin-blanco: #FFFFFF;
+	--inverfin-negro: #07090B;
+	--inverfin-negro-rgb: 7,9,11;
+
+	/* ---------- Base de Ionic ---------- */
+	--ion-background-color: #ffffff;
+	--ion-background-color-rgb: 255,255,255;
+	--ion-text-color: #07090B;
+	--ion-text-color-rgb: 7,9,11;
+
+	/* Primary · Azul de marca */
+	--ion-color-primary: #0E2246;
+	--ion-color-primary-rgb: 14,34,70;
+	--ion-color-primary-contrast: #ffffff;
+	--ion-color-primary-contrast-rgb: 255,255,255;
+	--ion-color-primary-shade: #0c1e3e;
+	--ion-color-primary-tint: #263858;
+
+	/* Secondary · Azul de marca aclarado (misma tonalidad) para enlaces, íconos y acentos */
+	--ion-color-secondary: #35548C;
+	--ion-color-secondary-rgb: 53,84,140;
+	--ion-color-secondary-contrast: #ffffff;
+	--ion-color-secondary-contrast-rgb: 255,255,255;
+	--ion-color-secondary-shade: #2f4a7b;
+	--ion-color-secondary-tint: #496598;
+
+	/* Tertiary · Gris de marca */
+	--ion-color-tertiary: #6C6E70;
+	--ion-color-tertiary-rgb: 108,110,112;
+	--ion-color-tertiary-contrast: #ffffff;
+	--ion-color-tertiary-contrast-rgb: 255,255,255;
+	--ion-color-tertiary-shade: #5f6163;
+	--ion-color-tertiary-tint: #7b7c7e;
+
+	/* Estados (sin cambio: solo para mensajes de éxito, aviso y error) */
+	--ion-color-success: #2E7D32;
+	--ion-color-success-rgb: 46,125,50;
+	--ion-color-success-contrast: #ffffff;
+	--ion-color-success-contrast-rgb: 255,255,255;
+	--ion-color-success-shade: #286e2c;
+	--ion-color-success-tint: #438a46;
+
+	--ion-color-warning: #FBC02D;
+	--ion-color-warning-rgb: 251,192,45;
+	--ion-color-warning-contrast: #000000;
+	--ion-color-warning-contrast-rgb: 0,0,0;
+	--ion-color-warning-shade: #dda928;
+	--ion-color-warning-tint: #fbc642;
+
+	--ion-color-danger: #C62828;
+	--ion-color-danger-rgb: 198,40,40;
+	--ion-color-danger-contrast: #ffffff;
+	--ion-color-danger-contrast-rgb: 255,255,255;
+	--ion-color-danger-shade: #ae2323;
+	--ion-color-danger-tint: #cc3e3e;
+
+	/* Light · Fondo de secciones alternas (blanco con un toque frío) */
+	--ion-color-light: #F4F6F9;
+	--ion-color-light-rgb: 244,246,249;
+	--ion-color-light-contrast: #07090B;
+	--ion-color-light-contrast-rgb: 7,9,11;
+	--ion-color-light-shade: #d7d8db;
+	--ion-color-light-tint: #f5f7fa;
+
+	/* Medium · Texto secundario (gris de marca) */
+	--ion-color-medium: #6C6E70;
+	--ion-color-medium-rgb: 108,110,112;
+	--ion-color-medium-contrast: #ffffff;
+	--ion-color-medium-contrast-rgb: 255,255,255;
+	--ion-color-medium-shade: #5f6163;
+	--ion-color-medium-tint: #7b7c7e;
+
+	/* Dark · Negro de marca */
+	--ion-color-dark: #07090B;
+	--ion-color-dark-rgb: 7,9,11;
+	--ion-color-dark-contrast: #ffffff;
+	--ion-color-dark-contrast-rgb: 255,255,255;
+	--ion-color-dark-shade: #06080a;
+	--ion-color-dark-tint: #202223;
+}
+
+
+.pop-contact {
+  --width: 600px;
+  --max-width: 90%;
+  --border-radius: 12px;
+  --background: #ffffff;
+  padding: 20px;
+}
+
+.modal-contact {
+  --width: 90%;
+  --max-width: 580px;
+  --height: 90vh; /* Permite espacio vertical adecuado */
+  --border-radius: 16px;
+  --background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+
+  app-contact-form {
+    height: 100%;
+    overflow-y: auto; /* Activa el scroll dinámico en el modal */
+
+    .contact-form-card {
+      box-shadow: none !important;
+      border: none !important;
+      padding: 20px 15px !important;
+    }
+  }
+}
+
+/* Tamaño estilizado para el modal de vista previa de artículos */
+.blog-preview-modal {
+  --width: 95vw;        /* Subido de 90% a 95vw */
+  --max-width: 1100px;  /* Subido de 850px a 1100px */
+  --height: 92vh;       /* Subido de 90% a 92vh */
+  --max-height: 950px;
+  --border-radius: 12px;
+}
+
+/* Centrado estricto para modales Ionic */
+ion-modal {
+  align-items: center !important;
+  justify-content: center !important;
+
+  &::part(content) {
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: auto !important;
+  }
+}
+
+/* Estilo para ajustar el tamaño del modal en la pantalla */
+ion-modal.modal-contact {
+  --width: 80vw;
+  --max-width: 950px;
+  --height: auto;
+  --max-height: 85vh;
+  --border-radius: 16px;
+
+  &::part(content) {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+}
+
+ion-modal.modal-contact {
+  --width: 92vw;
+  --max-width: 600px;
+  --height: auto;
+  --max-height: 88vh;
+  --border-radius: 16px;
+
+  &::part(content) {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  ion-modal.modal-contact {
+    --width: 94vw !important;
+    --max-width: 94vw !important;
+    --height: auto !important;
+    --max-height: 85vh !important;
+    --border-radius: 12px !important;
+
+    &::part(content) {
+      border-radius: 12px !important;
+      overflow-x: hidden !important; // Evita scroll horizontal
+    }
+  }
+}

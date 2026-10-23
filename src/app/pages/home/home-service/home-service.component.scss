@@ -1,0 +1,201 @@
+.service-section {
+  padding: 100px 20px;
+  background: radial-gradient(circle at top right, #114a75 0%, var(--ion-color-primary) 60%, #082338 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+  }
+
+  .service-header {
+    max-width: 850px;
+    margin: 0 auto 65px auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+    h5 {
+      display: inline-block;
+      color: #ffc107;
+      background: rgba(255, 193, 7, 0.1);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255, 193, 7, 0.25);
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 18px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      margin: 0 auto 12px auto;
+    }
+
+    .trust-line {
+      font-size: 0.95rem;
+      color: VAR(--inverfin-gris);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+    }
+  }
+}
+
+.service-grid {
+  max-width: 1240px; /* Ampliado ligeramente para acomodar 3 columnas cómodamente */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ✅ 3 columnas en escritorio */
+  gap: 30px; /* Reducido a 30px para dar más espacio horizontal */
+  position: relative;
+  z-index: 1;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.3);
+
+    .service-image img {
+      transform: scale(1.08);
+    }
+
+    ion-button {
+      --background: VAR(--inverfin-gris);
+    }
+  }
+
+  .service-image {
+    height: 180px; /* Reducido ligeramente de 220px a 180px para equilibrio visual */
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.25), transparent);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+  }
+
+  .service-content {
+    padding: 28px 22px; /* Ajustado el padding interno */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    h3 {
+      font-size: 1.45rem; /* Ajustado para que títulos largos encajen en 3 columnas */
+      font-weight: 700;
+      color: #0d3a5c;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #52606d;
+      margin-bottom: 25px;
+      flex-grow: 1;
+    }
+
+    ion-button {
+      align-self: flex-start;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.5px;
+      --background: VAR(--inverfin-gris);
+      --color: #ffffff;
+      --border-radius: 30px;
+      --padding-start: 20px;
+      --padding-end: 20px;
+      --padding-top: 12px;
+      --padding-bottom: 12px;
+      margin: 0;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .service-grid {
+    gap: 20px;
+  }
+
+  .service-card .service-content {
+    padding: 22px 18px;
+
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (max-width: 820px) {
+  .service-grid {
+    grid-template-columns: 1fr; /* Pasa a 1 sola columna en dispositivos móviles y tablets pequeñas */
+    max-width: 480px;
+  }
+
+  .service-card {
+    .service-image {
+      height: 190px;
+    }
+
+    .service-content {
+      padding: 28px 22px;
+
+      ion-button {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+<section class="valores-section">
+  <div class="valores-container">
+    <!-- LADO IZQUIERDO: Logo Estático y Curva -->
+    <div class="logo-container">
+      <h1 class="main-logo">INVERFIN</h1>
+
+      <svg class="dotted-line" viewBox="0 0 100 400">
+        <path
+          d="M 0 0 Q 100 200 0 400"
+          fill="none"
+          stroke="var(--ion-color-primary)"
+          stroke-width="3"
+          stroke-dasharray="0 12"
+          stroke-linecap="round"
+        />
+      </svg>
+    </div>
+
+    <!-- LADO DERECHO: Rueda de Valores (Swiper Vertical) -->
+    <div class="values-slider-container">
+      <!-- TÍTULO SUPERIOR AGREGADO -->
+      <span class="section-subtitle">Nuestros valores</span>
+
+        <swiper-container
+          #swiperHero
+          init="true"
+          direction="vertical"
+          loop="true"
+          [autoplay]="{ delay: 3000, disableOnInteraction: false }"
+          speed="800"
+          allow-touch-move="false"
+          class="vertical-swiper"
+        >
+        <swiper-slide>
+          <div class="value-item">
+            <div class="icon-circle">
+              <ion-icon name="timer-outline"></ion-icon>
+            </div>
+            <div class="text-content">
+              <h3>RÁPIDO Y BIEN HECHO</h3>
+              <p>
+                Actuamos rápido, pero con cabeza fría. La urgencia nunca nos gana el control ni la
+                calidad.
+              </p>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <swiper-slide>
+          <div class="value-item">
+            <div class="icon-circle">
+              <ion-icon name="hand-right-outline"></ion-icon>
+            </div>
+            <div class="text-content">
+              <h3>MANOS AL VOLANTE</h3>
+              <p>
+                Tomamos el control con fuerza y no lo soltamos hasta resolver el problema de raíz.
+              </p>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <swiper-slide>
+          <div class="value-item">
+            <div class="icon-circle">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
+            <div class="text-content">
+              <h3>ESCUADRÓN INVERFIN</h3>
+              <p>
+                Solos llegamos rápido; juntos llegamos más lejos. El resultado siempre es de todos.
+              </p>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <swiper-slide>
+          <div class="value-item">
+            <div class="icon-circle">
+              <ion-icon name="time-outline"></ion-icon>
+            </div>
+            <div class="text-content">
+              <h3>24/SIEMPRE</h3>
+              <p>
+                No hay hora ni día que nos detenga. Siempre listos para responder, dispuestos a dar
+                el extra.
+              </p>
+            </div>
+          </div>
+        </swiper-slide>
+
+        <swiper-slide>
+          <div class="value-item">
+            <div class="icon-circle">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <div class="text-content">
+              <h3>MIRADA 360</h3>
+              <p>Vemos lo que otros pasan por alto. Buscamos ángulos nuevos para resolver mejor.</p>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  </div>
+</section>
